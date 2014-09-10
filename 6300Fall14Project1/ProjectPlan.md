@@ -1,10 +1,10 @@
-# **Project Plan -- Team 01**
+### **Project Plan -- Team 01**
 
-1 Introduction
+#### 1 Introduction
 
 The introduction provides context for the project. Write a concise description of the software you will develop and its target users.
 
-2 Process Description
+#### 2 Process Description
 
 Process description as a set of activities; for each activity, provide the following:
 
@@ -13,15 +13,18 @@ Process description as a set of activities; for each activity, provide the follo
 - Entrance criteria (inputs needed for the activity)
 - Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
 
-3 Team
+#### 3 Team
 
 Describe the team and their roles (there may be more roles than there are team members)
 
 - Team Members:
-	- Alex Bowers Schoen (ABS)
-	- Alex Hortin (AH)
-	- Charles Cone (CC)
-	- Danelle Morales (DM)
+
+| Name  				| GATECH Username		| E-mail						| Alias |
+| --------------------- |:---------------------:|:-----------------------------:|:-----:| 
+| Alex Hortin 	 		| ahortin3				| hortinstein@gmail.com  		| AH    |
+| Charles Cone 	 		| ccone8		        | charlesprestoncone@gmail.com  | CC    |
+| Alex Bowers Schoen 	| abowers9				| alexandra.bowers@gmail.com 	| ABS   |
+| Danelle Morales		| dmorales30			| damoraled@gmail.com 			| DD    |
 	
 - Roles (with a short description of each):
 	- Project Manager
@@ -32,16 +35,19 @@ Describe the team and their roles (there may be more roles than there are team m
 	- QA Individual Contributor
 	- Pull Request Reviewer
 	
-- Table showing which team member(s) has which role(s):
-	- Project Manager: AH
-	- Development Lead: DM
-	- QA Manager: ABS
-	- Documentation Lead: CC
-	- Developer (Individual Contributor): ABS, AH, CC
-	- QA Individual Contributor: AH, CC, DM
-	- Pull Request Reviewer: ABS, AH, CC, DM
+- Project Roles:
 
-4 Estimates
+Roles | Assignments
+--- | --- | 
+| Project Manager	| AH 
+| Development Lead 	| DM
+| QA Manager 		| ABS
+| Documentation Lead| CC
+| Developer (Individual Contributor)| ABS, AH, CC
+|QA Individual Contributor			| AH, CC, DM
+| Pull Request Reviewer| ABS, AH, CC, DM
+
+#### 4 Estimates
 
 Provide estimates for the following metrics:
 
