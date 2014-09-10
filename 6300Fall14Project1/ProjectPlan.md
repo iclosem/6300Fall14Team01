@@ -1,12 +1,31 @@
 ## **Project Plan -- Team 01**
 
+Contents
+-----------------
+- [Introduction](#introduction)
+- [Process Descriptions](#process-descriptions)
+  - [Software Concept](#softwareconcept)
+  - [Requirements Analsys](#requirements-analsys)
+  - [Architectual Design](#architectual-design)
+  - [Detailed Design](#detailed-design)
+  - [Coding and debugging](#coding-and-debugging)
+  - [System Testing](#system-testing)
+  - [Maintenance](#maintenance)
+- [Team](#team)
+  - [Team Members](#team-members)
+  - [Roles](#roles)
+  - [Project Roles](#project-roles)
+- [Estimates](#estimates)
+  - [Effort Hours](#team-members)
+  - [Lines of Code](#lines-of-code)
+
 ### 1) Introduction
 
 The purpose of the Average Sentance Length project is to analyze the requirements of, design, implement and maintain the
 software defining a tool that will provide students a way to check the average sentance length of their essays, according to the
 requirements specified by the client.  
 
-### 2) Process Description
+### 2) Process Descriptions
 
 Process description as a set of activities; for each activity, provide the following:
 
@@ -93,17 +112,10 @@ Describe the team and their roles (there may be more roles than there are team m
 ### 4) Estimates
 
 Provide estimates for the following metrics:
-
+#### Effort Hours
 - Effort hours: total number of team-member hours you expect to spend on the project
-- Lines of code: 
-  - Main Class: 200 lines of code *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
-  - Tests: 300 lines of code
 
-
-rics:
-
-- Effort hours: total number of team-member hours you expect to spend on the project
-- Lines of code: 
+#### Lines of Code
   - Main Class: 200 lines of code *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
   - Tests: 300 lines of code
 
