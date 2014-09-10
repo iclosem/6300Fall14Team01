@@ -100,3 +100,11 @@ Provide estimates for the following metrics:
   - Tests: 300 lines of code
 
 
+rics:
+
+- Effort hours: total number of team-member hours you expect to spend on the project
+- Lines of code: 
+  - Main Class: 200 lines of code *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
+  - Tests: 300 lines of code
+
+
