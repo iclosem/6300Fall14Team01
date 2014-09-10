@@ -22,6 +22,7 @@ Describe the team and their roles (there may be more roles than there are team m
 	- Alex Hortin (AH)
 	- Charles Cone (CC)
 	- Danelle Morales (DM)
+	
 - Roles (with a short description of each):
 	- Project Manager
 	- Development Lead
