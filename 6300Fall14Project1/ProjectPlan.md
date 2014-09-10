@@ -18,27 +18,27 @@ Process description as a set of activities; for each activity, provide the follo
 Describe the team and their roles (there may be more roles than there are team members)
 
 - Team Members:
-	-Alex Bowers Schoen (ABS)
-	-Alex Hortin (AH)
-	-Charles Cone (CC)
-	-Danelle Morales (DM)
+	- Alex Bowers Schoen (ABS)
+	- Alex Hortin (AH)
+	- Charles Cone (CC)
+	- Danelle Morales (DM)
 - Roles (with a short description of each):
-	-Project Manager
-	-Development Lead
-	-QA Manager
-	-Documentation Lead
-	-Developer (Individual Contributor) 
-	-QA Individual Contributor
-	-Pull Request Reviewer
+	- Project Manager
+	- Development Lead
+	- QA Manager
+	- Documentation Lead
+	- Developer (Individual Contributor) 
+	- QA Individual Contributor
+	- Pull Request Reviewer
 	
 - Table showing which team member(s) has which role(s):
-	-Project Manager: AH
-	-Development Lead: DM
-	-QA Manager: ABS
-	-Documentation Lead: CC
-	-Developer (Individual Contributor): ABS, AH, CC
-	-QA Individual Contributor: AH, CC, DM
-	-Pull Request Reviewer: ABS, AH, CC, DM
+	- Project Manager: AH
+	- Development Lead: DM
+	- QA Manager: ABS
+	- Documentation Lead: CC
+	- Developer (Individual Contributor): ABS, AH, CC
+	- QA Individual Contributor: AH, CC, DM
+	- Pull Request Reviewer: ABS, AH, CC, DM
 
 4 Estimates
 
