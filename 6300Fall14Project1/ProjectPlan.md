@@ -75,8 +75,8 @@ Describe the team and their roles (there may be more roles than there are team m
 	
 ##### Project Roles:
 
-Roles | Assignments
---- | --- | 
+| Roles | Assignments |
+| --- | --- | 
 | Project Manager	| AH 
 | Development Lead 	| DM
 | QA Manager 		| ABS
@@ -91,3 +91,5 @@ Provide estimates for the following metrics:
 
 - Effort hours: total number of team-member hours you expect to spend on the project
 - Lines of code: total number of lines of source code you expect to have in your final product
+
+
