@@ -1,23 +1,61 @@
 ### **Project Plan -- Team 01**
 
-#### 1 Introduction
+#### 1) Introduction
 
 The introduction provides context for the project. Write a concise description of the software you will develop and its target users.
 
-#### 2 Process Description
+#### 2) Process Description
 
 Process description as a set of activities; for each activity, provide the following:
 
-- Activity name (verb or verb phrase)
+
+##### Software Concept
+
 - Activity description (concise paragraph)
 - Entrance criteria (inputs needed for the activity)
 - Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
 
-#### 3 Team
+##### Requirements Analsys 
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+
+##### Architectual Design
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+
+##### Detailed Design
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+ 
+##### Coding and debugging
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+
+##### System Testing
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+
+##### Maintenance
+
+- Activity description (concise paragraph)
+- Entrance criteria (inputs needed for the activity)
+- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
+
+#### 3) Team
 
 Describe the team and their roles (there may be more roles than there are team members)
 
-- Team Members:
+##### Team Members:
 
 | Name  				| GATECH Username		| E-mail						| Alias |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
@@ -26,16 +64,16 @@ Describe the team and their roles (there may be more roles than there are team m
 | Alex Bowers Schoen 	| abowers9				| alexandra.bowers@gmail.com 	| ABS   |
 | Danelle Morales		| dmorales30			| damoraled@gmail.com 			| DD    |
 	
-- Roles (with a short description of each):
-	- Project Manager
-	- Development Lead
-	- QA Manager
-	- Documentation Lead
-	- Developer (Individual Contributor) 
-	- QA Individual Contributor
-	- Pull Request Reviewer
+##### Roles (with a short description of each):
+- Project Manager
+- Development Lead
+- QA Manager
+- Documentation Lead
+- Developer (Individual Contributor) 
+- QA Individual Contributor
+- Pull Request Reviewer
 	
-- Project Roles:
+##### Project Roles:
 
 Roles | Assignments
 --- | --- | 
@@ -47,7 +85,7 @@ Roles | Assignments
 |QA Individual Contributor			| AH, CC, DM
 | Pull Request Reviewer| ABS, AH, CC, DM
 
-#### 4 Estimates
+#### 4) Estimates
 
 Provide estimates for the following metrics:
 
