@@ -27,8 +27,6 @@ requirements specified by the client.
 
 ### 2) Process Descriptions
 
-Process description as a set of activities; for each activity, provide the following:
-
 #### Software Concept
 
 - **Activity description**  The software concept phase of development is where the initial idea for the 
@@ -36,8 +34,10 @@ product was provided to our team by the customer.  During this phase, broad conc
 that will help define the basis for the requirements completed formally in the next phase.  During this phase
 our team will also define roles and responsibilities and assign roles for each team member  to assume.
 	  
-- **Entrance criteria**  The entrance criterea for this phase of the process 
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
+in order to start this part of the process.
+- **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next
+phase of the process.
 
 #### Requirements Analsys 
 
@@ -88,14 +88,19 @@ Describe the team and their roles (there may be more roles than there are team m
 | [Charles Cone](http://github.com/ccone8)  	 		| ccone8		        | charlesprestoncone@gmail.com  | [CC](http://github.com/ccone8 )    |
 | [Danelle Morales](http://github.com/DannieMorales) 		| dmorales30			| damoraled@gmail.com 			| [DM](http://github.com/DannieMorales )    |
 	
-#### Roles (with a short description of each):
-- Project Manager:  -> Agendas, notes, task assignments, and ProjectPlanTemplate.md.
-- Development Lead: -> Code
-- QA Manager: -> Tests
-- Documentation Lead: Design Documents (RequirementsDocumentTemplate.md), and help documents.
-- Developer (Individual Contributor):  The developer will work with the  
-- QA Individual Contributor
-- Pull Request Reviewer
+#### Roles :
+- **Project Manager**:  The project manager is responsible for the agenda, note taking, upkeep of project management software, 
+assigning taskes and submission of design documents and delivery of final product to the customer.
+- **Development Lead**:  The development lead makes initial design decisions based on customer requirements that will allow 
+for easy division amongst the rest of the team as functionality is added to the program.  The development lead should also
+work closely with the QA manager to ensure all functionality is understood and easily testable.
+- **QA Manager**: The quality assurance manager is responsible for ensuring that the product is well tested, interfaces are
+well defined and easy to use, and that customer requirements have been met.
+- **Documentation Lead**: The Documentation lead ensures that design documents are consistent throughout and that the implementation
+is well documented and adheres to a consistent conding style.
+- **Developer (Individual Contributor)**:  The developer will adhere to the design vision provided by the development lead   
+- **QA Individual Contributor**: QA contributers will implement the testing strategy set by the QA manager.  
+- **Pull Request Reviewer**:  These users are responsible for the merging and integration of disparate development branches.
 	
 #### Project Roles:
 
