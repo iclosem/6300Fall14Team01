@@ -11,3 +11,10 @@ Alex H's rough Questions (none) are critical, just food for thought for the grou
    Assuming a run time of less then 5 Seconds is acceptible.
 5) Should elipses be treated different then periods?
 6) How Should quotations within sentances be handled? 
+
+Charles's questions:
+
+1) How will the students receive and install/save the software?
+
+2) Will the program need to provide the students with any additional feedback regarding their average sentence length?  Too long, too short, etc?
+
