@@ -44,37 +44,40 @@ phase of the process.
 expected by the application will be specified.  
 - **Entrance criteria** Completion of a basic idea of required functionality
 - **Exit criteria** A set of defined requirements that can be easily linked to specific functionality within the product.  
-Ideally these requirements will be codified with expected outputs and use cases.  
+Ideally these requirements will be codified with expected outputs and use cases.  Class names should be decided by this point.  
 
 #### Architectual Design
 
-- **Activity description** During the architectual design phase, basic implementation layout should be specified.  User interface,
-input types, output types and basic user experiance should all be considered when planning for the architecture.  The achitecture 
-should complement the requirements defined in the previous process. 
+- **Activity description** During the architectual design phase, User interface, input types, output types and basic user 
+experiance should all be considered when planning for the architecture.  The achitecture should complement the requirements 
+defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and 
+defined during this point in the process.
 - **Entrance criteria** A well specified product defined by the requirements collected in the requirements analsys phase.  
-Implementation language, target platforms, and domain restrictions should be defined at this point as well as an extensive set of
-stakeholder behaviors. 
-- **Exit criteria**  To exit this phase, a basic class hierarchy should be developed, showing how all pieces will work together to acheive 
-desired outcome.
+An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
+- **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions.
 
 #### Detailed Design
 
-- **Activity description** This phase should focus on designing the
-OO Analysis, UML
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Activity description** This phase should focus on designing the objects interactions with each other and defining the data attributes, 
+functions, and class relationships.  These interactions should be strucuted in a way that is easily testible and verifiable.
+- **Entrance criteria** An understanding of the data inputs and expected outputs 
+- **Exit criteria** A formal specification of the relationships of the classes. Skeleton code can be generated to show the structure of 
+the program, source heirarchy, etc. 
  
 #### Coding and debugging
 
-- **Activity description** (concise paragraph)
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Activity description** This phase focuses on the implementation of the detailed design.  This is where all design decisions are implemented
+and integration tests and unit tests are created to ensure those design descisions are adherred to. 
+- **Entrance criteria** A complete specification of the system design and assignments for each team member for implementation and debugging of 
+certain sections of functionality. 
+- **Exit criteria** A test that meets basic verification tests showing that the program is functioning correctly under ideal conditions.
 
 #### System Testing
 
-- **Activity description** (concise paragraph)
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Activity description** During this section, tests that were written in the coding and debugging phase should be scrutinized to 
+ensure they cover all areas contained in the implementation and any edge cases.s
+- **Entrance criteria** A functionally complete implementation of the product and a set of well defined tests that verify basic IO.
+- **Exit criteria** To exit this, near 100% code coverage and a variety of tests that test the durability of the application.  
 
 #### Maintenance
 *i am not sure if we need this one, was not in the videos*
@@ -131,5 +134,4 @@ takes alot of time*
 #### Lines of Code
   - Main Class: **200 lines of code** *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
   - Tests: **300 lines of code**
-
 
