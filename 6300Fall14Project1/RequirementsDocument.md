@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# **Requirements Document -- Team 01**
+#**Requirements Document -- Team 01**
 ##Project 1: Average Sentence Length
 ###1 User Requirements
 
@@ -49,8 +48,11 @@ These subsections contain all the software requirements at a level of detail suf
 - Software is documented well enough for the lowest skill users to operate.
 - Software operates at a reasonable speed across all platforms.
 - Software requires minimal installation steps. 
+
+
+
 =======
-# **Requirements Document -- Team 01
+ **Requirements Document -- Team 01
 
 1 User Requirements
   1.1 Software Interfaces
@@ -69,7 +71,7 @@ Describe those general characteristics of the intended users of the product, inc
 
 These subsections contain all the software requirements at a level of detail sufficient to enable designers/developers to design/develop a system that satisfies those requirements, and testers to test that the system satisfies those requirements. This part of the document should provide a numbered (possibly hierarchical) list of simple, complete, and consistent functional and non-functional requirements.
  
-  2.1 Functional Requirements
+ 2.1 Functional Requirements
   _______________________________________________________________________________
   | Req#  |             Requirement            |        Comment       | Priority |
   |-------|------------------------------------|----------------------|----------|
@@ -123,4 +125,4 @@ These subsections contain all the software requirements at a level of detail suf
   |       |                                    |                      |          |
 
 
->>>>>>> origin/Requirements_edit
+
