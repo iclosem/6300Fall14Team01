@@ -81,5 +81,3 @@ These subsections contain all the software requirements at a level of detail suf
 | NF_04 | Software is documented well enough for the lowest skill users to operate || medium 
 | NF_05 | Software operates at a resonable speed across all platforms || medium
 |NF_06 | Software requires minimal installation steps. || medium
-
-
