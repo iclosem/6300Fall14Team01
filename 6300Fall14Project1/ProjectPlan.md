@@ -33,7 +33,6 @@ requirements specified by the client.
 product was provided to our team by the customer.  During this phase, broad conceptual questions are asked
 that will help define the basis for the requirements completed formally in the next phase.  During this phase
 our team will also define roles and responsibilities and assign roles for each team member  to assume.
-	  
 - **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
 in order to start this part of the process.
 - **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next
@@ -41,19 +40,27 @@ phase of the process.
 
 #### Requirements Analsys 
 
-- **Activity description** (concise paragraph)
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Activity description** During this phase of development, requirements will be formalized and more definate behavior
+expected by the application will be specified.  
+- **Entrance criteria** Completion of a basic idea of required functionality
+- **Exit criteria** A set of defined requirements that can be easily linked to specific functionality within the product.  
+Ideally these requirements will be codified with expected outputs and use cases.  
 
 #### Architectual Design
 
-- **Activity description** (concise paragraph)
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
+- **Activity description** During the architectual design phase, basic implementation layout should be specified.  User interface,
+input types, output types and basic user experiance should all be considered when planning for the architecture.  The achitecture 
+should complement the requirements defined in the previous process. 
+- **Entrance criteria** A well specified product defined by the requirements collected in the requirements analsys phase.  
+Implementation language, target platforms, and domain restrictions should be defined at this point as well as an extensive set of
+stakeholder behaviors. 
+- **Exit criteria**  To exit this phase, a basic class hierarchy should be developed, showing how all pieces will work together to acheive 
+desired outcome.
 
 #### Detailed Design
 
-- **Activity description** (concise paragraph)
+- **Activity description** This phase should focus on designing the
+OO Analysis, UML
 - **Entrance criteria**(inputs needed for the activity)
 - **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
  
@@ -70,7 +77,7 @@ phase of the process.
 - **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
 
 #### Maintenance
-
+*i am not sure if we need this one, was not in the videos*
 - **Activity description** (concise paragraph)
 - **Entrance criteria**(inputs needed for the activity)
 - **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
@@ -118,10 +125,11 @@ is well documented and adheres to a consistent conding style.
 
 Provide estimates for the following metrics:
 #### Effort Hours
-- Effort hours: total number of team-member hours you expect to spend on the project
+- Effort hours: 40 *rough estimate based on 5 hours per each part per person, maybe a little bit on the high side, but documentation 
+takes alot of time*
 
 #### Lines of Code
-  - Main Class: 200 lines of code *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
-  - Tests: 300 lines of code
+  - Main Class: **200 lines of code** *I estimated this based on my simple implemenation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
+  - Tests: **300 lines of code**
 
 
