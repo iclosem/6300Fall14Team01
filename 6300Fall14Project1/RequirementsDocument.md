@@ -54,20 +54,32 @@ These subsections contain all the software requirements at a level of detail suf
  
 #####Functional Requirements
 
-- Vanilla java 1.7.
-- Compiles with javac, no options.
-- Executable from the command line.
-- User specifies file path.
-- User specifies sentence delimiters with switch -d.
-- User specifies word length limit (minimum?) with switch -l.
 - Output average sentence length. 
 
-  
+| Req#  				| Requirement		| Comment						| Priority |
+| --------------------- |:---------------------:|:-----------------------------:|:-----:| 
+| F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users ranging in levels of technical	background  | high				
+| F_02 | System should have flexibility in defining a word by it's length of characters | | high
+|F_03 | System default ffor character length defining a word should be set to three |  | medium
+| F_04 | System should allow user to specifiy sentence delimiters with switch -d. (eg ,;.?!) | | High
+|F_05 | System default for punctuation defining a sentance should exclude comma | | medium
+| F_06 | System should provide user the average length of their sentences as an end result  || high
+| F_07 | System should compile with javac, java  1.6 or 1.7 | | high
+| F_08 | System should be executable from the command line | | high
+| F_09 | SYstem should allow for the input of a file path || high 
+| F_10 | System should output the average sentance length | | high
+
 #####Non-Functional Requirements
 
-- Software is documented well enough for the lowest skill users to operate.
-- Software operates at a reasonable speed across all platforms.
-- Software requires minimal installation steps. 
 
+
+| Req#  				| Requirement		| Comment						| Priority |
+| --------------------- |:---------------------:|:-----------------------------:|:-----:| 
+| NF_01 | System should accomodate up to 270 students  | 45 students per unit, up to 6 units per semester  | high		
+| NF_02 | System should run from command line in java based tool | | medium
+| NF_03 | System default for character length to define a word set to three. || medium
+| NF_04 | Software is documented well enough for the lowest skill users to operate || medium 
+| NF_05 | Software operates at a resonable speed across all platforms || medium
+|NF_06 | Software requires minimal installation steps. || medium
 
 
