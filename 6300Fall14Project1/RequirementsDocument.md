@@ -66,7 +66,8 @@ These subsections contain all the software requirements at a level of detail suf
   
 #####Non-Functional Requirements
 
-- Software is documented thoroughly enough for the lowest skill users to operate and easily accessible.
+- Software is documented thoroughly enough for the lowest skill users to operate. 
+- Software documetation is easily accessible.
 - Software operates at a reasonable speed across all platforms.
 - Software requires minimal installation steps. 
 
