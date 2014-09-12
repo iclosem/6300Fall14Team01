@@ -38,6 +38,7 @@ import org.junit.Test;
 Specify the logical characteristics of each interface between the software product and its users. This is a description of how the system will interact with its users.
 
 - Command line input, requires input of sentance delimiters and a text input file
+- Documentation view or help interface.
 - Output view 
 
 ######User Characteristics
@@ -46,7 +47,7 @@ Describe those general characteristics of the intended users of the product, inc
 
 - College students with at least some experience with computer file systems.
 - Mixed computer proficiency from beginner to advanced.
-- Experience varies across multiple platforms
+- Experience varies across multiple platforms.
 
 ####System Requirements
 
@@ -65,7 +66,7 @@ These subsections contain all the software requirements at a level of detail suf
   
 #####Non-Functional Requirements
 
-- Software is documented well enough for the lowest skill users to operate.
+- Software is documented thoroughly enough for the lowest skill users to operate and easily accessible.
 - Software operates at a reasonable speed across all platforms.
 - Software requires minimal installation steps. 
 
