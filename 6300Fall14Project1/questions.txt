@@ -14,6 +14,4 @@ Alex H's rough Questions (none) are critical, just food for thought for the grou
 
 Charles's questions:
 
-1) How will the students receive and install/save the software?
-2) Will the program need to provide the students with any additional feedback regarding their 
-   average sentence length?  Too long, too short, etc?
+1) How will the students to access and utilize the program documentation?
