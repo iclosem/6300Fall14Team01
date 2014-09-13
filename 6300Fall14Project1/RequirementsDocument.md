@@ -86,6 +86,11 @@ These subsections contain all the software requirements at a level of detail suf
 | NF_03 | System default for character length to define a word set to three. || medium
 | NF_04 | Software is documented well enough for the lowest skill users to operate || medium 
 | NF_05 | Software operates at a resonable speed across all platforms || medium
-|NF_06 | Software requires minimal installation steps. || medium
+| NF_06 | Software requires minimal installation steps. || medium
+| NF_07 | Software documetation is easily accessible. || medium
+| NF_08 | Software operates at a reasonable speed across all platforms. || medium
+| NF_09 | Software requires minimal installation steps. || medium
+| NF_10 | Software is documented thoroughly enough for the lowest skill users to operate.  || medium
+
 
 
