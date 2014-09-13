@@ -48,7 +48,7 @@ These subsections contain all the software requirements at a level of detail suf
  
 #####Functional Requirements
 
-- Output average sentence length. 
+- Output average number of words in a sentence. 
 
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
