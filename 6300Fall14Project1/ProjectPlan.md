@@ -24,7 +24,7 @@ Describe the team and their roles (there may be more roles than there are team m
 | Alex Hortin 	 		| ahortin3				| hortinstein@gmail.com  		| AH    |
 | Charles Cone 	 		| ccone8		        | charlesprestoncone@gmail.com  | CC    |
 | Alex Bowers Schoen 	| abowers9				| alexandra.bowers@gmail.com 	| ABS   |
-| Danelle Morales		| dmorales30			| damoraled@gmail.com 			| DD    |
+| Danelle Morales		| dmorales30			| damoraled@gmail.com 			| DM    |
 	
 - Roles (with a short description of each):
 	- Project Manager
