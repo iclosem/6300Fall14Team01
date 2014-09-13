@@ -15,9 +15,6 @@
 
 #####Software Interfaces
 
-List all the external systems with which the software product interacts. These are external systems/libraries 
-that you have to interact with.
-
 - **Command Line**, Windows, Linux, Mac
 - **File System** : retrieves student essay
 - **Java Compiler**
@@ -35,15 +32,11 @@ import org.junit.Test;
  
 #####User Interfaces
 
-Specify the logical characteristics of each interface between the software product and its users. This is a description of how the system will interact with its users.
-
 - Command line input, requires input of sentance delimiters and a text input file
 - Documentation view or help interface.
 - Output view 
 
 ######User Characteristics
-
-Describe those general characteristics of the intended users of the product, including educational level, experience, and technical expertise.
 
 - College students with at least some experience with computer file systems.
 - Mixed computer proficiency from beginner to advanced.
@@ -72,13 +65,6 @@ These subsections contain all the software requirements at a level of detail suf
 
 #####Non-Functional Requirements
 
-- Software is documented thoroughly enough for the lowest skill users to operate. 
-- Software documetation is easily accessible.
-- Software operates at a reasonable speed across all platforms.
-- Software requires minimal installation steps. 
-
-
-
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | NF_01 | System should accomodate up to 270 students  | 45 students per unit, up to 6 units per semester  | high		
@@ -91,6 +77,4 @@ These subsections contain all the software requirements at a level of detail suf
 | NF_08 | Software operates at a reasonable speed across all platforms. || medium
 | NF_09 | Software requires minimal installation steps. || medium
 | NF_10 | Software is documented thoroughly enough for the lowest skill users to operate.  || medium
-
-
 
