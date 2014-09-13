@@ -48,8 +48,6 @@ These subsections contain all the software requirements at a level of detail suf
  
 #####Functional Requirements
 
-- Output average number of words in a sentence. 
-
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users ranging in levels of technical	background  | high				
@@ -62,6 +60,7 @@ These subsections contain all the software requirements at a level of detail suf
 | F_08 | System should be executable from the command line | | high
 | F_09 | SYstem should allow for the input of a file path || high 
 | F_10 | System should output the average sentance length | | high
+| F_11 | Output average number of words in a sentence | | medium
 
 #####Non-Functional Requirements
 
