@@ -79,12 +79,6 @@ ensure they cover all areas contained in the implementation and any edge cases.
 - **Entrance criteria** A functionally complete implementation of the product and a set of well defined tests that verify basic IO.
 - **Exit criteria** To exit this, near 100% code coverage and a full compliment of tests that test the durability of the application.  
 
-#### Maintenance
-*i am not sure if we need this one, was not in the videos*
-- **Activity description** (concise paragraph)
-- **Entrance criteria**(inputs needed for the activity)
-- **Exit criteria** (outputs produced by the activity and how you know it has been completed satisfactorily)
-
 ### 3) Team
 
 #### Team Members:
