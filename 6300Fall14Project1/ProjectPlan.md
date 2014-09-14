@@ -33,8 +33,7 @@ product is provided to the development team by the customer. During this phase, 
 that will help define the basis for the requirements completed formally in the next phase. The development team will also define roles and responsibilities and assign roles for each team member to assume.
 - **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
 in order to start this part of the process.
-- **Exit criteria**   Phase 1: Basic requirements should be documented and preliminary roles defined prior to starting the next phase of the process. Phase 2: Agreed upon documented requirements should be implemented to satisfactory of user, and development team should evaluate and concur that the quality of objectives has been met.
-
+- **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next phase of the process. 
 #### Requirements Analysis 
 
 - **Activity description** During this phase of development, requirements will be formalized and more definite behavior
