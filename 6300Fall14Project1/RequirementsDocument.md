@@ -58,7 +58,7 @@ These subsections contain all the software requirements at a level of detail suf
 |F_04 | System default for character length defining a word, when not set by the user, should be set to three |  | high
 |F_05 | System allowed character length defining a word to set by the user using the switch -l |  | high
 | F_06 | System default for sentence delimiters should be (DEFAULT HERE) | | high
-| F_07 | System should allow user to specify sentence delimiters with switch -d. (eg ,;.?!) | | high
+| F_07 | System should allow user to specify sentence delimiters with switch -d | | high
 | F_08 | System should compile with javac, java  1.6 or 1.7 | | high
 | F_09 | System should be executable from the command line | | high
 | F_10 | System should allow for the input of a file path || high 
