@@ -88,7 +88,7 @@ import org.junit.Test;
 | NF_04.4 | Software documentation is easily accessible || medium
 | NF_4.5 | Software is documented thoroughly enough for the lowest skill users to operate  || medium
 | NF_4.6 | Software documents the defaults for minimum word length and sentence delimiters  || medium
-| NF_05.0 | Software operates at a reasonable speed across all platforms || medium
+| NF_5.0 | System will cap the size of allowed file type at 50KB | | medium
 | NF_06.0 | Software requires minimal installation steps |Users range in technical skills, installation should be minimal in steps| medium
 | NF_7.0 | System will run on operating systems Mac, Windows and Linux |Students may be working with different operating systems|high
 | NF_08.0 | Software operates at a reasonable speed across all platforms || medium
@@ -97,7 +97,7 @@ import org.junit.Test;
 
 | NF_10.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
 | NF_10.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
-| NF_11 | System will cap the size of allowed file type at 50KB | | medium
+
 
 
 
