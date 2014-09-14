@@ -51,20 +51,20 @@ import org.junit.Test;
 
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
-| F_01 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
-| F_02 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
-| F_03 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. Refer to F04 & F05 for further details  | high
-|F_04 | System default for minimum character length defining a word will be set to three | Refer to F03 & F05 for further details  | high
-|F_05 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | Refer to F03 & F04 for further details | high
-| F_06 | System default for sentence delimiters will be .?!; || high
-| F_07 | System allows user to specify sentence delimiters with flag -d |i.e. Should allow user to select a comma ',' as a sentence delimiter | high
-| F_08 | System will compile with javac, java  1.6 or 1.7 | | high
-| F_09 | System will be executable from the command line | | high
-| F_10.0 | System will allow for the input of a file path || high 
-| F_10.1 | System will retrieve file from the file path specified by user || high 
-| F_10.2 | System will allow the user to input these types of files (TYPES) | | high
-| F_10.3 | System will cap the size of allowed file type at (size) | | medium
-| F_10.4 | System will notify user if cap of file size exceeded) | | medium
+| F_01.0 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
+| F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
+| F_03.0 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
+|F_03.1 | System default for minimum character length defining a word will be set to three |  | high
+|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
+| F_04.0 | System allows user to specify sentence delimiters with flag -d |i.e. Should allow user to select a comma ',' as a sentence delimiter | high
+| F_04.1 | System default for sentence delimiters will be .?!; || high
+| F_05.0 | System will compile with javac, java  1.6 or 1.7 | | high
+| F_06.0 | System will be executable from the command line | | high
+| F_7.0 | System will allow for the input of a file path || high 
+| F_7.1 | System will retrieve file from the file path specified by user || high 
+| F_7.2 | System will allow the user to input these types of files (TYPES) | | high
+| F_7.3 | System will cap the size of allowed file type at (size) | | medium
+| F_7.4 | System will notify user if cap of file size exceeded) | | medium
 
 
 
