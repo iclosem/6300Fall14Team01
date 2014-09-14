@@ -76,9 +76,9 @@ import org.junit.Test;
 | NF_02.0 | System will run from command line in java-based tool | | medium
 | NF_03.0 | System will provide promts and communication to user in English as standard language || high
 | NF_04.0 | Software is documented well enough for the lowest skill users to operate || medium 
-| NF_04.1 | Software documentation will provide further information on error messages to assist user running system properly| medium
-| NF_04.2 | Software documentation will provide operational steps to assist user running system properly| medium
-| NF_04.3 | Software documentation will provide installation steps to assist user installing system properly| medium
+| NF_04.1 | Software documentation will provide further information on error messages to assist user running system properly|| medium
+| NF_04.2 | Software documentation will provide operational steps to assist user running system properly|| medium
+| NF_04.3 | Software documentation will provide installation steps to assist user installing system properly| |medium
 | NF_04.4 | Software documentation is easily accessible || medium
 | NF_4.5 | Software is documented thoroughly enough for the lowest skill users to operate  || medium
 | NF_4.6 | Software documents the defaults for minimum word length and sentence delimiters  || medium
