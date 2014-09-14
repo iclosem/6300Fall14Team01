@@ -57,7 +57,7 @@ import org.junit.Test;
 | F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly. "Sentence delimiters were not input correctly. Please retry or reference the help view.” | | medium
 | F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer or reference the help view.” | | medium
 | F_1.05 | System will produce a friendly feedback message to user when input is null or empty. "The .txt file being accessed is empty. Please confirm proper file path was used." | | medium
-| F_1.06 | System will produce a friendly feedback message to user when processing exceeds 3 seconds. "System loading, please be patient."| | low
+| F_1.06 | System will produce a friendly feedback message to user when processing exceeds three (3) seconds. "System loading, please be patient."| | low
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
 | F_02.2 | System will output the constraints for sentence delimiters used to calculate average sentence length | | low
@@ -96,8 +96,8 @@ import org.junit.Test;
 | NF_06.0 | Software requires minimal installation steps |Users range in technical skills, installation should be minimal in steps| medium
 | NF_7.0 | System will run on operating systems Mac, Windows and Linux |Students may be working with different operating systems|high
 | NF_08.0 | Software operates at a reasonable speed across all platforms || medium
-| NF_08.1 | Software will process and output average sentence length in 3 seconds || medium
-| NF_08.2 | Software will load input file within 3 seconds || medium
+| NF_08.1 | Software will process and output average sentence length in three (3) seconds || medium
+| NF_08.2 | Software will load input file within three (3) seconds || medium
 | NF_9.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
 | NF_9.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
 
