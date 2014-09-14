@@ -21,8 +21,8 @@ Contents
 
 ### 1) Introduction
 
-The purpose of the Average Sentence Length project is to analyze the requirements, design,  and implementation of the
-software defining a tool that will provide students a way to check the average number of words per sentence in their essays, according to the requirements specified by the client.  
+The purpose of the Average Sentence Length project is to analyze the requirements, design, and implement the
+defined software tool. The Average Sentence Length Tool will provide students a way to check the average number of words per sentence in their essays, according to the requirements specified by the client.  
 
 ### 2) Process Descriptions
 
