@@ -97,8 +97,8 @@ import org.junit.Test;
 | NF_08.1 | Software will process and output average sentence length in 3 seconds || medium
 | NF_08.2 | Software will load input file withing 3 seconds || medium
 
-| NF_10.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
-| NF_10.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
+| NF_9.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
+| NF_9.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
 
 
 
