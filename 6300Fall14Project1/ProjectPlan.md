@@ -30,8 +30,7 @@ software defining a tool that will provide students a way to check the average n
 
 - **Activity description**  The software concept phase of development is where the initial idea for the 
 product is provided to the development team by the customer. During this phase, broad conceptual questions are asked
-that will help define the basis for the requirements completed formally in the next phase. During this phase
-the development team will also define roles and responsibilities and assign roles for each team member to assume.
+that will help define the basis for the requirements completed formally in the next phase. The development team will also define roles and responsibilities and assign roles for each team member to assume.
 - **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
 in order to start this part of the process.
 - **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next
@@ -51,7 +50,7 @@ Ideally these requirements will be codified with expected outputs.
 experience should all be considered when planning for the architecture. The architecture should complement the requirements 
 defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and 
 defined during this point in the process.
-- **Entrance criteria** A well specified product defined by the requirements collected in the requirements analysis phase.  
+- **Entrance criteria** A well-specified product defined by the requirements collected in the requirements analysis phase.  
 An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
 - **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions.
 
@@ -121,6 +120,6 @@ is well documented and is responsible for the user manual and help feature imple
 - Effort hours:  40 hours including documentation
 
 #### Lines of Code
-  - Main Class: **200 lines of code** *Estimated based on a small prototype.*
+  - Main Class: **200 lines of code** 
   - Tests: **300 lines of code**
 
