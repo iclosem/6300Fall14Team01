@@ -53,12 +53,12 @@ These subsections contain all the software requirements at a level of detail suf
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
-| F_02 | System should output the average (mean) number of words per sentence, rounded (UP,DOWN) to the nearest integer | | high
+| F_02 | System should output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_03 | System should have flexibility in defining a word by its length of characters | | high
-|F_04 | System default for character length defining a word, when not set by the user, should be set to three |  | high
-|F_05 | System allowed character length defining a word to set by the user using the switch -l |  | high
-| F_06 | System default for sentence delimiters should be (DEFAULT HERE) | | high
-| F_07 | System should allow user to specify sentence delimiters with switch -d | | high
+|F_04 | System default for minimum character length defining a word should be set to three |  | high
+|F_05 | System allows character length defining a word to set by the user to a positive integer using the flag -l |  | high
+| F_06 | System default for sentence delimiters should be .?!; | | high
+| F_07 | System should allow user to specify sentence delimiters with flag -d | | high
 | F_08 | System should compile with javac, java  1.6 or 1.7 | | high
 | F_09 | System should be executable from the command line | | high
 | F_10 | System should allow for the input of a file path || high 
