@@ -61,13 +61,13 @@ import org.junit.Test;
 | F_03.0 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
 |F_03.1 | System default for minimum character length defining a word will be set to three |  | high
 |F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
-| F_04.0 | System allows user to specify sentence delimiters with flag -d |i.e. Should allow user to select a comma ',' as a sentence delimiter | high
+| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
 | F_04.1 | System default for sentence delimiters will be .?!; || high
 | F_05.0 | System will compile with javac, java  1.6 or 1.7 | | high
 | F_06.0 | System will be executable from the command line | | high
 | F_7.0 | System will allow for the input of a file path || high 
 | F_7.1 | System will retrieve file from the file path specified by user || high 
-| F_7.2 | System will allow the user to input .txt files | | high
+| F_7.2 | System will allow the user to input .txt files consisting of the UTF-8 character set | | high
 
 
 
@@ -85,9 +85,9 @@ import org.junit.Test;
 | NF_04.1 | Software documentation will provide further information in error messages to assist user running system properly|| medium
 | NF_04.2 | Software documentation will provide operational steps to assist user running system properly|| medium
 | NF_04.3 | Software documentation will provide installation steps to assist user installing system properly| |medium
-| NF_04.4 | Software documentation is easily accessible || medium
+| NF_04.4 | Software documentation is accessible via a user manual in Markdown format || medium
 | NF_4.5 | Software is documented thoroughly enough for the lowest skill users to operate  || medium
-| NF_4.6 | Software documents the defaults for minimum word length and sentence delimiters  || medium
+| NF_4.6 | Documentation indicates the defaults for minimum word length and sentence delimiters  || medium
 | NF_5.0 | System will cap the size of allowed file type at 50KB | | medium
 | NF_06.0 | Software requires minimal installation steps |Users range in technical skills, installation should be minimal in steps| medium
 | NF_7.0 | System will run on operating systems Mac, Windows and Linux |Students may be working with different operating systems|high
