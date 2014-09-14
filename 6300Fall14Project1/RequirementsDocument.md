@@ -55,7 +55,7 @@ import org.junit.Test;
 | F_1.01 | System will produce a friendly feedback message to user if cap of file size is exceeded. "The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit withing the sizing constraints."  | | medium
 | F_1.02 | System will produce a friendly feedback message to user if file path input is not successful in loading file. "The file path that has been input was not sucessful, please re-enter file path" | | medium
 | F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly. "Sentence deliminator was not input correctly please retry or reference the help view" | | medium
-| F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minum number of charecter used to define a word was not input correctly please retry or reference the help view" | | medium
+| F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minimum number of charecter used to define a word was not input correctly please retry or reference the help view" | | medium
 | F_1.05 | System will produce a friendly feedback message to user when input is null or empty. "The .txt file being accessed is empty. Please confirm propper file path was used." | | medium
 | F_1.06 | System will produce a friendly feedback message to user when processing exceedes 3 seconds. "System loading, please be patient."| | low
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
