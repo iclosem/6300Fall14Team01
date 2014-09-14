@@ -6,7 +6,7 @@ Contents
 - [Process Descriptions](#process-descriptions)
   - [Software Concept](#softwareconcept)
   - [Requirements Analsys](#requirements-analsys)
-  - [Architectual Design](#architectual-design)
+  - [Architectural Design](#architectual-design)
   - [Detailed Design](#detailed-design)
   - [Coding and debugging](#coding-and-debugging)
   - [System Testing](#system-testing)
@@ -123,6 +123,6 @@ is well documented and adheres to a consistent coding style.
 takes a lot of time*
 
 #### Lines of Code
-  - Main Class: **200 lines of code** *I estimated this based on my simple implementation that needs a few more edge cases handled, it was around 70 lines of code, but could grow due to architecture decisions*
+  - Main Class: **200 lines of code** *Estimated based on a small prototype.*
   - Tests: **300 lines of code**
 
