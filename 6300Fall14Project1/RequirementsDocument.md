@@ -54,12 +54,12 @@ import org.junit.Test;
 | F_01.0 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
 | F_1.01 | System will produce a friendly feedback message to user if cap of file size is exceeded | | medium
 | F_1.02 | System will produce a friendly feedback message to user if file path input is not successful in loading file | | medium
-| F_1.03 | System will produce a friendly feedback message to user if sentence dilimiters are not input correctly | | medium
+| F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly | | medium
 | F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly | | medium
 | F_1.05 | System will produce a friendly feedback message to user when input is null or empty | | medium
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
-| F_02.2 | System will output the constraints for sentence dilimiters used to calculate average sentence length | | low
+| F_02.2 | System will output the constraints for sentence delimiters used to calculate average sentence length | | low
 | F_03.0 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
 |F_03.1 | System default for minimum character length defining a word will be set to three |  | high
 |F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
