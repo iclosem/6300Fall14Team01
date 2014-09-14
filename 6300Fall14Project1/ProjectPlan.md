@@ -34,6 +34,7 @@ that will help define the basis for the requirements completed formally in the n
 - **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
 in order to start this part of the process.
 - **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next phase of the process. 
+
 #### Requirements Analysis 
 
 - **Activity description** During this phase of development, requirements will be formalized and more definite behavior
