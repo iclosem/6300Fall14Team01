@@ -57,7 +57,6 @@ import org.junit.Test;
 | F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly. "Sentence delimiters were not input correctly. Please retry or reference the help view.” | | medium
 | F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer or reference the help view.” | | medium
 | F_1.05 | System will produce a friendly feedback message to user when input is null or empty. "The .txt file being accessed is empty. Please confirm proper file path was used." | | medium
-| F_1.06 | System will produce a friendly feedback message to user when processing exceeds three (3) seconds. "System loading, please be patient."| Timing is a nice-to-have, as it’s not specified by the client | low
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
 | F_02.2 | System will output the constraints for sentence delimiters used to calculate average sentence length | | low
