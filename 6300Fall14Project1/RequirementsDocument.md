@@ -33,14 +33,14 @@ import org.junit.Test;
 #####User Interfaces
 
 - Command line input, requires input of sentence delimiters and a text input file
-- Documentation view or help interface.
+- Documentation view or help interface
 - Output view 
 
 ######User Characteristics
 
-- College students with at least some experience with computer file systems.
-- Mixed computer proficiency from beginner to advanced.
-- Experience varies across multiple platforms.
+- College students with at least some experience with computer file systems
+- Mixed computer proficiency from beginner to advanced
+- Experience varies across multiple platforms
 
 ####System Requirements
 
@@ -50,7 +50,7 @@ These subsections contain all the software requirements at a level of detail suf
 
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
-| F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users ranging in levels of technical	background  | high
+| F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
 | F_02 | System should output the average (mean) number of words per sentence, rounded (UP,DOWN) to the nearest integer | | high
 | F_03 | System should have flexibility in defining a word by its length of characters | | high
 |F_04 | System default for character length defining a word, when not set by the user, should be set to three |  | high
@@ -69,7 +69,7 @@ These subsections contain all the software requirements at a level of detail suf
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | NF_01 | System should accommodate up to 270 students  | 45 students per unit, up to 6 units per semester  | high		
-| NF_02 | System should run from command line in java based tool | | medium
+| NF_02 | System should run from command line in java-based tool | | medium
 | NF_03 | System default for character length to define a word set to three. || medium
 | NF_04 | Software is documented well enough for the lowest skill users to operate || medium 
 | NF_05 | Software operates at a reasonable speed across all platforms || medium
