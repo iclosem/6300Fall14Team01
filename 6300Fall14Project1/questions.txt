@@ -1,0 +1,13 @@
+This is the file for questions.
+
+Alex H's rough Questions (none) are critical, just food for thought for the group:
+1) Would your students be interested in a printed list of largest to smallest 
+   sentences to easily identify where their problem areas are?   
+2) Should spaces be counted, or can we just average word length?
+   If so, should we expect any lists or strange formats that would require special white space handling?
+3) Are there any performance considerations we need to take into consideration?  
+   Assuming a run time of less then 5 Seconds is acceptible.
+
+
+Alex BS’s questions:
+1) Should we limit what they can specify as a delimiter? Can they specify letters/numbers as sentence delimiters?
