@@ -5,7 +5,7 @@ Contents
 - [Introduction](#introduction)
 - [Process Descriptions](#process-descriptions)
   - [Software Concept](#softwareconcept)
-  - [Requirements Analsys](#requirements-analsys)
+  - [Requirements Analysis](#requirements-analsys)
   - [Architectural Design](#architectual-design)
   - [Detailed Design](#detailed-design)
   - [Coding and debugging](#coding-and-debugging)
