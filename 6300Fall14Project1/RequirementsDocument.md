@@ -72,6 +72,7 @@ import org.junit.Test;
 | F_7.0 | System will allow for the input of a file path || high 
 | F_7.1 | System will retrieve file from the file path specified by user || high 
 | F_7.2 | System will allow the user to input .txt files consisting of the UTF-8 character set | | high
+| F_8.0 | System will provide feedback on which sentences within the essay are exceeding the average number of words per sentence| This would be a nice addition but was not requested| low 
 
 
 
