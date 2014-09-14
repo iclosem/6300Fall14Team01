@@ -52,7 +52,10 @@ import org.junit.Test;
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | F_01.0 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
-| F_1.01 | System will notify user if cap of file size exceeded | | medium
+| F_1.01 | System will produce a friendlyl feedback message to user if cap of file size exceeded | | medium
+| F_1.02 | System will produce a friendlyl feedback message to user if file path is not successful | | medium
+| F_1.03 | System will produce a friendlyl feedback message to user if sentence dilimiters are not input correctly | | medium
+| F_1.04 | System will produce a friendlyl feedback message to user if word length not input correctly | | medium
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_03.0 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
 |F_03.1 | System default for minimum character length defining a word will be set to three |  | high
