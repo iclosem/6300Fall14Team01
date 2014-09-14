@@ -86,10 +86,10 @@ import org.junit.Test;
 | NF_06.0 | Software requires minimal installation steps |Users range in technical skills, installation should be minimal in steps| medium
 | NF_7.0 | System will run on operating systems Mac, Windows and Linux |Students may be working with different operating systems|high
 | NF_07.1 | Software operates at a reasonable speed across all platforms || medium
-| NF_09.0 | Software will process and output average sentence length in reasonable time || medium
-| NF_11.0 | System will give the user a warning when input is null or empty | | medium
-| NF_12.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
-| NF_12.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
+| NF_08.0 | Software will process and output average sentence length in reasonable time || medium
+| NF_09.0 | System will give the user a warning when input is null or empty | | medium
+| NF_10.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
+| NF_10.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
 
 
 
