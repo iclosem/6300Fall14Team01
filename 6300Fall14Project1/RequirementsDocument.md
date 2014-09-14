@@ -32,7 +32,9 @@ import org.junit.Test;
  
 #####User Interfaces
 
-- Command line input, requires input of sentence delimiters and a text input file
+- Command line input
+	- Required input: a text input file
+	- Optional input: sentence delimiters, minimum word length
 - Documentation view or help interface
 - Output view 
 
@@ -44,7 +46,7 @@ import org.junit.Test;
 
 ####System Requirements
 
-These subsections contain all the software requirements at a level of detail sufficient to enable designers/developers to design/develop a system that satisfies those requirements, and testers to test that the system satisfies those requirements. This part of the document should provide a numbered (possibly hierarchical) list of simple, complete, and consistent functional and non-functional requirements.
+These subsections contain all the software requirements at a level of detail sufficient to enable designers/developers to design/develop a system that satisfies the client’s requirements, and enough detail to allow testers to test that the system satisfies those requirements. This part of the document provides a numbered list of simple, complete, and consistent functional and non-functional requirements.
  
 #####Functional Requirements
 
@@ -79,4 +81,5 @@ These subsections contain all the software requirements at a level of detail suf
 | NF_09 | Software requires minimal installation steps. || medium
 | NF_10 | Software is documented thoroughly enough for the lowest skill users to operate.  || medium
 | NF_11 | System should give the user a warning when input is null or empty | | medium
+
 
