@@ -52,16 +52,16 @@ These subsections contain all the software requirements at a level of detail suf
 
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
-| F_01 | System should produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
-| F_02 | System should output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
-| F_03 | System should have flexibility in defining a word by its length of characters | | high
-|F_04 | System default for minimum character length defining a word should be set to three |  | high
-|F_05 | System allows character length defining a word to set by the user to a positive integer using the flag -l |  | high
-| F_06 | System default for sentence delimiters should be .?!; | | high
-| F_07 | System should allow user to specify sentence delimiters with flag -d | | high
-| F_08 | System should compile with javac, java  1.6 or 1.7 | | high
-| F_09 | System should be executable from the command line | | high
-| F_10 | System should allow for the input of a file path || high 
+| F_01 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
+| F_02 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
+| F_03 | System will have flexibility in defining a word by its length of characters | | high
+|F_04 | System default for minimum character length defining a word will be set to three |  | high
+|F_05 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l |  | high
+| F_06 | System default for sentence delimiters will be .?!; | | high
+| F_07 | System allows user to specify sentence delimiters with flag -d | | high
+| F_08 | System will compile with javac, java  1.6 or 1.7 | | high
+| F_09 | System will be executable from the command line | | high
+| F_10 | System will allow for the input of a file path || high 
 | F_11 | System should allow the user to input these types of files (TYPES) | | high
 | F_12 | System should cap the size of allowed file type at (size) | | medium
 
