@@ -1,11 +1,3 @@
-This is the file for questions.
-
-Alex H's rough Questions (none) are critical, just food for thought for the group:
 1) Would your students be interested in a printed list of largest to smallest 
    sentences to easily identify where their problem areas are?   
-3) Are there any performance considerations we need to take into consideration?  
-   Assuming a run time of less then 5 Seconds is acceptible.
-
-
-Alex BS’s questions:
-1) Should the user be able to specify any character as a sentence delimiter?
+2) Should the user be able to specify any character as a sentence delimiter?
