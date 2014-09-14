@@ -10,6 +10,4 @@ Alex H's rough Questions (none) are critical, just food for thought for the grou
 
 
 Alex BS’s questions:
-1) When user specifies a blank set of characters, does this turn into a straight-up word count of the doc, or do we give a warning? 
-2) If the file is null/empty do we give a warning or return 0? 
-3) Should we limit what they can specify as a delimiter? Can they specify letters/numbers as sentence delimiters?
+1) Should we limit what they can specify as a delimiter? Can they specify letters/numbers as sentence delimiters?
