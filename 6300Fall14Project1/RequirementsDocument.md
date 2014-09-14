@@ -16,10 +16,10 @@
 #####Software Interfaces
 
 - **Command Line**, Windows, Linux, Mac
-- **File System** : retrieves student essay from user specified file path
+- **File System** : Retrieves student essay from user-specified file path
 - **Java Compiler**
 - **Make** (Makefiles for automating building and testing)
-- **Java Libraries**: all java libraries are contained within the Standard Library:
+- **Java Libraries**: All java libraries are contained within the Standard Library:
 ```java
 //this is the library that is built for file handling,
 //to read the file in as a string use readAllBytes
