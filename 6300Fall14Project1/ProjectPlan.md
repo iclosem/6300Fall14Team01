@@ -22,17 +22,16 @@ Contents
 ### 1) Introduction
 
 The purpose of the Average Sentence Length project is to analyze the requirements of, design, implement and maintain the
-software defining a tool that will provide students a way to check the average sentence length of their essays, according to the
-requirements specified by the client.  
+software defining a tool that will provide students a way to check the average number of words per sentence in their essays, according to the requirements specified by the client.  
 
 ### 2) Process Descriptions
 
 #### Software Concept
 
 - **Activity description**  The software concept phase of development is where the initial idea for the 
-product was provided to our team by the customer. During this phase, broad conceptual questions are asked
+product is provided to the development team by the customer. During this phase, broad conceptual questions are asked
 that will help define the basis for the requirements completed formally in the next phase. During this phase
-our team will also define roles and responsibilities and assign roles for each team member to assume.
+the development team will also define roles and responsibilities and assign roles for each team member to assume.
 - **Entrance criteria**  The customer needs to have a conceptual idea of basic uses of the requested deliverable 
 in order to start this part of the process.
 - **Exit criteria**   Basic requirements should be documented and preliminary roles defined prior to starting the next
@@ -44,7 +43,7 @@ phase of the process.
 expected by the application will be specified.  
 - **Entrance criteria** Completion of a basic idea of required functionality
 - **Exit criteria** A set of defined requirements that can be easily linked to specific functionality within the product.  
-Ideally these requirements will be codified with expected outputs and use cases. Class names should be decided by this point.  
+Ideally these requirements will be codified with expected outputs. 
 
 #### Architectural Design
 
@@ -99,7 +98,7 @@ work closely with the QA manager to ensure all functionality is understood and e
 - **QA Manager**: The quality assurance manager is responsible for ensuring that the product is well tested, interfaces are
 well defined and easy to use, and that customer requirements have been met.
 - **Documentation Lead**: The Documentation lead ensures that design documents are consistent throughout and that the implementation
-is well documented and adheres to a consistent coding style.
+is well documented and is responsible for the user manual and help feature implementation.  
 - **Developer (Individual Contributor)**:  The developer will adhere to the design vision provided by the development lead   
 - **QA Individual Contributor**: QA contributors will implement the testing strategy set by the QA manager.  
 - **Pull Request Reviewer**:  These users are responsible for the merging and integration of disparate development branches.
@@ -119,8 +118,7 @@ is well documented and adheres to a consistent coding style.
 ### 4) Estimates
 
 #### Effort Hours
-- Effort hours: 40 *rough estimate based on 5 hours per each part per person, maybe a little bit on the high side, but documentation 
-takes a lot of time*
+- Effort hours:  40 hours including documentation
 
 #### Lines of Code
   - Main Class: **200 lines of code** *Estimated based on a small prototype.*
