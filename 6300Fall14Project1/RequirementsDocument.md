@@ -67,7 +67,7 @@ import org.junit.Test;
 | F_7.0 | System will allow for the input of a file path || high 
 | F_7.1 | System will retrieve file from the file path specified by user || high 
 | F_7.2 | System will allow the user to input .txt files | | high
-| F_7.3 | System will cap the size of allowed file type at 50KB | | medium
+
 
 
 
@@ -94,6 +94,7 @@ import org.junit.Test;
 | NF_09.0 | System will give the user a warning when input is null or empty | | medium
 | NF_10.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
 | NF_10.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
+| NF_11 | System will cap the size of allowed file type at 50KB | | medium
 
 
 
