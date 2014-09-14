@@ -21,7 +21,7 @@
 - **Make** (Makefiles for automating building and testing)
 - **Java Libraries**: all java libraries are contained within the Standard Library:
 ```java
-//this is the library that is built for filehandling,
+//this is the library that is built for file handling,
 //to read the file in as a string use readAllBytes
 import java.nio.file.Files; 
 //this will help open the file: Paths.get(filename)
@@ -74,7 +74,7 @@ import org.junit.Test;
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | NF_01.0 | System will accommodate up to 270 students  | 45 students per unit, up to 6 units per semester  | high		
 | NF_02.0 | System will run from command line in java-based tool | | medium
-| NF_03.0 | System will provide promts and communication to user in English as standard language || high
+| NF_03.0 | System will provide prompts and communication to user in English as standard language || high
 | NF_04.0 | Software is documented well enough for the lowest skill users to operate || medium 
 | NF_04.1 | Software documentation will provide further information on error messages to assist user running system properly|| medium
 | NF_04.2 | Software documentation will provide operational steps to assist user running system properly|| medium
@@ -86,10 +86,10 @@ import org.junit.Test;
 | NF_06.0 | Software requires minimal installation steps |Users range in technical skills, installation should be minimal in steps| medium
 | NF_7.0 | System will run on operating systems Mac, Windows and Linux |Students may be working with different operating systems|high
 | NF_07.1 | Software operates at a reasonable speed across all platforms || medium
-| NF_09.0 | Software will process and out put average sentence length in reasonable time || medium
+| NF_09.0 | Software will process and output average sentence length in reasonable time || medium
 | NF_11.0 | System will give the user a warning when input is null or empty | | medium
 | NF_12.0 | System will be available to user 24 hours a day 7 days a week, with exception of maintenance hours | | medium
-| NF_12.1 | System upgrade and maintenance will be completed within preaproved time slots | Maintenance hours should not interfe with student's assignment timelines| medium
+| NF_12.1 | System upgrade and maintenance will be completed within pre-approved time slots | Maintenance hours should not interfere with student's assignment timelines| medium
 
 
 
