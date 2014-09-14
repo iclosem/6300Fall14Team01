@@ -52,6 +52,7 @@ import org.junit.Test;
 | Req#  				| Requirement		| Comment						| Priority |
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | F_01.0 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
+| F_1.01 | System will notify user if cap of file size exceeded | | medium
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_03.0 | System will have flexibility in defining a word by its length of characters |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
 |F_03.1 | System default for minimum character length defining a word will be set to three |  | high
@@ -62,9 +63,9 @@ import org.junit.Test;
 | F_06.0 | System will be executable from the command line | | high
 | F_7.0 | System will allow for the input of a file path || high 
 | F_7.1 | System will retrieve file from the file path specified by user || high 
-| F_7.2 | System will allow the user to input these types of files (TYPES) | | high
-| F_7.3 | System will cap the size of allowed file type at (size) | | medium
-| F_7.4 | System will notify user if cap of file size exceeded) | | medium
+| F_7.2 | System will allow the user to input .txt files | | high
+| F_7.3 | System will cap the size of allowed file type at 50KB | | medium
+
 
 
 
