@@ -49,8 +49,7 @@ Ideally these requirements will be codified with expected outputs.
 experience should all be considered when planning for the architecture. The architecture should complement the requirements 
 defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and 
 defined during this point in the process.
-- **Entrance criteria** A well-specified product defined by the requirements collected in the requirements analysis phase.  
-An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
+- **Entrance criteria** A well-specified product defined by the requirements collected in the requirements analysis phase. An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
 - **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions.
 
 #### Detailed Design
