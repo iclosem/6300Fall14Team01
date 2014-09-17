@@ -26,7 +26,7 @@ Mandatory arguments to long options are mandatory for short options too.
   -h, --help          displays this help and exit
   -f, --file          specifies the input file
   -v, --verbose       prints out a list of every sentance with lengths in addition to normal output
-  -m, --minimum       defines a minimum word size
+  -l, --length       defines a minimum word size
 ```
 ####AUTHORS      
 
