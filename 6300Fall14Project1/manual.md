@@ -22,11 +22,11 @@ Set each NAME to VALUE in the environment and run COMMAND.
 
 Mandatory arguments to long options are mandatory for short options too.
 ```
-  -d, --delimiters  sets the delimeters, defaults to: 
-  --help display    this help and exit
-  -f, --file        specifies the input file
-  -v, --verbose     prints out a list of every sentance with lengths in addition to normal output
-  -m, --minimum     defines a minimum word size
+  -d, --delimiters    sets the delimeters, defaults to: 
+  -h, --help          displays this help and exit
+  -f, --file          specifies the input file
+  -v, --verbose       prints out a list of every sentance with lengths in addition to normal output
+  -m, --minimum       defines a minimum word size
 ```
 ####AUTHORS      
 
