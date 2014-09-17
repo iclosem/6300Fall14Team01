@@ -19,4 +19,4 @@ run: classes
 	$(JVM) $(MAIN) "tag" "delims" "./foo.txt"
 
 clean:
-	$(RM) *.class
+	$(RM) -rf *.class
