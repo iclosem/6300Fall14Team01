@@ -1,0 +1,5 @@
+Hi Team01! I hope the project is coming along well. Thank You for getting back to me with questions. Here are my answers:
+
+1. Extra features are always welcome but please make sure that you meet the requirements mentioned earlier and also be informed that the department will not be able to pay extra for features that weren't requested.
+
+2. The sentence delimiters are: . ; ! ?
