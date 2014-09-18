@@ -66,6 +66,20 @@ public class ASL {
 	//Public Methods//
 	//////////////////
 	
+	
+	//@precondition a file has been specified
+	//@post averageSentenceLength is set	
+	public String removeSmallWords (String sentence){
+		if (this.minWordLength == 0){
+			return sentence;
+			
+		} else {
+			String regex = "\\b\\w{1," + this.minWordLength-1 + "}\\b";
+			return sentence.replaceAll(regex, "");
+		}
+	}
+	
+	
 	//@precondition a file has been specified
 	//@post averageSentenceLength is set
 	public int computeAverageSentenceLength(){
@@ -76,9 +90,8 @@ public class ASL {
         for (String strings : essaySentances) { // for all of the sentences in essay
 	        if(strings.length()>0){ //eliminates zero element items resulting from elipses etc and min ammount of chars
 	        	
-	        	///NEED TO CHECK MINIMUM WORD VALUE TO COUNT 
-		        //possible implementation strings.split(" ",0) > self.minLength
-		        totalChars+=strings.length(); //adding current sentence 
+	        	strings = this.removeSmallWords(strings);
+	        	totalChars+=strings.length(); //adding current sentence 
 		        //System.out.println(strings + ", "+ strings.length()); //debugging print statement
 		      } else { //if there is a zero element sentence, it skips it and decrements
 		        totalSentances--;
