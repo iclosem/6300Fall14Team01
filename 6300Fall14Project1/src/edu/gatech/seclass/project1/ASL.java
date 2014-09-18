@@ -21,26 +21,31 @@ public class ASL {
     
 
 	private int computeAverageSentenceLength(){
-        String[] essaySentances = essay.split(this.delimiters, 0);//split into sentances, 0 means for all instances
-        int totalChars = 0; //keeping track of total characters
-       	int totalSentances = essaySentances.length; // -1 since split retains the first sentance
+        String[] essaySentences = essay.split(this.delimiters, 0);//split into sentances, 0 means for all instances
+        int totalWords = 0; //keeping track of total characters
+       	int totalSentences = essaySentences.length; // -1 since split retains the first sentance
         //| F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
-        for (String strings : essaySentances) { // for all of the sentances in essay
-            if(strings.length()>0){ //eliminates zero element items resulting from elipses etc and min ammount of chars
-                ///NEED TO CHECK MINIMUM WORD VALUE TO COUND 
-                //possible implementation strings.split(" ",0) > self.minLength
-                
-                totalChars+=strings.length(); //adding current sentance 
-                //System.out.println(strings + ", "+ strings.length()); //debugging print statement
-            } else { //if there is a zero element sentance, it skips it and decrements
-                totalSentances--;
-            }
+        for (String sentence : essaySentences) { // for all of the sentances in essay
+			if(sentence.length()>0){ //eliminates zero element items resulting from elipses etc and min ammount of chars
+            	String[] words = sentence.split(" ",0);//seperates out words
+       			int wordsThisSentence=words.length;	
+       			for (String entry : words){
+       				if (entry.length() < this.minWordLength){
+       					wordsThisSentence -= 1;	
+       				}
+       			}
+       			totalWords += wordsThisSentence;         			     			
+       			//totalChars+=sentence.length(); //adding current sentence 
+       			////System.out.println(strings + ", "+ strings.length()); //debugging print statement
+       		} else { //if there is a zero element sentence, it skips it and decrements
+		        totalSentences--;
+		    }
         }
         //TODO
         //
         //| F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
 		
-		return (int)(totalChars/totalSentances);
+		return (int)(totalWords/totalSentences);
     }
     //setter method that sets the internal delimiters variable
 	private void setSentenceDelimiters(String delimiters){
