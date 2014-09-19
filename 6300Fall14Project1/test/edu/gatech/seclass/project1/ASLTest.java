@@ -68,13 +68,13 @@ public class ASLTest {
     @Test
     public void testOpenFile() {
         String comment = "Testing the opening of a file";
-        asl.readFile("./test/inputfiles/input.txt");
+        asl2.readFile("./test/inputfiles/input.txt");
         assertEquals(comment, 0, asl2.readFile("./test/inputfiles/input.txt"), 0);
     }
     @Test
     public void testMainConstructor() {
     	String comment = "Testing constructor as it will be called from main";
     	String[] args = new String[]{"-f","./test/inputfiles/input.txt"};
-    	ASL asl = new ASL(args);
+    	ASL asl2 = new ASL(args);
     }
 }
