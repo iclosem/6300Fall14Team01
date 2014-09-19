@@ -25,7 +25,6 @@ Mandatory arguments to long options are mandatory for short options too.
   -d, --delimiters    sets the delimeters, defaults to: 
   -h, --help          displays this help and exit
   -f, --file          specifies the input file
-  -v, --verbose       prints out a list of every sentance with lengths in addition to normal output
   -l, --length       defines a minimum word size
 ```
 ####AUTHORS      
