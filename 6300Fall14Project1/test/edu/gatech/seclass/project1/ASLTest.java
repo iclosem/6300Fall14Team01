@@ -12,8 +12,7 @@ import org.junit.Test;
 public class ASLTest {
 
     private ASL asl = new ASL();
-    private String fileDir;
-
+  
     @Before
     public void setUp() throws Exception {
     	
@@ -21,7 +20,24 @@ public class ASLTest {
     @After
     public void tearDown() throws Exception {
         asl = null;
-        fileDir = null;
+    }
+    @Test
+    public void testCommandParseFile() {
+        String comment = "Testing the parsing of -f command";
+        String[] args = new String[]{"-f","./test/inputfiles/input2.txt"};
+        assertEquals(comment, 0, asl.parseCommandString(args), 0);
+    }
+    @Test
+    public void testCommandParseFile2() {
+        String comment = "Testing the parsing of --file command";
+        String[] args = new String[]{"--file","./test/inputfiles/input2.txt"};
+        assertEquals(comment, 0, asl.parseCommandString(args), 0);
+    }
+    @Test
+    public void testCommandParseHelp() {
+        String comment = "Testing the parsing of -h command";
+        String[] args = new String[]{"-h"};
+        assertEquals(comment, 0, asl.parseCommandString(args), 0);
     }
     @Test
     public void testOpenFile() {
