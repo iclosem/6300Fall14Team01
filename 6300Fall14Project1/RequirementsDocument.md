@@ -61,9 +61,9 @@ import org.junit.Test;
 | F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
 | F_02.2 | System will output the constraints for sentence delimiters used to calculate average sentence length | | low
 | F_03.0 | System will have flexibility in defining a word by its minimum length of characters. |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
-| F_03.0 | System will accept values between 1-15 to define a word by its minimum length of characters. | | medium
-|F_03.1 | System default for minimum character length defining a word will be set to three |  | high
-|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
+| F_03.1 | System will accept values between 1-15 to define a word by its minimum length of characters. | | medium
+|F_03.2 | System default for minimum character length defining a word will be set to three |  | high
+|F_03.3 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
 | F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
 | F_04.1 | System default for sentence delimiters will be .?!; || high
 | F_05.0 | System will compile with javac, java  1.6 or 1.7 | | high
