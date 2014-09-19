@@ -88,6 +88,7 @@ public class ASL {
         }
         //TODO
         //
+        System.out.println("The average number of words per sentences is: "+(totalWords/totalSentences));
 		return (int)(totalWords/totalSentences);
     }
 	

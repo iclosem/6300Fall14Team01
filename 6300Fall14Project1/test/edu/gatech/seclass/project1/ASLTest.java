@@ -24,13 +24,13 @@ public class ASLTest {
     @Test
     public void testCommandParseFile() {
         String comment = "Testing the parsing of -f command";
-        String[] args = new String[]{"-f","./test/inputfiles/input2.txt"};
+        String[] args = new String[]{"-f","./test/inputfiles/input2file.txt"};
         assertEquals(comment, 0, asl.parseCommandString(args), 0);
     }
     @Test
     public void testCommandParseFile2() {
         String comment = "Testing the parsing of --file command";
-        String[] args = new String[]{"--file","./test/inputfiles/input2.txt"};
+        String[] args = new String[]{"--file","./test/inputfiles/input2file.txt"};
         assertEquals(comment, 0, asl.parseCommandString(args), 0);
     }
     @Test
@@ -64,5 +64,11 @@ public class ASLTest {
         asl.readFile("./test/inputfiles/input.txt");
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
+    }
+    @Test
+    public void testMainConstructor() {
+    	String comment = "Testing constructor as it will be called from main";
+    	String[] args = new String[]{"-f","./test/inputfiles/input.txt"};
+    	ASL asl = new ASL(args);
     }
 }
