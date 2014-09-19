@@ -33,7 +33,7 @@ public class ASL {
     }
     
     //setter method that sets the internal delimiters variable
-	private int setSentenceDelimiters(String delimiters){
+	public int setSentenceDelimiters(String delimiters){
         if (delimiters != "" && delimiters != null){
             this.delimiters = "["+ delimiters +"]"; 
             return 0;
@@ -65,14 +65,14 @@ public class ASL {
 	
 	//@precondition a file has been specified
 	//@post averageSentenceLength is set
-	private int computeAverageSentenceLength(){
-        String[] essaySentences = essay.split(this.delimiters, 0);//split into sentances, 0 means for all instances
+	public int computeAverageSentenceLength(){
+        String[] essaySentences = essay.split(this.delimiters, 0);//split into sentences, 0 means for all instances
         int totalWords = 0; //keeping track of total words
-       	int totalSentences = essaySentences.length-1; // -1 since split retains the first sentance
+       	int totalSentences = essaySentences.length; // -1 since split retains the first sentence
         //| F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
-        for (String sentence : essaySentences) { // for all of the sentances in essay
-			if(sentence.length()>0){ //eliminates zero element items resulting from elipses etc and min ammount of chars
-            	String[] words = sentence.split(" ",0);//seperates out words
+        for (String sentence : essaySentences) { // for all of the sentences in essay
+			if(sentence.length()>0){ //eliminates zero element items resulting from ellipses etc and min ammount of chars
+            	String[] words = sentence.split(" ",0);//Separates out words
        			int wordsThisSentence=words.length;	
        			for (String entry : words){
        				if (entry.length() < this.minWordLength){
@@ -130,9 +130,8 @@ public class ASL {
     		if (args[i] == "-d" || args[i] == "--delimiters"){
     			this.setSentenceDelimiters(args[i+1]);
     			i++;
-    		} else if (args[i] == "-v" || args[i] == "--verbose"){
-    			//TODO extra
-    		} else if (args[i] == "-h" || args[i] == "--help"){
+    		} 
+    		else if (args[i] == "-h" || args[i] == "--help"){
     			//echo the markdown file
     		} else if (args[i] == "-f" || args[i] == "--file"){
     			this.readFile(args[i+1]);
@@ -140,6 +139,9 @@ public class ASL {
     		} else if (args[i] == "-l" || args[i] == "--length"){
     			this.setMinWordLength(Integer.parseInt(args[i+1]));
     		}
+    		//else if (args[i] == "-v" || args[i] == "--verbose"){
+    			//TODO extra
+    		//} 
     		i++;
     	}
     	
