@@ -91,7 +91,25 @@ public class ASL {
         System.out.println("The average number of words per sentences is: "+(totalWords/totalSentences));
 		return (int)(totalWords/totalSentences);
     }
-	
+	public int setFile(File studentFile){
+		try{
+			if (studentFile.exists()){
+				double bytes = studentFile.length();
+				double kilobytes = (bytes/1024);
+				if (kilobytes > 50){
+					System.out.println("The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints.");
+					return 1;
+				}
+			}
+			//| F_7.1 | System will retrieve file from the file path specified by user || high 
+			//| F_7.2 | System will allow the user to input .txt files consisting of the UTF-8 character set | | high
+			this.essay = new String(Files.readAllBytes(Paths.get(studentFile.getPath()))); // reads the bytes in from the file
+			return 0;
+		} catch(java.io.IOException e){//| F_1.02 | System will produce a friendly feedback message to user if file path input is not successful in loading file. "The file path that has been input was not successful, please re-enter file path.” | | medium
+			System.out.println("The file path that has been input was not successful, please re-enter file path.");//F_01.02, should throw exception or report error if file does not exist
+			return 1;
+		}
+	}
 	//@precondition none
 	//@post file will be set
     public int readFile(String filePath){
