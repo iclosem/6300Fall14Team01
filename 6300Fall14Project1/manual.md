@@ -10,7 +10,7 @@
 
 ####NAME       
 
-Main - compute average sentence length for a program
+Main - computes average sentence length for a text document
 
 ####SYNOPSIS        
 
