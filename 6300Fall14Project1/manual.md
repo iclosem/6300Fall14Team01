@@ -10,22 +10,25 @@
 
 ####NAME       
 
-asl - count average sentance length for a program
+Main - compute average sentence length for a program
 
 ####SYNOPSIS        
 
-The Average Sentence Length application is a tool provided for students to assess the average number of words per sentence or clause in an writing sample or essay.  This information is useful in evaluating changes in writing style and composition habits. With a simple command line entry, the student can determine the average number of words per sentence in a document saved in *.txt format. 
+*Main* -f|--file _FILE_ [-d|--delimiters _DELIMITERS_] [-l|--length _MINWORDLENGTH_] [-h|--help]
+
 
 ####DESCRIPTION    
 
-Set each NAME to VALUE in the environment and run COMMAND.
+The Average Sentence Length application *Main* is a command line tool provided for students to assess the average number of words per sentence or clause in a [FILE], which is defined as the full path to document in *.txt format.  The default [DELIMITERS], or puctuation characters defining the end of a sentence are {.!?}.  Custom [DELIMITERS] can be set using the -d switch.  By default, the minimum size for a word to be counted or [MINWORDLENGTH] is 3 charactes.  The [MINWORDLENGTH] can be adjusted using the -l switch. The -h switch displays this man page and exits the program.
 
+
+####OPTIONS
 Mandatory arguments to long options are mandatory for short options too.
 ```
-  -d, --delimiters    sets the delimeters, defaults to: 
-  -h, --help          displays this help and exit
-  -f, --file          specifies the input file
-  -l, --length       defines a minimum word size
+  -d, --delimiters=DELIMITERS   sets the delimeters, defaults to: .!?
+  -h, --help                    displays this help and exit
+  -f, --file=[FILE]             specifies the input file
+  -l, --length=[MINWORDLENGTH]  defines a minimum word size
 ```
 ####AUTHORS      
 
