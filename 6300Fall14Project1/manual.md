@@ -1,13 +1,6 @@
 ##**ASL Manual -- Team 01**
 ###Project 1: Average Sentence Length
 
-###Contents
-
-- [NAME](#NAME)
-- [SYNOPSIS](#SYNOPSIS)	
-- [DESCRIPTION](#DESCRIPTION)
-- [AUTHORS](#AUTHORS)
-
 ####NAME       
 
 Main - computes average sentence length for a text document
@@ -25,10 +18,16 @@ The Average Sentence Length application *Main* is a command line tool provided f
 ####OPTIONS
 Mandatory arguments to long options are mandatory for short options too.
 ```
-  -d, --delimiters=DELIMITERS   sets the delimeters, defaults to: .!?
-  -h, --help                    displays this help and exit
-  -f, --file=[FILE]             specifies the input file
-  -l, --length=[MINWORDLENGTH]  defines a minimum word size
+  -d, --delimiters = DELIMITERS   sets the delimeters, allowable delimiters include 
+                                  {~!@#$%^&*()_+`-=[]\{}|;':",./<>?}.  defaults to: .!?
+                                
+  -h, --help                      displays this help and exit
+  
+  -f, --file = FILE               specifies the input file
+  
+  -l, --length = MINWORDLENGTH    defines a minimum word size.  allowable lengths 
+                                  include integers >= 0.
+  
 ```
 ####AUTHORS      
 
