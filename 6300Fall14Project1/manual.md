@@ -12,7 +12,7 @@ Main - computes average sentence length for a text document
 
 ####DESCRIPTION    
 
-The Average Sentence Length application *Main* is a command line tool provided for students to assess the average number of words per sentence or clause in a [_FILE_], which is defined as the full path to document in *.txt format.  The default [_DELIMITERS_], or puctuation characters defining the end of a sentence are {.!?}.  Custom [_DELIMITERS_] can be set using the -d switch.  By default, the minimum size for a word to be counted or [_MINWORDLENGTH_] is 3 charactes.  The [_MINWORDLENGTH_] can be adjusted using the -l switch. The -h switch displays this man page and exits the program.
+The Average Sentence Length application *Main* is a command line tool provided for students to assess the average number of words per sentence or clause in a [_FILE_], which is defined as the full path to a document in *.txt format.  The default [_DELIMITERS_], or puctuation characters defining the end of a sentence are {.!?}.  Custom [_DELIMITERS_] can be set using the -d switch.  By default, the minimum size for a word to be counted or [_MINWORDLENGTH_] is 3 charactes.  The [_MINWORDLENGTH_] can be adjusted using the -l switch. The -h switch displays this man page and exits the program.
 
 
 ####OPTIONS
