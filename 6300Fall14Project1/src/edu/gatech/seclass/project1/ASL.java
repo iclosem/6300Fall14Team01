@@ -6,10 +6,10 @@ import java.io.File;
 
 
 public class ASL {
-	private String delimiters = "[.?!]"; //F_04.1 
+	private String delimiters = "[.?!;]"; //F_04.1 
     private String essay;
     private int minWordLength = 3; //F_03.1 
-    private int averageSentanceLength;
+    private int averageSentenceLength;
     
     ///////////
     //GETTERS//
@@ -75,8 +75,8 @@ public class ASL {
 		    }
         }//F_02.0
         System.out.println("The sentence delimiters were: "+this.delimiters);//F_02.2
-		System.out.println("The minimum word length was: "+this.minWordLength;//F_02.1
-		System.out.println("The average number of words per sentences is: "+(int)(totalWords/totalSentences));
+		System.out.println("The minimum word length was: "+this.minWordLength);//F_02.1
+		System.out.println("The average number of words per sentence is: "+(int)(totalWords/totalSentences));
 		return (int)(totalWords/totalSentences);
     }
     
@@ -161,6 +161,7 @@ public class ASL {
     		} 
     		else if (args[i] == "-h" || args[i] == "--help"){
     			this.printHelp();
+    			break;
     		} else if (args[i] == "-f" || args[i] == "--file"){
     			this.readFile(args[i+1]);
     			i++;
