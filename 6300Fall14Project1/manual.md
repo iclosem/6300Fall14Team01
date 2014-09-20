@@ -26,7 +26,7 @@ Mandatory arguments to long options are mandatory for short options too.
   -f, --file = FILE               specifies the input file
   
   -l, --length = MINWORDLENGTH    defines a minimum word size.  allowable lengths 
-                                  include integers >= 0.
+                                  include integer values from 1 to 15.
   
 ```
 ####AUTHORS      
