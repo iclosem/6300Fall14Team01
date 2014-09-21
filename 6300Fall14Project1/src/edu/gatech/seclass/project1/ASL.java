@@ -11,6 +11,16 @@ public class ASL {
     private int minWordLength = 3; //F_03.1 
     
 
+    //constructor
+    public ASL(String[] args) { 
+    	this.parseCommandString(args);
+    	this.computeAverageSentenceLength();
+    	
+    }
+    public ASL() { 
+       
+    }
+    
     public String getEssay(){
 	    return this.essay;
     }
@@ -161,15 +171,5 @@ public class ASL {
        //|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
 		//| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
 
-    }
-    
-    //constructor
-    public ASL(String[] args) { 
-    	this.parseCommandString(args);
-    	this.computeAverageSentenceLength();
-    	
-    }
-    public ASL() { 
-       
     }
 }
