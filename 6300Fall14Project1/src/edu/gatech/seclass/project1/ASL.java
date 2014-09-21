@@ -32,14 +32,20 @@ public class ASL {
     }
     
 	public boolean setMinWordLength(int minWordLength){//F_3.0
-        if (minWordLength != 0 && minWordLength >= 1 && minWordLength <= 15){//F_3.0
-            //may want to replace this with a try, catch since they could put a string as input
-            this.minWordLength = minWordLength;
-        } else { //F_1.05 
-             System.out.println("Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer or reference the help view.");
+		String errorMsg = "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer (1-15) or reference the help view.";
+		try{
+	        if (minWordLength != 0 && minWordLength >= 1 && minWordLength <= 15){//F_3.0
+	            //may want to replace this with a try, catch since they could put a string as input
+	            this.minWordLength = minWordLength;
+	            return true;
+	        }else{
+	             System.out.println(errorMsg);
+	             return false;
+	        }
+        } catch (Exception e) { //F_1.05 
+             System.out.println(errorMsg);
              return false;
         }
-        return true;
     }
 	
     public int getMinWordLength(){
