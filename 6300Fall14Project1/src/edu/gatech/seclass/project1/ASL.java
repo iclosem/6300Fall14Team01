@@ -10,40 +10,42 @@ public class ASL {
     private String essay;
     private int minWordLength = 3; //F_03.1 
     
-    ///////////
-    //GETTERS//
-    ///////////
+
     public String getEssay(){
 	    return this.essay;
     }
-    public String getDelimeters(){
-    	return this.delimiters;
-    }
-    public int getMinWordLength(){
-    	return this.minWordLength;
-    }
-    
-    //setter method that sets the internal delimiters variable
-	public void setSentenceDelimiters(String delimiters){
+
+    //Sets the internal delimiters variable
+	public boolean setSentenceDelimiters(String delimiters){
         if (delimiters != "" && delimiters != null){
-            this.delimiters = "["+ delimiters +"]"; 
+            this.delimiters = "["+ delimiters +"]";
+            return true;
         } else { //F_1.03
             System.out.println("Sentence delimiters were not input correctly. Please retry or reference the help view.");
+            return false;
         }
         //F_02.2 System will output the constraints for sentence delimiters used to calculate average sentence length | | low
         
     }
+    public String getDelimeters(){
+    	return this.delimiters;
+    }
     
-	public int setMinWordLength(int minWordLength){//F_3.0
+	public boolean setMinWordLength(int minWordLength){//F_3.0
         if (minWordLength != 0 && minWordLength >= 1 && minWordLength <= 15){//F_3.0
             //may want to replace this with a try, catch since they could put a string as input
             this.minWordLength = minWordLength;
         } else { //F_1.05 
              System.out.println("Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer or reference the help view.");
-             return 1;
+             return false;
         }
-        return 0;
+        return true;
     }
+	
+    public int getMinWordLength(){
+    	return this.minWordLength;
+    }
+    
 	//////////////////
 	//Public Methods//
 	//////////////////
