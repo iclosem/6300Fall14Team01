@@ -9,7 +9,6 @@ public class ASL {
 	private String delimiters = "[.?!;]"; //F_04.1 
     private String essay;
     private int minWordLength = 3; //F_03.1 
-    private int averageSentenceLength;
     
     ///////////
     //GETTERS//
@@ -25,16 +24,12 @@ public class ASL {
     }
     
     //setter method that sets the internal delimiters variable
-	public int setSentenceDelimiters(String delimiters){
+	public void setSentenceDelimiters(String delimiters){
         if (delimiters != "" && delimiters != null){
             this.delimiters = "["+ delimiters +"]"; 
-            return 0;
         } else { //F_1.03
             System.out.println("Sentence delimiters were not input correctly. Please retry or reference the help view.");
-            return 1;
         }
-        //TODO
-        //
         //F_02.2 System will output the constraints for sentence delimiters used to calculate average sentence length | | low
         
     }
@@ -75,12 +70,14 @@ public class ASL {
 		    }
         }//F_02.0
         int averageWords = (int)(totalWords/totalSentences);
-        System.out.println("The sentence delimiters were: "+this.delimiters);//F_02.2
-		System.out.println("The minimum word length was: "+this.minWordLength);//F_02.1
+        System.out.println("The sentence delimiters were: " + this.delimiters);//F_02.2
+		System.out.println("The minimum word length was: " + this.minWordLength);//F_02.1
 		System.out.println("The average number of words per sentence is: " + averageWords);
 		return averageWords;
     }
-    
+	
+	//@precondition none
+	//@post file will be set
 	public void setFile(File studentFile){
 		try{
 			if (studentFile.exists()){
@@ -102,47 +99,22 @@ public class ASL {
 			System.out.println("The file path that has been input was not successful, please re-enter file path.");//F_01.02
 		}
 	}
-	//@precondition none
-	//@post file will be set
-    public int readFile(String filePath){//F_
-    	try{
-    	
-    		//| F_1.01 | System will produce a friendly feedback message to user if cap of file size is exceeded. "The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints."  | | low
+
+    public void readFile(String filePath){//F_
     		File file = new File(filePath);
-    		if (file.exists()){
-    			double bytes = file.length();
-    			double kilobytes = (bytes/1024);
-    			if (kilobytes > 50){
-    				System.out.println("The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints.");
-    				return 1;
-    			}
-                if (kilobytes == 0){//F_01.05
-                    System.out.println("The .txt file being accessed is empty. Please confirm proper file path was used.");
-					return 1;
-                }
-    		}
-    		//F_7.1, F_7.2 
-    		this.essay = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
-    		return 0;
-    	} catch(java.io.IOException e){//| F_1.02 | 
-    		System.out.println("The file path that has been input was not successful, please re-enter file path.");//F_01.02
-    		return 1;
-    	}
-        //TODO
-        
+    		setFile(file);
     }
+    
     //@precondition none
   	//@post none
-    public int printHelp(){
+    public void printHelp(){
     	try{
     		String filePath = "./manual.md";
       		String help = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
       		System.out.println(help);//F_01.02, should throw exception or report error if file does not exist
       		
-      		return 0;
       	} catch(java.io.IOException e){
       		System.out.println("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
-      		return 1;
       	}
           //TODO
           
@@ -150,7 +122,7 @@ public class ASL {
     
     //@precondition none
   	//@post options will all be set
-    public int parseCommandString(String[] args){
+    public boolean parseCommandString(String[] args){
     	int i=0; 
     	int fileSet = 0;
     	while (i < args.length){
@@ -173,11 +145,10 @@ public class ASL {
     	}
     	if (fileSet == 0){
     		System.out.println("The file path that has been input was not successful, please re-enter file path.");
-    		return 1;
+    		return false;
     	}
-    	return 0;
-        //TODO
-        //
+    	return true;
+
        //|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
 		//| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
 
