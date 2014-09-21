@@ -47,33 +47,36 @@ public class ASLTest {
 
     @Test
     public void testCommandParseFile() {
-        String comment = "Testing the parsing of -f command";
+        String comment = "Parsing of -f command is successful with proper file input";
         String[] args = new String[]{"-f","./test/inputfiles/input2file.txt"};
         assertEquals(comment, true, asl.parseCommandString(args));
     }
     @Test
     public void testCommandParseFile2() {
-        String comment = "Testing the parsing of --file command";
+        String comment = "Parsing of --file command is successful with proper file input";
         String[] args = new String[]{"--file","./test/inputfiles/input2file.txt"};
         assertEquals(comment, true, asl.parseCommandString(args));
     }
     @Test
     public void testCommandParseHelp() {
-        String comment = "Testing the parsing of -h command";
+        String comment = "Parsing of -h command is successful";
         String[] args = new String[]{"-h"};
         assertEquals(comment, true, asl.parseCommandString(args));
     }
     @Test
     public void testCommandParseBadFile() {
-        String comment = "Testing the parsing of --file command";
+        String comment = "Parsing of --file command is unsuccessful with bad file input";
         String[] args = new String[]{"--file","./test/inputfiles/input2sdhyehdfgfile.txt"};
         assertEquals(comment, false, asl.parseCommandString(args));
     }
     @Test
-    public void testOpenFile() {
-        String comment = "Testing the opening of a file";
+    public void testOpenFile() throws Exception {
+        String comment = "ReadFile works as setFile does";
         asl.readFile("./test/inputfiles/input.txt");
-        Fail("Need to test that the file is set");
-        //assertEquals(comment, false, asl.readFile("./test/inputfiles/input.txt"));
+        String readFileOutput = asl.getEssay();
+        
+        asl.setFile(new File(fileDir + "input.txt"));
+        String setFileOutput = asl.getEssay();
+        assertEquals(comment, setFileOutput, readFileOutput );
     }
 }

@@ -78,7 +78,7 @@ public class ASL {
 	
 	//@precondition none
 	//@post file will be set
-	public void setFile(File studentFile){
+	public boolean setFile(File studentFile) {
 		try{
 			if (studentFile.exists()){
 				double bytes = studentFile.length();
@@ -94,27 +94,31 @@ public class ASL {
 			this.essay = new String(Files.readAllBytes(Paths.get(studentFile.getPath()))); // reads the bytes in from the file;
 			this.essay = essay.trim();
 			this.essay = essay.replaceAll("[\\n]", " ");
-			
+			return true;
 		} catch(java.io.IOException e){//F_01.05
-			System.out.println("The file path that has been input was not successful, please re-enter file path.");//F_01.02
+			System.out.println("The file path " + studentFile.getPath() + " that has been input was not successful, please re-enter file path.");//F_01.02
+			return false;
 		}
 	}
 
-    public void readFile(String filePath){//F_
+    public void readFile(String filePath) throws Exception{//F_
     		File file = new File(filePath);
     		setFile(file);
+    		if( setFile(file) == false){
+	    		throw new Exception("The file path "+ filePath + " that has been input was not successful, please re-enter file path.");
+	    	}
     }
     
     //@precondition none
   	//@post none
-    public void printHelp(){
+    public void printHelp() throws Exception{
     	try{
     		String filePath = "./manual.md";
       		String help = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
       		System.out.println(help);//F_01.02, should throw exception or report error if file does not exist
       		
       	} catch(java.io.IOException e){
-      		System.out.println("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
+      		throw new Exception("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
       	}
           //TODO
           
@@ -124,30 +128,29 @@ public class ASL {
   	//@post options will all be set
     public boolean parseCommandString(String[] args){
     	int i=0; 
-    	int fileSet = 0;
-    	while (i < args.length){
-    		
-    		if (args[i] == "-d" || args[i] == "--delimiters"){//F_04.0
-    			this.setSentenceDelimiters(args[i+1]);
-    			i++;
-    		} 
-    		else if (args[i] == "-h" || args[i] == "--help"){
-    			this.printHelp();
-    			break;
-    		} else if (args[i] == "-f" || args[i] == "--file"){
-    			this.readFile(args[i+1]);
-    			i++;
-    			fileSet = 1;
-    		} else if (args[i] == "-l" || args[i] == "--length"){//F_03.03
-    			this.setMinWordLength(Integer.parseInt(args[i+1]));
-    		}
-    		i++;
-    	}
-    	if (fileSet == 0){
-    		System.out.println("The file path that has been input was not successful, please re-enter file path.");
+    	try{
+	    	while (i < args.length){
+	    		
+	    		if (args[i] == "-d" || args[i] == "--delimiters"){//F_04.0
+	    			this.setSentenceDelimiters(args[i+1]);
+	    			i++;
+	    		} 
+	    		else if (args[i] == "-h" || args[i] == "--help"){
+	    			this.printHelp();
+	    			break;
+	    		} else if (args[i] == "-f" || args[i] == "--file"){
+	    			this.readFile(args[i+1]);
+	    			i++;
+	    		} else if (args[i] == "-l" || args[i] == "--length"){//F_03.03
+	    			this.setMinWordLength(Integer.parseInt(args[i+1]));
+	    		}
+	    		i++;
+	    	}
+	    	return true;
+    	} catch(Exception e){
+    		System.out.println(e.getMessage());//F_01.02
     		return false;
     	}
-    	return true;
 
        //|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
 		//| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
