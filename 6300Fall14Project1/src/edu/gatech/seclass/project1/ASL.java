@@ -105,7 +105,6 @@ public class ASL {
 
     public void readFile(String filePath) throws Exception{//F_
     		File file = new File(filePath);
-    		setFile(file);
     		if( setFile(file) == false){
 	    		throw new Exception("The file path "+ filePath + " that has been input was not successful, please re-enter file path.");
 	    	}
@@ -122,7 +121,6 @@ public class ASL {
       	} catch(java.io.IOException e){
       		throw new Exception("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
       	}
-          //TODO
           
       }
     
