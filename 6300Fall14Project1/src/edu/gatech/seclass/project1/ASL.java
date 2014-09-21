@@ -58,7 +58,7 @@ public class ASL {
        	int totalSentences = essaySentences.length; // -1 since split retains the first sentence
         for (String sentence : essaySentences) { // for all of the sentences in essay
 			if(sentence.length()>0){ //eliminates zero element items resulting from ellipses etc and min ammount of chars
-            	String[] words = sentence.split(" ",0);//Separates out words
+            	String[] words = sentence.split("\\s+",0);//Separates out words
        			int wordsThisSentence = words.length;	
        			for (String entry : words){
        				//entry = entry.replaceAll("[^a-zA-Z0-9\\s]",""); //regex to remove any punctuation so it does not count for word length
