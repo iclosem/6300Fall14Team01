@@ -64,7 +64,7 @@ public class ASL {
             	String[] words = sentence.split(" ",0);//Separates out words
        			int wordsThisSentence = words.length;	
        			for (String entry : words){
-       				entry = entry.replaceAll("[^a-zA-Z0-9\\s]",""); //regex to remove any punctuation so it does not count for word length
+       				//entry = entry.replaceAll("[^a-zA-Z0-9\\s]",""); //regex to remove any punctuation so it does not count for word length
        				if (entry.length() < this.minWordLength){
        					wordsThisSentence -= 1;	
        				}
@@ -74,32 +74,32 @@ public class ASL {
 		        totalSentences--;
 		    }
         }//F_02.0
+        int averageWords = (int)(totalWords/totalSentences);
         System.out.println("The sentence delimiters were: "+this.delimiters);//F_02.2
 		System.out.println("The minimum word length was: "+this.minWordLength);//F_02.1
-		System.out.println("The average number of words per sentence is: "+(int)(totalWords/totalSentences));
-		return (int)(totalWords/totalSentences);
+		System.out.println("The average number of words per sentence is: " + averageWords);
+		return averageWords;
     }
     
-	public int setFile(File studentFile){
+	public void setFile(File studentFile){
 		try{
 			if (studentFile.exists()){
 				double bytes = studentFile.length();
 				double kilobytes = (bytes/1024);
 				if (kilobytes > 50){
 					System.out.println("The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints.");
-					return 1;
 				}
                 if (kilobytes == 0){
                     System.out.println("The .txt file being accessed is empty. Please confirm proper file path was used.");
-					return 1;
                 }
 			}
 			//F_7.1, F_7.2 
-			this.essay = new String(Files.readAllBytes(Paths.get(studentFile.getPath()))); // reads the bytes in from the file
-			return 0;
+			this.essay = new String(Files.readAllBytes(Paths.get(studentFile.getPath()))); // reads the bytes in from the file;
+			this.essay = essay.trim();
+			this.essay = essay.replaceAll("[\\n]", " ");
+			
 		} catch(java.io.IOException e){//F_01.05
 			System.out.println("The file path that has been input was not successful, please re-enter file path.");//F_01.02
-			return 1;
 		}
 	}
 	//@precondition none
