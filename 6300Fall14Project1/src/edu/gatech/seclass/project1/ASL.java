@@ -31,8 +31,7 @@ public class ASL {
             this.delimiters = "["+ delimiters +"]";
             return true;
         } else { //F_1.03
-            System.out.println("Sentence delimiters were not input correctly. Please retry or reference the help view.");
-            return false;
+        	return printMsgRetFalse("Sentence delimiters were not input correctly. Please retry or reference the help view with -h.");
         }
         //F_02.2 System will output the constraints for sentence delimiters used to calculate average sentence length | | low
         
@@ -42,7 +41,7 @@ public class ASL {
     }
     
 	public boolean setMinWordLength(int minWordLength){//F_3.0
-		String errorMsg = "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer (1-15) or reference the help view.";
+		String errorMsg = "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer (1-15) or reference the help view with -h.";
 		try{
 	        if (minWordLength != 0 && minWordLength >= 1 && minWordLength <= 15){//F_3.0
 	            //may want to replace this with a try, catch since they could put a string as input
@@ -53,10 +52,10 @@ public class ASL {
 	             return false;
 	        }
         } catch (Exception e) { //F_1.05 
-             System.out.println(errorMsg);
-             return false;
+        	return printMsgRetFalse(errorMsg);
         }
-    }
+    } //|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
+	
 	
     public int getMinWordLength(){
     	return this.minWordLength;
@@ -102,10 +101,10 @@ public class ASL {
 				double bytes = studentFile.length();
 				double kilobytes = (bytes/1024);
 				if (kilobytes > 50){
-					System.out.println("The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints.");
+					return printMsgRetFalse("The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints.");
 				}
                 if (kilobytes == 0){
-                    System.out.println("The .txt file being accessed is empty. Please confirm proper file path was used.");
+                	return printMsgRetFalse("The .txt file being accessed is empty. Please confirm proper file path was used.");
                 }
 			}
 			//F_7.1, F_7.2 
@@ -114,8 +113,7 @@ public class ASL {
 			this.essay = essay.replaceAll("[\\n]", " ");
 			return true;
 		} catch(java.io.IOException e){//F_01.05
-			System.out.println("The file path " + studentFile.getPath() + " that has been input was not successful, please re-enter file path.");//F_01.02
-			return false;
+			return printMsgRetFalse("The file path " + studentFile.getPath() + " was not successful, please re-enter file path.");//F_01.02
 		}
 	}
 
@@ -132,7 +130,7 @@ public class ASL {
     	try{
     		String filePath = "./manual.md";
       		String help = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
-      		System.out.println(help);//F_01.02, should throw exception or report error if file does not exist
+      		System.out.println(help);
       		
       	} catch(java.io.IOException e){
       		throw new Exception("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
@@ -142,6 +140,7 @@ public class ASL {
     
     //@precondition none
   	//@post options will all be set
+    //| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
     public boolean parseCommandString(String[] args){
     	int i=0; 
     	try{
@@ -164,12 +163,12 @@ public class ASL {
 	    	}
 	    	return true;
     	} catch(Exception e){
-    		System.out.println(e.getMessage());//F_01.02
-    		return false;
+    		return printMsgRetFalse(e.getMessage());//F_01.02
     	}
-
-       //|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
-		//| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
-
+    }
+    
+    private boolean printMsgRetFalse(String msg){
+		System.out.println(msg);//F_01.02
+		return false;
     }
 }
