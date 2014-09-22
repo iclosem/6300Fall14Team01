@@ -111,4 +111,11 @@ public class ASLTest {
         String setFileOutput = asl.getEssay();
         assertEquals(comment, setFileOutput, readFileOutput );
     }
+
+    
+    @Test
+    public void testOpenTooLargeFile() {
+        String comment = "Opening a large file does not work";
+        assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));
+    }
 }

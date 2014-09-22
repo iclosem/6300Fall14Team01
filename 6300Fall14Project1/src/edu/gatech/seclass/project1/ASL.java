@@ -142,24 +142,18 @@ public class ASL {
   	//@post options will all be set
     //| F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
     public boolean parseCommandString(String[] args){
-    	int i=0; 
     	try{
-	    	while (i < args.length){
-	    		
-	    		if (args[i] == "-d" || args[i] == "--delimiters"){//F_04.0
+	    	for (int i = 0; i < args.length; i++){
+	    		if (args[i].equals("-d") || args[i].equals("--delimiters")){//F_04.0
 	    			this.setSentenceDelimiters(args[i+1]);
-	    			i++;
-	    		} 
-	    		else if (args[i] == "-h" || args[i] == "--help"){
+	    		} else if (args[i].equals("-h") || args[i].equals("--help")){
 	    			this.printHelp();
 	    			break;
-	    		} else if (args[i] == "-f" || args[i] == "--file"){
+	    		} else if (args[i].equals("-f") || args[i].equals("--file")){
 	    			this.readFile(args[i+1]);
-	    			i++;
-	    		} else if (args[i] == "-l" || args[i] == "--length"){//F_03.03
+	    		} else if (args[i].equals("-l") || args[i].equals("--length")){//F_03.03
 	    			this.setMinWordLength(Integer.parseInt(args[i+1]));
 	    		}
-	    		i++;
 	    	}
 	    	return true;
     	} catch(Exception e){
