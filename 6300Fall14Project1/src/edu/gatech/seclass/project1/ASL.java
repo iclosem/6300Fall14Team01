@@ -117,7 +117,7 @@ public class ASL {
 		}
 	}
 
-    public void readFile(String filePath) throws Exception{//F_
+    public void readFile(String filePath) throws Exception{
     		File file = new File(filePath);
     		if( setFile(file) == false){
 	    		throw new Exception("The file path "+ filePath + " that has been input was not successful, please re-enter file path.");

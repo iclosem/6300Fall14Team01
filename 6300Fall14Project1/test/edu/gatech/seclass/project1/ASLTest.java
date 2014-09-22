@@ -74,6 +74,20 @@ public class ASLTest {
     }
     
     @Test
+    public void testCommandParseSetSentenceDelimiters(){
+    	String testDelimiters = "12@#";
+        String[] args = new String[]{"--delimiters", testDelimiters};
+        assertEquals("Sentence delimeters can be set to a valid string with --delimiters through parseCommandString", true, asl.parseCommandString(args));
+    }
+
+    @Test
+    public void testCommandParseSetSentenceD(){
+    	String testDelimiters = "12@#";
+        String[] args = new String[]{"-d", testDelimiters};
+        assertEquals("Sentence delimeters can be set to a valid with -d string through parseCommandString", true, asl.parseCommandString(args));
+    }
+
+    @Test
     public void testCommandParseFile() {
         String comment = "Parsing of -f command is successful with proper file input";
         String[] args = new String[]{"-f","./test/inputfiles/input2file.txt"};
@@ -88,9 +102,16 @@ public class ASLTest {
     }
     
     @Test
-    public void testCommandParseHelp() {
+    public void testCommandParseHelpH() {
         String comment = "Parsing of -h command is successful";
         String[] args = new String[]{"-h"};
+        assertEquals(comment, true, asl.parseCommandString(args));
+    }
+    
+    @Test
+    public void testCommandParseHelpHelp() {
+        String comment = "Parsing of -help command is successful";
+        String[] args = new String[]{"-help"};
         assertEquals(comment, true, asl.parseCommandString(args));
     }
     
@@ -112,10 +133,30 @@ public class ASLTest {
         assertEquals(comment, setFileOutput, readFileOutput );
     }
 
-    
     @Test
-    public void testOpenTooLargeFile() {
+    public void testOpenTooLargeSetFile() {
         String comment = "Opening a large file does not work";
         assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));
     }
+    
+    @Test
+    public void testOpenEmptySetFile() {
+        String comment = "Opening an empty file does not work";
+        assertEquals(comment, false, asl.setFile(new File(fileDir + "emptyText.txt")));
+    }
+
+    @Test
+    public void testParseCommandTooLargeFile() {
+        String comment = "Parsing a large file does not work";
+        String[] args = new String[]{"--file","./test/inputfiles/largeTxt.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
+    @Test
+    public void testOpenEmptyReadFile() {
+        String comment = "Opening an empty file does not work";
+        String[] args = new String[]{"--file","./test/inputfiles/emptyText.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
 }
