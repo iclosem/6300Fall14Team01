@@ -104,10 +104,10 @@ is well documented and is responsible for the user manual and help feature imple
 
 | Roles | Assignments |
 | --- | --- | 
-| Project Manager	| [AH](http://github.com/hortinstein) 
+| Project Manager	| [CC](http://github.com/ccone8) 
 | Development Lead 	| [DM](http://github.com/DannieMorales)
 | QA Manager 		| [ABS](http://github.com/bowersaa )
-| Documentation Lead| [CC](http://github.com/ccone8)
+| Documentation Lead| [AH](http://github.com/hortinstein) [CC](http://github.com/ccone8)
 | Developer (Individual Contributor)| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
 |QA Individual Contributor			| [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), [DM](http://github.com/DannieMorales)
 | Pull Request Reviewer| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), [DM](http://github.com/DannieMorales)
