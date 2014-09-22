@@ -5,20 +5,17 @@ import java.nio.file.Paths;
 import java.io.File;
 
 
-public class ASL {
+public class ASL{
 	private String delimiters = ".?!;"; //F_04.1 
     private String essay;
     private int minWordLength = 3; //F_03.1 
     
 
-    //constructor
-    public ASL(String[] args) { 
+    public ASL(){ }
+    
+    public ASL(String[] args){ 
     	this.parseCommandString(args);
     	this.computeAverageSentenceLength();
-    	
-    }
-    public ASL() { 
-       
     }
     
     public String getEssay(){
@@ -60,10 +57,7 @@ public class ASL {
     public int getMinWordLength(){
     	return this.minWordLength;
     }
-    
-	//////////////////
-	//Public Methods//
-	//////////////////
+
 	
 	//@precondition a file has been specified
 	//@post averageSentenceLength is set
@@ -99,7 +93,7 @@ public class ASL {
 	
 	//@precondition none
 	//@post file will be set
-	public boolean setFile(File studentFile) {
+	public boolean setFile(File studentFile){
 		try{
 			if (studentFile.exists()){
 				double bytes = studentFile.length();
