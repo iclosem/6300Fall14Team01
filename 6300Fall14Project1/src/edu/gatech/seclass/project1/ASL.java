@@ -131,6 +131,7 @@ public class ASL {
     		String filePath = "./manual.md";
       		String help = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
       		System.out.println(help);
+      		System.exit(0);
       		
       	} catch(java.io.IOException e){
       		throw new Exception("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
