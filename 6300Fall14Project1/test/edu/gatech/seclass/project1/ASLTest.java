@@ -44,6 +44,19 @@ public class ASLTest {
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
+
+    @Test
+    public void testOpenTooLargeSetFile() {
+        String comment = "Opening a large file does not work";
+        assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));
+    }
+    
+    @Test
+    public void testOpenEmptySetFile() {
+        String comment = "Opening an empty file does not work";
+        assertEquals(comment, false, asl.setFile(new File(fileDir + "emptyText.txt")));
+    }
+
     
     @Test
     public void testSetMinWordLength(){
@@ -102,6 +115,47 @@ public class ASLTest {
     }
     
     @Test
+    public void testCommandParseBadFileF() {
+        String comment = "Parsing of -f command is unsuccessful with bad file input";
+        String[] args = new String[]{"-f","./test/inputfiles/input2sdhyehdfgfile.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
+    @Test
+    public void testCommandParseBadFileFile() {
+        String comment = "Parsing of --file command is unsuccessful with bad file input";
+        String[] args = new String[]{"--file","./test/inputfiles/input2sdhyehdfgfile.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    @Test
+    public void testParseCommandTooLargeFileFile() {
+        String comment = "Parsing a large file does not work with --file";
+        String[] args = new String[]{"--file","./test/inputfiles/largeTxt.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+
+    @Test
+    public void testParseCommandTooLargeFileF() {
+        String comment = "Parsing a large file does not work with -f";
+        String[] args = new String[]{"-f","./test/inputfiles/largeTxt.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
+    @Test
+    public void testOpenEmptyReadFileFile() {
+        String comment = "Opening an empty file does not work with --file";
+        String[] args = new String[]{"--file","./test/inputfiles/emptyText.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
+    @Test
+    public void testOpenEmptyReadFileF() {
+        String comment = "Opening an empty file does not work with -f";
+        String[] args = new String[]{"-f","./test/inputfiles/emptyText.txt"};
+        assertEquals(comment, false, asl.parseCommandString(args));
+    }
+    
+    @Test
     public void testCommandParseHelpH() {
         String comment = "Parsing of -h command is successful";
         String[] args = new String[]{"-h"};
@@ -116,9 +170,9 @@ public class ASLTest {
     }
     
     @Test
-    public void testCommandParseBadFile() {
-        String comment = "Parsing of --file command is unsuccessful with bad file input";
-        String[] args = new String[]{"--file","./test/inputfiles/input2sdhyehdfgfile.txt"};
+    public void testCommandParseBadInput() {
+        String comment = "Parsing of -halp command is unsuccessful";
+        String[] args = new String[]{"-halp"};
         assertEquals(comment, false, asl.parseCommandString(args));
     }
     
@@ -131,32 +185,6 @@ public class ASLTest {
         asl.setFile(new File(fileDir + "input.txt"));
         String setFileOutput = asl.getEssay();
         assertEquals(comment, setFileOutput, readFileOutput );
-    }
-
-    @Test
-    public void testOpenTooLargeSetFile() {
-        String comment = "Opening a large file does not work";
-        assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));
-    }
-    
-    @Test
-    public void testOpenEmptySetFile() {
-        String comment = "Opening an empty file does not work";
-        assertEquals(comment, false, asl.setFile(new File(fileDir + "emptyText.txt")));
-    }
-
-    @Test
-    public void testParseCommandTooLargeFile() {
-        String comment = "Parsing a large file does not work";
-        String[] args = new String[]{"--file","./test/inputfiles/largeTxt.txt"};
-        assertEquals(comment, false, asl.parseCommandString(args));
-    }
-    
-    @Test
-    public void testOpenEmptyReadFile() {
-        String comment = "Opening an empty file does not work";
-        String[] args = new String[]{"--file","./test/inputfiles/emptyText.txt"};
-        assertEquals(comment, false, asl.parseCommandString(args));
     }
     
 }
