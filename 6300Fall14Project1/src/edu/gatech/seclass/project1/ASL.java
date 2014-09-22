@@ -6,7 +6,7 @@ import java.io.File;
 
 
 public class ASL {
-	private String delimiters = "[.?!;]"; //F_04.1 
+	private String delimiters = ".?!;"; //F_04.1 
     private String essay;
     private int minWordLength = 3; //F_03.1 
     
@@ -28,7 +28,7 @@ public class ASL {
     //Sets the internal delimiters variable
 	public boolean setSentenceDelimiters(String delimiters){
         if (delimiters != "" && delimiters != null){
-            this.delimiters = "["+ delimiters +"]";
+            this.delimiters = delimiters;
             return true;
         } else { //F_1.03
         	return printMsgRetFalse("Sentence delimiters were not input correctly. Please retry or reference the help view with -h.");
@@ -68,7 +68,7 @@ public class ASL {
 	//@precondition a file has been specified
 	//@post averageSentenceLength is set
 	public int computeAverageSentenceLength(){
-        String[] essaySentences = essay.split(this.delimiters, 0);//split into sentences, 0 means for all instances
+        String[] essaySentences = essay.split("[" + this.delimiters + "]", 0);//split into sentences, 0 means for all instances
         int totalWords = 0; //keeping track of total words
        	int totalSentences = essaySentences.length; // -1 since split retains the first sentence
         for (String sentence : essaySentences) { // for all of the sentences in essay

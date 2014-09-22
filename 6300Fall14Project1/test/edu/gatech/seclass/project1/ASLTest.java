@@ -65,7 +65,7 @@ public class ASLTest {
     public void testSetSentenceDelimiters(){
     	String testDelimiters = "12@#";
     	asl.setSentenceDelimiters(testDelimiters);
-    	assertEquals("Sentence delimeters can be set to a valid string", "[" + testDelimiters + "]", asl.getDelimeters());
+    	assertEquals("Sentence delimeters can be set to a valid string", testDelimiters, asl.getDelimeters());
     }
     
     @Test
