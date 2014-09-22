@@ -29,6 +29,20 @@ Mandatory arguments to long options are mandatory for short options too.
                                   include integer values from 1 to 15.
   
 ```
+
+####EXAMPLES
+```
+Main -l 5 -f ./test/inputfiles/input.txt           sets the minimnum word size to 5  
+                                                    characters and the input file to 
+                                                    ./test/inputfiles/input.txt 
+        
+Main --delimiters %.! --file C:\Essays\essay.txt   sets the sentence delimiters to %.! 
+                                                    and the input file to 
+                                                    C:\Essays\essay.txt
+
+Main -h                                            displays this help page.
+
+```
 ####AUTHORS      
 
 | Name  				| GATECH Username		| E-mail						| Alias |
