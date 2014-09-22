@@ -120,7 +120,7 @@ public class ASL {
     public void readFile(String filePath) throws Exception{
     		File file = new File(filePath);
     		if( setFile(file) == false){
-	    		throw new Exception("The file path "+ filePath + " that has been input was not successful, please re-enter file path.");
+	    		throw new Exception("The file path "+ filePath + " was not successful, please re-enter file path.");
 	    	}
     }
     
@@ -147,13 +147,18 @@ public class ASL {
 	    	for (int i = 0; i < args.length; i++){
 	    		if (args[i].equals("-d") || args[i].equals("--delimiters")){//F_04.0
 	    			this.setSentenceDelimiters(args[i+1]);
+	    			i++;
 	    		} else if (args[i].equals("-h") || args[i].equals("--help")){
 	    			this.printHelp();
 	    			break;
 	    		} else if (args[i].equals("-f") || args[i].equals("--file")){
 	    			this.readFile(args[i+1]);
+	    			i++;
 	    		} else if (args[i].equals("-l") || args[i].equals("--length")){//F_03.03
 	    			this.setMinWordLength(Integer.parseInt(args[i+1]));
+	    			i++;
+	    		}else{
+	    			return printMsgRetFalse("Could not understand command. Please reference the help view with -h.");
 	    		}
 	    	}
 	    	return true;

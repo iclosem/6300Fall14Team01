@@ -46,6 +46,30 @@ public class ASLTest {
     }
 
     @Test
+    public void testComputeAverageSentenceLength1CommandParse(){
+        String comment = "Testing sentences that span multiple lines with commandParse";
+        String[] args = new String[]{"--file", fileDir + "input.txt"};
+        asl.parseCommandString(args);
+        assertEquals(comment, 7, asl.computeAverageSentenceLength(), 0);	
+	}
+
+    @Test
+    public void testComputeAverageSentenceLength2CommandParse(){
+        String comment = "Testing customized delimiters with commandParse";
+        String[] args = new String[]{"-d", "%.", "-f", fileDir + "input.txt"};
+        asl.parseCommandString(args);
+        assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);	
+	}
+
+    @Test
+    public void testComputeAverageSentenceLength3CommandParse() {
+        String comment = "Testing customized minimal word length with CommandParse";
+        String[] args = new String[]{"-l", "5", "-f", fileDir + "input.txt"};
+        asl.parseCommandString(args);
+        assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    @Test
     public void testOpenTooLargeSetFile() {
         String comment = "Opening a large file does not work";
         assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));
@@ -164,8 +188,8 @@ public class ASLTest {
     
     @Test
     public void testCommandParseHelpHelp() {
-        String comment = "Parsing of -help command is successful";
-        String[] args = new String[]{"-help"};
+        String comment = "Parsing of --help command is successful";
+        String[] args = new String[]{"--help"};
         assertEquals(comment, true, asl.parseCommandString(args));
     }
     
