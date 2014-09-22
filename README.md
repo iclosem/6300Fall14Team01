@@ -3,8 +3,8 @@
 Basecamp:
 https://basecamp.com/2735443/projects/6935660
 
-#### Project Manager       Alex Hortin 
+#### Project Manager       Charles Cone 
 #### Development Lead      Danelle Morales 
 #### QA Manager            Alex Bowers Schoen 
-#### Documentation Lead    Charles Cone 
+#### Documentation Lead    Alex Hortin 
 
