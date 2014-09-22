@@ -70,6 +70,12 @@ public class ASLTest {
     }
     
     @Test
+    public void testComputeAverageSentenceLengthNoEssay() {
+        String comment = "Testing calling computeAverageSentenceLength without setting a file";
+        assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);	
+    }
+    
+    @Test
     public void testOpenTooLargeSetFile() {
         String comment = "Opening a large file does not work";
         assertEquals(comment, false, asl.setFile(new File(fileDir + "largeTxt.txt")));

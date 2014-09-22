@@ -68,29 +68,33 @@ public class ASL {
 	//@precondition a file has been specified
 	//@post averageSentenceLength is set
 	public int computeAverageSentenceLength(){
-        String[] essaySentences = essay.split("[" + this.delimiters + "]", 0);//split into sentences, 0 means for all instances
-        int totalWords = 0; //keeping track of total words
-       	int totalSentences = essaySentences.length; // -1 since split retains the first sentence
-        for (String sentence : essaySentences) { // for all of the sentences in essay
-			if(sentence.length()>0){ //eliminates zero element items resulting from ellipses etc and min ammount of chars
-            	String[] words = sentence.split("\\s+",0);//Separates out words
-       			int wordsThisSentence = words.length;	
-       			for (String entry : words){
-       				//entry = entry.replaceAll("[^a-zA-Z0-9\\s]",""); //regex to remove any punctuation so it does not count for word length
-       				if (entry.length() < this.minWordLength){
-       					wordsThisSentence -= 1;	
-       				}
-       			}
-       			totalWords += wordsThisSentence;         			     			
-       		} else { //if there is a zero element sentence, it skips it and decrements
-		        totalSentences--;
-		    }
-        }//F_02.0
-        int averageWords = (int)(totalWords/totalSentences);
-        System.out.println("The sentence delimiters were: " + this.delimiters);//F_02.2
-		System.out.println("The minimum word length was: " + this.minWordLength);//F_02.1
-		System.out.println("The average number of words per sentence is: " + averageWords);
-		return averageWords;
+		if(essay != null){
+	        String[] essaySentences = essay.split("[" + this.delimiters + "]", 0);//split into sentences, 0 means for all instances
+	        int totalWords = 0; //keeping track of total words
+	       	int totalSentences = essaySentences.length; // -1 since split retains the first sentence
+	        for (String sentence : essaySentences) { // for all of the sentences in essay
+				if(sentence.length()>0){ //eliminates zero element items resulting from ellipses etc and min ammount of chars
+	            	String[] words = sentence.split("\\s+",0);//Separates out words
+	       			int wordsThisSentence = words.length;	
+	       			for (String entry : words){
+	       				//entry = entry.replaceAll("[^a-zA-Z0-9\\s]",""); //regex to remove any punctuation so it does not count for word length
+	       				if (entry.length() < this.minWordLength){
+	       					wordsThisSentence -= 1;	
+	       				}
+	       			}
+	       			totalWords += wordsThisSentence;         			     			
+	       		} else { //if there is a zero element sentence, it skips it and decrements
+			        totalSentences--;
+			    }
+	        }//F_02.0
+	        int averageWords = (int)(totalWords/totalSentences);
+	        System.out.println("The sentence delimiters were: " + this.delimiters);//F_02.2
+			System.out.println("The minimum word length was: " + this.minWordLength);//F_02.1
+			System.out.println("The average number of words per sentence is: " + averageWords);
+			return averageWords;
+		} else {
+			return 0;
+		}
     }
 	
 	//@precondition none
@@ -131,7 +135,6 @@ public class ASL {
     		String filePath = "./manual.md";
       		String help = new String(Files.readAllBytes(Paths.get(filePath))); // reads the bytes in from the file
       		System.out.println(help);
-      		System.exit(0);
       		
       	} catch(java.io.IOException e){
       		throw new Exception("The help file cannot be found.");//F_01.02, should throw exception or report error if file does not exist
