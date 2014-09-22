@@ -53,17 +53,17 @@ import org.junit.Test;
 | --------------------- |:---------------------:|:-----------------------------:|:-----:| 
 | F_01.0 | System will produce a friendly feedback message(s) to user, to assist in case of user operational error. | Users may range in levels of technical background  | high
 | F_1.01 | System will produce a friendly feedback message to user if cap of file size is exceeded. "The file selected has exceeded the allowed file size of 50KB. Please confirm the correct file has been selected and/or modify the text file to fit within the sizing constraints."  | | low
-| F_1.02 | System will produce a friendly feedback message to user if file path input is not successful in loading file. "The file path that has been input was not successful, please re-enter file path.” | | medium
-| F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly. "Sentence delimiters were not input correctly. Please retry or reference the help view.” | | medium
-| F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer or reference the help view.” | | medium
+| F_1.02 | System will produce a friendly feedback message to user if file path input is not successful in loading file. "The file path [path that they input] was not successful, please re-enter file path.” | | medium
+| F_1.03 | System will produce a friendly feedback message to user if sentence delimiters are not input correctly. "Sentence delimiters were not input correctly. Please retry or reference the help view with -h.” | | medium
+| F_1.04 | System will produce a friendly feedback message to user if defining word length not input correctly. "Minimum number of characters used to define a word was not input correctly. Please retry using a positive integer (1-15) or reference the help view with -h.” | | medium
 | F_1.05 | System will produce a friendly feedback message to user when input is null or empty. "The .txt file being accessed is empty. Please confirm proper file path was used." | | medium
 | F_02.0 | System will output the average (mean) number of words per sentence, rounded down to the nearest integer | | high
 | F_02.1 | System will output the constraints for word length used to calculate average sentence length | | low
 | F_02.2 | System will output the constraints for sentence delimiters used to calculate average sentence length | | low
 | F_03.0 | System will have flexibility in defining a word by its minimum length of characters. |The professor is not interested in counting smaller words when averaging the length of a sentence. | high
-| F_03.0 | System will accept values between 1-15 to define a word by its minimum length of characters. | | medium
-|F_03.1 | System default for minimum character length defining a word will be set to three |  | high
-|F_03.2 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
+| F_03.1 | System will accept values between 1-15 to define a word by its minimum length of characters. | | medium
+|F_03.2 | System default for minimum character length defining a word will be set to three |  | high
+|F_03.3 | System allows minimum character length defining a word to set by the user to a positive integer using the flag -l | | high
 | F_04.0 | System allows user to specify sentence delimiters with flag -d |e.g. Should allow user to select a comma ',' as a sentence delimiter | high
 | F_04.1 | System default for sentence delimiters will be .?!; || high
 | F_05.0 | System will compile with javac, java  1.6 or 1.7 | | high
