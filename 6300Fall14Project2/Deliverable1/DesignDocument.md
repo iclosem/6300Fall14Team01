@@ -2,7 +2,7 @@
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: Team01 
 
 ## 1 Design Considerations
 
@@ -10,7 +10,9 @@
 
 ### 1.1 Assumptions
 
-*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
+  - Initially there are  not have concurrent access requirements
+  - Android will be the systems platform
+  - Android Hardware will support 4.* APIs
 
 ### 1.2 Constraints
 
