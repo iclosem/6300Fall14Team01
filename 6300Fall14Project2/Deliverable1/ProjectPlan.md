@@ -51,7 +51,7 @@ Ideally these requirements will be codified with expected outputs.
 - **Activity description** During the architectural design phase, user interface, input types, output types and basic user experience should all be considered when planning for the architecture. The architecture should complement the requirements defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and defined during this point in the process.  This phase we will also model the object interactions in UML.
 - **Entrance criteria** A well-specified product defined by the requirements collected in the requirements analysis phase. An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
 - **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions outlined in a UML document.
-- 
+
 #### Coding and debugging
 
 - **Activity description** This phase focuses on the implementation of the detailed design. This is where all design decisions are implemented
@@ -76,7 +76,6 @@ ensure they cover all areas contained in the implementation and any edge cases.
 | [Alex Bowers Schoen](http://github.com/bowersaa )  	| abowers9				| alexandra.bowers@gmail.com 	| [ABS](http://github.com/bowersaa )   |
 | [Alex Hortin](http://github.com/hortinstein) 	 		| ahortin3				| hortinstein@gmail.com  		| [AH](http://github.com/hortinstein )    |
 | [Charles Cone](http://github.com/ccone8)  	 		| ccone8		        | charlesprestoncone@gmail.com  | [CC](http://github.com/ccone8 )    |
-| [Danelle Morales](http://github.com/DannieMorales) 		| dmorales30			| damoraled@gmail.com 			| [DM](http://github.com/DannieMorales )    |
 	
 #### Roles :
 - **Project Manager**:  The project manager is responsible for the agenda, note taking, upkeep of project management software, 
@@ -97,20 +96,20 @@ is well documented and is responsible for the user manual and help feature imple
 | Roles | Assignments |
 | --- | --- | 
 | Project Manager	| [CC](http://github.com/ccone8) 
-| Development Lead 	| [DM](http://github.com/DannieMorales)
+| Development Lead 	| [AH](http://github.com/hortinstein)
 | QA Manager 		| [ABS](http://github.com/bowersaa )
 | Documentation Lead| [AH](http://github.com/hortinstein) [CC](http://github.com/ccone8)
 | Developer (Individual Contributor)| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
-|QA Individual Contributor			| [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), [DM](http://github.com/DannieMorales)
-| Pull Request Reviewer| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), [DM](http://github.com/DannieMorales)
+|QA Individual Contributor			| [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), 
+| Pull Request Reviewer| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
 
 ### 4) Estimates
 
 #### Effort Hours
-- Effort hours:  40 hours including documentation
+- Effort hours:  50 hours including documentation
 
 #### Lines of Code
-  - Main Class: **200 lines of code** 
-  - Tests: **300 lines of code**
+  - Main Class: **1000 lines of code** 
+  - Tests: **200 lines of code**
 
 
