@@ -1,6 +1,6 @@
 ## **Project Plan -- Team 01**
 
-Contents
+###Contents
 -----------------
 - [Introduction](#introduction)
 - [Process Descriptions](#process-descriptions)
