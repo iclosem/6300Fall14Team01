@@ -6,10 +6,10 @@
 -----------------
 - [Use Case Diagrams](#use-case-diagrams)
 - [Use Case Descriptions](#use-case-descriptions)
-  - [Cart Manager - Edit VIP](#cart-manager-edit-vip)
-  - [Cart Manager - Process Purchase](#cart-manager-process-purchase)
-  - [Cart Manager - Process Preorder](#cart-manager-process-preorder)
-  - [Cart Manager - Generate Daily Report](#cart-manager-generate-daily-report)
+  - [Cart Manager - Edit VIP](#cart-manager--edit-vip)
+  - [Cart Manager - Process Purchase](#cart-manager--process-purchase)
+  - [Cart Manager - Process Preorder](#cart-manager--process-preorder)
+  - [Cart Manager - Generate Daily Report](#cart-manager--generate-daily-report)
  
 ### 1) Use Case Diagram
 
