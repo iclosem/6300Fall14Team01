@@ -67,6 +67,12 @@ ensure they cover all areas contained in the implementation and any edge cases.
 - **Entrance criteria** A functionally complete implementation of the product and a set of well defined tests that verify basic IO.
 - **Exit criteria** To exit this, near 100% code coverage and a full compliment of tests that test the durability of the application.  
 
+#### System Acceptance and Deployment
+
+- **Activity description** During this section, we will verify the system is accepted by the customer and deploy.
+- **Entrance criteria** A functionally complete implementation of the product based on current requirements.
+- **Exit criteria** Acceptance by the customer.
+
 ### 3) Team
 
 #### Team Members:
