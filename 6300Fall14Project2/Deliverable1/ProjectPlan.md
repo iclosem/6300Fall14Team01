@@ -9,6 +9,7 @@ Contents
   - [Design](#Design)
   - [Coding and debugging](#coding-and-debugging)
   - [System Testing](#system-testing)
+  - [System Acceptance and Deployment](#system-acceptance-and-deployment)
 - [Team](#team)
   - [Team Members](#team-members)
   - [Roles](#roles)
