@@ -9,7 +9,6 @@ Contents
   - [Design](#Design)
   - [Coding and debugging](#coding-and-debugging)
   - [System Testing](#system-testing)
-  - [Maintenance](#maintenance)
 - [Team](#team)
   - [Team Members](#team-members)
   - [Roles](#roles)
