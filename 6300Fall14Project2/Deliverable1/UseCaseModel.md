@@ -1,11 +1,6 @@
 ## Use Case Model
 
 **Author**: [CS6300 Fall 2014 Team #1](https://github.com/gt-ud-softeng/6300Fall14Team01)
-
-###Contents
------------------
-- [Use Case Diagrams](#use-case-diagrams)
-- [Use Case Descriptions](#use-case-descriptions)
  
 ### 1) Use Case Diagram
 
