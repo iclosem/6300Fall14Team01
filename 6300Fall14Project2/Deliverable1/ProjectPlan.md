@@ -22,8 +22,6 @@
 
 Author: Team1
 
-## 1 Introduction
-
 IScreamRewards is a rewards management system based on VIP cards on which customers can accrue 
 points based on the amount of money they have spent at IScren and get benefits based on their
 points. This system allows the management the reward system on Android Mobile devices. 
