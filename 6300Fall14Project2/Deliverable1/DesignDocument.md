@@ -55,18 +55,18 @@ https://www.lucidchart.com/invitations/accept/52005991-2e84-40f0-af78-d7e0be970d
 
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
 
-  - ### 4.1 Sell
+### 4.1 Sell
 This mockup would allow for the sale of ice cream
 ![](http://i.imgur.com/0P7eDRn.png)
-  - ### 4.2 Preorder 
+### 4.2 Preorder 
 This mockup would allow for the preorder of ice cream
 ![](http://i.imgur.com/uDnYPtG.png)
-  - ### 4.3 Vip 
+### 4.3 Vip 
 This mockup would allow for the checking of VIP status
 ![](http://i.imgur.com/UVN0sLw.png)
-  - ### 4.4 Report 
+### 4.4 Report 
 This mockup generates the required report
 ![](http://i.imgur.com/0vvLipP.png)
-  - ### 4.5 Create 
+### 4.5 Create 
 This mockup would allow for the creation of users
 ![](http://i.imgur.com/l39y5Wk.png)
