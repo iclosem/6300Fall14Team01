@@ -6,8 +6,7 @@ Contents
 - [Process Descriptions](#process-descriptions)
   - [Software Concept](#softwareconcept)
   - [Requirements Analysis](#requirements-analsys)
-  - [Architectural Design](#architectual-design)
-  - [Detailed Design](#detailed-design)
+  - [Design](#Design)
   - [Coding and debugging](#coding-and-debugging)
   - [System Testing](#system-testing)
   - [Maintenance](#maintenance)
@@ -48,23 +47,12 @@ expected by the application will be specified.
 - **Exit criteria** A set of defined requirements that can be easily linked to specific functionality within the product.  
 Ideally these requirements will be codified with expected outputs. 
 
-#### Architectural Design
+#### Design
 
-- **Activity description** During the architectural design phase, user interface, input types, output types and basic user 
-experience should all be considered when planning for the architecture. The architecture should complement the requirements 
-defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and 
-defined during this point in the process.
+- **Activity description** During the architectural design phase, user interface, input types, output types and basic user experience should all be considered when planning for the architecture. The architecture should complement the requirements defined in the previous process. Implementation language, target platforms, and domain restrictions should be explored and defined during this point in the process.  This phase we will also model the object interactions in UML.
 - **Entrance criteria** A well-specified product defined by the requirements collected in the requirements analysis phase. An extensive set of stakeholder behaviors and use cases should also be defined by this time. 
-- **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions.
-
-#### Detailed Design
-
-- **Activity description** This phase should focus on designing the objects interactions with each other and defining the data attributes, 
-functions, and class relationships. These interactions should be structured in a way that is easily testable and verifiable.
-- **Entrance criteria** An understanding of the data inputs and expected outputs 
-- **Exit criteria** A formal specification of the relationships of the classes. Skeleton code can be generated to show the structure of 
-the program, source hierarchy, etc. 
- 
+- **Exit criteria**  A clear idea of the user interface, language, target platform and broad component interactions outlined in a UML document.
+- 
 #### Coding and debugging
 
 - **Activity description** This phase focuses on the implementation of the detailed design. This is where all design decisions are implemented
