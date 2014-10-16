@@ -13,7 +13,7 @@ IceCreamCart is the implmentation of a rewards system where designated VIP custo
 
 *Here you discuss the reason you are planning to build your product. You’ll want to talk about the problem people are facing, the requirements you need to meet to solve that problem (10000-foot view), and the market itself. Essentially, you’re making a case that the product needs to be built.*
 
-The Brad and Janet, the owners of the local Atlanta ice cream cart IScream, want to put in place a reward system based on VIP cards on which customers can accrue points based on the amount of money they spend and get benefits based on their points.  In a heavily saturated market of fast food desserts, brick-and-mortar coffee shops and dessert boutiques, Brad and Janet believe that along with leveraging the mobility of their business, attracting and maintaining repeat customers, particularly targeted "VIP" customers, is a key to their future success.   
+Brad and Janet, the owners of the local Atlanta ice cream cart IScream, want to put in place a reward system based on VIP cards on which customers can accrue points based on the amount of money they spend and get benefits based on their points.  In a heavily saturated market of fast food desserts, brick-and-mortar coffee shops and dessert boutiques, Brad and Janet believe that along with leveraging the mobility of their business, attracting and maintaining repeat customers, particularly targeted "VIP" customers, is a key to their future success.   
 
 ## 3 Product / Solution Overview
 
