@@ -6,7 +6,7 @@
 
 ### 2.1 Overall strategy
 
-*This section should provide details about your unit-, integration-, system-, and regression-testing strategies. In particular, it should discuss which activities you will perform as part of your testing process, and who will perform such activities.*
+Our overall testing strategy will be a mix of black-box and white-box testing. We will attempt to verify all user interactions with manual testing, and verify calculations with JUnit testing.
 
 ### 2.2 Test Selection
 
@@ -18,11 +18,11 @@ In order to test UI functionality, we will use black-box testing techniques with
 
 ### 2.3 Adequacy Criterion
 
-*Define how you are going to assess the quality of your test cases. Typically, this involves some form of functional or structural coverage. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+We will verify the adequacy of our black-box testing by ensuring all use cases and user screens have testing associated with them. We will also verify that functions involving calculations are covered with JUnit testing, both negative and positive tests.  
 
 ### 2.4 Bug Tracking
 
-Bugs will be tracked with a Google spreadsheet, with issues submitted through a form. 
+Bugs will be tracked with a [Google spreadsheet](https://docs.google.com/forms/d/1gytVHrfrbv2MI5VQauExF8aECjGkEsM3ZttJiNqXxU4/viewform), with issues submitted through a form. 
 
 The form will include fields for:
 - Description
@@ -42,7 +42,6 @@ We intend to use JUnit to create any automated testing.
 
 ## 4 Test Cases
 
-*This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
 
 | Case Number | Purpose             | Steps                                                                                               | Expected Result                                     | Actual Result | Pass/Fail information | Tester's Initials | Notes |
 |:-------------:|---------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------|---------------|-----------------------|:-------------------:|-------|
