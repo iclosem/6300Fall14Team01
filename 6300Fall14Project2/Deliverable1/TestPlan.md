@@ -1,7 +1,5 @@
 # Test Plan
 
-*This is the template for your test plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
 **Author**: Alex Bowers Schoen (Team 01)
 
 ## 2 Testing Strategy
@@ -39,24 +37,24 @@ The form will include fields for:
 
 ### 2.5 Technology
 
-*Describe any testing technology you intend to use or build (e.g., JUnit, Selenium).*
+We intend to use JUnit to create any automated testing.
 
 
 ## 4 Test Cases
 
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
 
-| Case Number | Purpose      | Steps    | Expected Result | Actual Result | Pass/Fail information | Tester's Initials | Notes |
-|-------------|--------------|----------|-----------------|---------------|-----------------------|-------------------|-------|
-| 1           | System Start | Open App | App Opens       |               |                       |                   |       |
-| 2           |              |          |                 |               |                       |                   |       |
-| 3           |              |          |                 |               |                       |                   |       |
-| 4           |              |          |                 |               |                       |                   |       |
-| 5           |              |          |                 |               |                       |                   |       |
-| 6           |              |          |                 |               |                       |                   |       |
-| 7           |              |          |                 |               |                       |                   |       |
-| 8           |              |          |                 |               |                       |                   |       |
-| 9           |              |          |                 |               |                       |                   |       |
-| 10          |              |          |                 |               |                       |                   |       |
-| 11          |              |          |                 |               |                       |                   |       |
-| 12          |              |          |                 |               |                       |                   |       |
+| Case Number | Purpose             | Steps                                                                                               | Expected Result                                     | Actual Result | Pass/Fail information | Tester's Initials | Notes |
+|-------------|---------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------|---------------|-----------------------|-------------------|-------|
+| 1           | System Start        | Open App                                                                                            | App Opens                                           |               |                       |                   |       |
+| 2           | Create VIP Customer | <ul><li>TC1</li><li>Enter Customer's name</li><li>Enter Customer's address</li><li>Enter Customer's DOB</li><li>Click Create User</li></ul> | User is created with correct Name, Address, and DOB |               |                       |                   |       |
+| 3           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 4           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 5           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 6           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 7           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 8           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 9           |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 10          |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 11          |                     |                                                                                                     |                                                     |               |                       |                   |       |
+| 12          |                     |                                                                                                     |                                                     |               |                       |                   |       |
