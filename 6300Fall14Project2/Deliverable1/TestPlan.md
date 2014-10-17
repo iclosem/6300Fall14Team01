@@ -40,8 +40,23 @@ The form will include fields for:
 ### 2.5 Technology
 
 *Describe any testing technology you intend to use or build (e.g., JUnit, Selenium).*
-The 
+
 
 ## 4 Test Cases
 
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+
+| Case Number | Purpose      | Steps    | Expected Result | Actual Result | Pass/Fail information | Tester's Initials | Notes |
+|-------------|--------------|----------|-----------------|---------------|-----------------------|-------------------|-------|
+| 1           | System Start | Open App | App Opens       |               |                       |                   |       |
+| 2           |              |          |                 |               |                       |                   |       |
+| 3           |              |          |                 |               |                       |                   |       |
+| 4           |              |          |                 |               |                       |                   |       |
+| 5           |              |          |                 |               |                       |                   |       |
+| 6           |              |          |                 |               |                       |                   |       |
+| 7           |              |          |                 |               |                       |                   |       |
+| 8           |              |          |                 |               |                       |                   |       |
+| 9           |              |          |                 |               |                       |                   |       |
+| 10          |              |          |                 |               |                       |                   |       |
+| 11          |              |          |                 |               |                       |                   |       |
+| 12          |              |          |                 |               |                       |                   |       |
