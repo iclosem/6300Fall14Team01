@@ -2,7 +2,7 @@
 
 *This is the template for your test plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: Alex Bowers Schoen (Team 01)
 
 ## 2 Testing Strategy
 
@@ -12,7 +12,11 @@
 
 ### 2.2 Test Selection
 
-*Here you should discuss how you are going to select your test cases, that is, which black-box and/or white-box techniques you will use. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+Test cases will be selected based on level of functionality and ability of the user to directly interact with the functionality.
+
+In order to test the base functionality (database connectivity, computational functions), we will use automated JUnit testing in a white-box testing strategy. 
+
+In order to test UI functionality, we will use black-box testing techniques with manual testing based off of scripts. 
 
 ### 2.3 Adequacy Criterion
 
@@ -20,11 +24,23 @@
 
 ### 2.4 Bug Tracking
 
-*Describe how bugs and enhancement requests will be tracked.*
+Bugs will be tracked with a Google spreadsheet, with issues submitted through a form. 
+
+The form will include fields for:
+- Description
+- Type of Bug
+	- Bug
+	- UI Issue
+	- Investigation
+	- Feature
+	- Other categories as needed
+- Priority
+
 
 ### 2.5 Technology
 
 *Describe any testing technology you intend to use or build (e.g., JUnit, Selenium).*
+The 
 
 ## 4 Test Cases
 
