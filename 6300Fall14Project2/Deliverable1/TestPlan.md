@@ -1,6 +1,6 @@
 # Test Plan
 
-**Author**: Alex Bowers Schoen (Team 01)
+**Author**: Team 01
 
 ## 2 Testing Strategy
 
