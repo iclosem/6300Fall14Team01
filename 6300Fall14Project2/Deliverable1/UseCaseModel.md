@@ -4,19 +4,10 @@
  
 ### 1) Use Case Diagram
 
+[Charts built with yuml...editing link here](http://yuml.me/edit/26df9b41)
 ![Cart Manager](http://yuml.me/26df9b41)
 
 ### 2) Use Case Descriptions
-
-*For each use case in the use case diagram, this section should contain a description, with the following elements:*
-
-- *Requirements: High-level description of what the use case must allow the user to do.*
-- *Pre-conditions: Conditions that must be true before the use case is run.*
-- *Post-conditions Conditions that must be true once the use case is run.*
-- *Scenarios: Sequence of events that characterize the use case. This part may include multiple scenarios, for normal, alternate, and exceptional event sequences. These scenarios may be expressed as a list of steps in natural language or as sequence diagrams.*
-
-
-
 
 #### **Cart Manager - Edit VIP** 
 - **Requirements**: Allows the cart manager to make changes to the VIP customer database, including the creation and removal of VIP customers.
@@ -26,7 +17,7 @@
   - 1. A customer requests VIP status.  The manager will input name, address, birth date, etc and save the customer as a VIP, which will generate a VIP ID # and a new database entry which will track points and rewards.
   - 2. A customer's information has changed.  The manager will update the customer's database entry with the new information.
   - 3. A customer has lost his VIP privileges.  The manager will recall and erase this customer's VIP database entry.
-  - 4. A customer's VIP points or rewards status are in dispute and need to be manually updated. The manager will recall the customer's VIP database entry and manually set VIP points, rewards accrued, Gold Status, etc.   
+  
    
 	
 #### **Cart Manager - Process Purchase**
