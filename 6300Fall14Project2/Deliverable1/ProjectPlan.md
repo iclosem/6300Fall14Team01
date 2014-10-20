@@ -1,6 +1,6 @@
 ## **Project Plan -- Team 01**
 
-###Contents
+### Contents
 -----------------
 - [Introduction](#introduction)
 - [Process Descriptions](#process-descriptions)
@@ -24,7 +24,7 @@ Author: [CS6300 Fall 2014 Team #1](https://github.com/gt-ud-softeng/6300Fall14Te
 
 IScreamRewards is a rewards management system based on VIP cards on which customers can accrue 
 points based on the amount of money they have spent at IScren and get benefits based on their
-points. This system allows the management the reward system on Android Mobile devices. 
+points. This system allows the management of the reward system on Android Mobile devices. 
 
 ### 2) Process Descriptions
 
@@ -64,7 +64,7 @@ certain sections of functionality.
 - **Activity description** During this section, tests that were written in the coding and debugging phase should be scrutinized to 
 ensure they cover all areas contained in the implementation and any edge cases.
 - **Entrance criteria** A functionally complete implementation of the product and a set of well defined tests that verify basic IO.
-- **Exit criteria** To exit this, near 100% code coverage and a full compliment of tests that test the durability of the application.  
+- **Exit criteria** To exit this requires a full compliment of testing that verifies the functionality/interoperability of the system components and tests the core computations of the system.  
 
 #### System Acceptance and Deployment
 
@@ -103,9 +103,9 @@ is well documented and is responsible for the user manual and help feature imple
 | Project Manager	| [CC](http://github.com/ccone8) 
 | Development Lead 	| [AH](http://github.com/hortinstein)
 | QA Manager 		| [ABS](http://github.com/bowersaa )
-| Documentation Lead| [AH](http://github.com/hortinstein) [CC](http://github.com/ccone8)
+| Documentation Lead| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
 | Developer (Individual Contributor)| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
-|QA Individual Contributor			| [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8), 
+|QA Individual Contributor			| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
 | Pull Request Reviewer| [ABS](http://github.com/bowersaa ), [AH](http://github.com/hortinstein), [CC](http://github.com/ccone8)
 
 ### 4) Estimates
