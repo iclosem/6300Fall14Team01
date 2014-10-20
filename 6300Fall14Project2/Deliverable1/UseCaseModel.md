@@ -34,7 +34,7 @@
 - **Post-conditions**: either the pre-order is logged into the sales database or the customer is notified that there are no preorder slots remaining.
 - Scenarios:
   - 1. A VIP customer requests a preorder for an ice cream for 11/15/2014.  The cart manager determines there is availability of slots for that date via the sales database and reserves the ice cream for the customer in the Sales Database.
-
+  - 2. A A VIP customer requests a preorder for an ice cream for 11/15/2014, but calls to cancel on 11/14/2014.  The cart manager calls up the preorder and cancels it, freeing up a slot for 11/15 preorders.
 
 #### **Cart Manager - Generate Daily Report**
 - **Requirements**: the cart manager pulls a report from the sales database which shows all purchases and preorders taken on the requested date.  
