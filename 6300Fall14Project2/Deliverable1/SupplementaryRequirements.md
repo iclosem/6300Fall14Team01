@@ -40,3 +40,4 @@ the system for a **VIP custome**r, such as *change* his or her **address**.
 *application will be used on one device* at a time, at least for now.
 
 Supplemental Requirements:
+ - No supplemental requirements identified for the current version.
