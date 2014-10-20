@@ -41,4 +41,4 @@
 - **Pre-conditions**: a report is needed by the Cart Manager
 - **Post-conditions**: a report is generated.
 - **Scenarios**: 
-  - 1. The cart manager wants to know what was purchased and preordered at his cart on 11/15/2014.  He enters the dsate into the application and the report is output to the device.
+  - 1. The cart manager wants to know what was purchased and preordered at his cart on 11/15/2014.  He enters the date into the application and the report is output to the device.
