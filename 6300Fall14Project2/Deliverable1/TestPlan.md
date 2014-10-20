@@ -60,8 +60,8 @@ We intend to use JUnit to create any automated testing.
 | 13          | Process non-VIP sale |<ul><li>Select Purchase Tab</li><li>Select Product</li><li>Do not select VIP customer</li></ul>|Purchase completed without VIP customer|  |                 |       |
 | 14          | Purchase Product with Reward |<ul><li>Select Purchase Tab</li><li>Select product</li><li>Select VIP customer with free rewards pending</li><li>Use the freebie to make purchase</li></ul>| Product is purchased, VIP customer's freebies are depleted by appropriate amount, rewards are not given, and daily report is updated appropriately    |                       |                   |       |
 | 15          | Points not awarded on Preorder until pickup |<ul><li></li><li></li><li></li></ul>|               |                       |                   |       |
-| 16          | Verify Gold Rewards |   <ul><li>Find customer with Gold Rewards earned</li><li></li><li></li></ul>|               |                       |                   |       |
-| 17          | |    <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 16          | Verify Gold Rewards |   <ul><li>Find customer with Gold Rewards earned</li><li>Test the redemption of free items and the deduction from rewards earned.</li><li></li></ul>|               |                       |                   |       |
+| 17          | Verify date based rewards accrual |    <ul><li>Manipulate the Date object to simulate time passing</li><li>Test that VIP Gold customers are receiving free items</li><li></li></ul> |               |                       |                   |       |
 | 18          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
 | 19          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
 | 20          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
