@@ -6,7 +6,7 @@
 
 ### 1.1 Assumptions
 
-  - Initially there are  not have concurrent access requirements
+  - Initially there are no concurrent access requirements
   - Android will be the systems platform
   - Android Hardware will support android API level 19
 
@@ -22,17 +22,13 @@
   
 ## 2 Architectural Design
 
-The architecture provides the high-level design view of our system and provides a basis for more detailed design work. These subsections describe the top-level components of the system and their relationships.
-
 ### 2.1 Component Diagram
-
-*This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
 
 [Charts built with lucidchart...editing link here](https://www.lucidchart.com/invitations/accept/684b73b5-edbb-489c-8cc3-7c27ad836ef7)
 ![Imgur](http://i.imgur.com/jBjp4MD.png?1)
-### 2.2 Deployment Diagram
 
-This section describes how the different components will be deployed on actual hardware devices. 
+
+### 2.2 Deployment Diagram
 
 
 [Charts built with yuml...editing link here](http://yuml.me/edit/7f384fe4)
@@ -50,8 +46,6 @@ This section shows the relationship of our classes.
 
 [Charts built with yuml...editing link here](http://yuml.me/edit/1f150011)
 ![](http://yuml.me/1f150011)
-
-*In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
 
 ### 3.2 Other Diagrams
 
