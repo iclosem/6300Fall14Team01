@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -11,6 +13,39 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+	
+		TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+		tabHost.setup();
+		//this video explains the process i used here...more or less
+		//https://www.youtube.com/watch?v=irDdBxamuZs 
+		TabHost.TabSpec tabSpec = tabHost.newTabSpec("sell");
+		tabSpec.setContent(R.id.sellTab);
+		tabSpec.setIndicator("Sell");
+		tabHost.addTab(tabSpec);
+		
+		tabSpec = tabHost.newTabSpec("preorder");
+		tabSpec.setContent(R.id.preorderTab);
+		tabSpec.setIndicator("Preorder");
+		tabHost.addTab(tabSpec);
+	
+		tabSpec = tabHost.newTabSpec("vips");
+		tabSpec.setContent(R.id.vipsTab);
+		tabSpec.setIndicator("VIPS");
+		tabHost.addTab(tabSpec);
+
+		
+		tabSpec = tabHost.newTabSpec("report");
+		tabSpec.setContent(R.id.reportTab);
+		tabSpec.setIndicator("Report");
+		tabHost.addTab(tabSpec);
+	
+		
+		tabSpec = tabHost.newTabSpec("create");
+		tabSpec.setContent(R.id.createTab);
+		tabSpec.setIndicator("Create");
+		tabHost.addTab(tabSpec);
+
+	
 	}
 
 	@Override
