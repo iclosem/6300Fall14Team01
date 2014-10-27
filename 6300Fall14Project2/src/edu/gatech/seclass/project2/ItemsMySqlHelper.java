@@ -59,7 +59,7 @@ public class ItemsMySQLiteHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_FLAVOR, item.getFlavor()); 
         values.put(KEY_CATEGORY, item.getCategory()); 
-        values.put(KEY_CATEGORY, item.getPrice()); 
+        values.put(KEY_PRICE, item.getPrice()); 
         
  
         // 3. insert
