@@ -1,6 +1,6 @@
 package edu.gatech.seclass.project2;
 
-public class Item {
+public abstract class Item {
     private String flavor;
     private double cost;
  
@@ -11,29 +11,26 @@ public class Item {
     //deduct current date slot
 }
 
-public class IceCream extends Item {
+class IceCream extends Item {
     
     public IceCream(String initFlavor, double initCost){
         super (initFlavor, initCost);
     };
-     public int purchase(int custID){
+    //public int purchase(int custID){
         //this should log the purchase and the customer ID
-    };
+    //};
 }
 
-public class FrozenYogurt extends Item {
+class FrozenYogurt extends Item {
      private int dailyPreorderSlots;
     
-    public FrozenYogurt(string initFlavor, double initCost){
+    public FrozenYogurt(String initFlavor, double initCost){
         super(initFlavor,  initCost);
     };
     
-    public FrozenYogurt(string initFlavor, double initCost){
-        super( initFlavor,  initCost);
-    };
-    public int purchase(int custID){
+    //public int purchase(int custID){
         //this should log the purchase and the customer ID
-    };
+    //};
     //public int preorder(Date date, int vipID){
         //this should log the purchase and the preorder
         //return orderNumber;
