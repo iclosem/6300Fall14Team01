@@ -18,6 +18,9 @@ public class Items {
 	public Items(){
 		
 	}
+	
+	
+   
 	public Item[] inventory(){
       return this.inventory;
 	}    
