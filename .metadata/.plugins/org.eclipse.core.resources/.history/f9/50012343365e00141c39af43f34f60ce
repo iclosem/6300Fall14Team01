@@ -21,11 +21,8 @@ public abstract class Item {
     public double getPrice(){
         return this.cost;
     }
-    public int getID(){
-        return this.ID;
-    }
     public int setID(int initID){
-        return this.ID = initID;
+        this.ID = initID;
     }
     //deduct current date slot
 }

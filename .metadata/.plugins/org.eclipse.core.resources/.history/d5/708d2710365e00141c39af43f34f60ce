@@ -21,11 +21,8 @@ public abstract class Item {
     public double getPrice(){
         return this.cost;
     }
-    public int getID(){
-        return this.ID;
-    }
-    public int setID(int initID){
-        return this.ID = initID;
+    public double setID(int ID){
+        this.ID = ID;
     }
     //deduct current date slot
 }
@@ -33,7 +30,7 @@ public abstract class Item {
 class IceCream extends Item {
     
     public IceCream(String initFlavor, double initCost){
-        super (initFlavor, initCost, "IceCream");
+        super (initFlavor, initCost, 'IceCream');
     };
     //public int purchase(int custID){
         //this should log the purchase and the customer ID in the DB
@@ -46,7 +43,7 @@ class FrozenYogurt extends Item {
     private int dailyPreorderSlots = 30; //used to check against database (subtract all other preorders for the day in question)
     
     public FrozenYogurt(String initFlavor, double initCost){
-        super(initFlavor,  initCost, "FrozenYogurt");
+        super(initFlavor,  initCost, 'FrozenYogurt');
     };
     
     //public int purchase(int custID){
