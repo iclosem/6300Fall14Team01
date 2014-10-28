@@ -1,0 +1,179 @@
+package edu.gatech.seclass.project2;
+import java.util.List;
+import edu.gatech.seclass.project2.Purchase;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+
+//date help here
+//http://stackoverflow.com/questions/1081234/java-date-insert-into-database
+
+public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
+	   // Database Version
+    private static final int DATABASE_VERSION = 1;
+    // Database Name
+    private static final String DATABASE_NAME = "puchasesDB";
+ 
+    public PurchasesMySQLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION); 
+    }
+ 
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // SQL statement to create puchases table
+        String CREATE_PURCHASES_TABLE = "CREATE TABLE puchases ( " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "flavor TEXT, "+
+                "category TEXT, "+ //yogurt or icecream
+                "puchasetype TEXT, "+ //puchase or preorder
+                "price TEXT, "+
+                "date TEXT, "+
+                "vipid TEXT )";
+ 
+        // create puchases table
+        db.execSQL(CREATE_PURCHASES_TABLE);
+    }
+ 
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS puchases");
+        // create fresh puchases table
+        this.onCreate(db);
+    }
+     
+    private static final String TABLE_PURCHASES = "puchases";
+ 
+    // puchases Table Columns names
+    private static final String KEY_ID = "id";
+    private static final String KEY_FLAVOR = "flavor";
+    private static final String KEY_CATEGORY = "category";
+    private static final String KEY_PURCHASETYPE = "puchasetype";
+    private static final String KEY_PRICE = "price";
+    private static final String KEY_DATE = "date";
+    private static final String KEY_VIPID = "vipid";
+    
+    private static final String[] COLUMNS = {KEY_ID,KEY_FLAVOR, KEY_CATEGORY, KEY_PURCHASETYPE, KEY_PRICE, KEY_DATE, KEY_VIPID};
+     
+    public void addPurchase(Purchase purchase){
+        SQLiteDatabase db = this.getWritableDatabase(); //get reference to writable DB 
+        ContentValues values = new ContentValues();
+        values.put(KEY_FLAVOR, purchase.getFlavor()); 
+        values.put(KEY_CATEGORY, purchase.getCategory()); 
+        values.put(KEY_PURCHASETYPE, purchase.getPurchaseType()); 
+        values.put(KEY_PRICE, purchase.getPrice());
+        values.put(KEY_DATE, purchase.getDate());
+        values.put(KEY_VIPID, purchase.getVIPID());
+        // 3. insert
+        db.insert(TABLE_PURCHASES, // table
+                null, //nullColumnHack
+                values); // key/value -> keys = column names/ values = column values
+ 
+        // 4. close
+        db.close();
+    }
+ 
+    public Purchase getOrder(int id){
+ 
+        //get reference to readable DB
+        SQLiteDatabase db = this.getReadableDatabase();
+ 
+        //build query
+        Cursor cursor =
+                db.query(TABLE_PURCHASES, // a. table
+                COLUMNS, // b. column names
+                " id = ?", // c. selections
+                new String[] { String.valueOf(id) }, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+ 
+        //if we got results get the first one
+        if (cursor != null)
+            cursor.moveToFirst();
+        //build purchase object
+        Purchase purchase = new Purchase();
+        int ID = Integer.parseInt(cursor.getString(0)));
+        String flavor = cursor.getString(1);
+        String category = cursor.getString(2);
+        String purchaseType = cursor.getString(3);
+        String price = cursor.getString(4);
+        String date = cursor.getString(5);
+        String vipid= cursor.getString(6);
+        return purchase;
+    }
+    
+    public List<Purchase> getPreorders() {
+        List<Purchase> puchases = new LinkedList<Purchase>();
+ 
+        String query = "SELECT  * FROM " + TABLE_PURCHASES;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+ 
+        //go over each row, build item and add it to list
+        Purchase puchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+                purchase = new Purchase();
+                Purchase purchase = new Purchase();
+                int ID = Integer.parseInt(cursor.getString(0)));
+                String flavor = cursor.getString(1);
+                String category = cursor.getString(2);
+                String purchaseType = cursor.getString(3);
+                String price = cursor.getString(4);
+                String date = cursor.getString(5);
+                String vipid= cursor.getString(6);
+    
+                purchases.add(puchase);
+            } while (cursor.moveToNext());
+        }
+ 
+        // return puchases
+        return purchases;
+    }
+    public List<Purchase> getPurchases() {
+        List<Purchase> purchases = new LinkedList<Purchase>();
+ 
+        String query = "SELECT  * FROM " + TABLE_PURCHASES;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+ 
+        //go over each row, build item and add it to list
+        Purchase purchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+                purchase = new Purchase();
+                //check to see if its a preorder
+                ////ID
+                //Flavor
+                //Category 
+                //Purchasetype
+                //date
+                //vipid
+                //
+                //ID Integer.parseInt(cursor.getString(0))); //ID
+                //flavor (cursor.getString(0))); //Flavor
+                //category (cursor.getString(2));   //Category
+                //price Integer.parseInt(cursor.getString(3));     //Price
+    
+                purchases.add(purchase);
+            } while (cursor.moveToNext());
+        }
+ 
+        // return purchases
+        return purchases;
+    }
+ 
+    public void deletePurchase(Purchase puchase) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_PURCHASES,
+                KEY_ID+" = ?",
+                new String[] { String.valueOf(puchase.getID()) });
+        db.close();
+    }
+}

@@ -1,0 +1,71 @@
+package edu.gatech.seclass.project2;
+import java.util.Date;
+
+public abstract class Purchase {
+    private int id;
+    private String flavor;
+    private String category;//yogurt or icecream 
+    private String purchaseType;//preorder or sale
+    private double price;
+    private Date date;
+    private String vipid;
+    private boolean freebie; //if it was a freebie or not
+    
+    //constructor
+    public Purchase(String initFlavor, 
+    				String initCategory, 
+    				String initPurchaseType, 
+    				double initPrice, 
+    				Date initDate, 
+    				String initVIPID){     
+        this.flavor = initFlavor;
+        this.category = initCategory;
+        this.purchaseType = initPurchaseType;
+        this.price = initPrice;
+        this.date = initDate;
+        this.vipid = initVIPID;
+    }
+    
+    public int setID(int initID){
+        return this.id = initID;
+    }
+    public int getID(){
+        return this.id;
+    }
+    public String getFlavor(){
+        return this.flavor;
+    }
+    public String getCategory(){
+        return this.category;
+    }//yogurt or icecream 
+    public String getPurchaseType(){
+        return this.purchaseType;
+    }
+    public double getPrice(){
+        return this.price;
+    }
+    public Date getDate(){
+        return this.date;
+    }
+    public String getVIPID(){
+        return this.vipid;
+    }
+}
+class Preorder extends Purchase{
+    public Preorder(String initFlavor, 
+					String initCategory, 
+					double initPrice, 
+					Date initDate, 
+					String initVIPID){
+        super (initFlavor, initCategory, "preorder", initPrice, initDate, initVIPID );
+    };
+}
+class Sale extends Purchase{
+    public Preorder(String initFlavor, 
+					String initCategory, 
+					double initPrice, 
+					Date initDate, 
+					String initVIPID){
+        super (initFlavor, initCategory, "sale", initPrice, initDate, initVIPID );
+    };
+}}
