@@ -1,6 +1,13 @@
 INDEX VERSION 1.127+D:\workspace\6300Fall14Team01\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 1723719449.index
 3423435590.index
 535940297.index
 1284074322.index
+=======
+>>>>>>> ItemClass
 3823353004.index
+535940297.index
+1284074322.index
+1642392601.index
+3423435590.index
