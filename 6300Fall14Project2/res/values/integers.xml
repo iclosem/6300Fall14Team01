@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="as">3</integer>
+    <integer name="as2">5</integer>
 </resources>
