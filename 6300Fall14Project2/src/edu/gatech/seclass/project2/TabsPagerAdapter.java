@@ -3,7 +3,7 @@ import edu.gatech.seclass.project2.SellFragment;
 import edu.gatech.seclass.project2.PreorderFragment;
 import edu.gatech.seclass.project2.VIPFragment;
 import edu.gatech.seclass.project2.ReportFragment;
-import edu.gatech.seclass.project2.EditFragment;
+import edu.gatech.seclass.project2.CreateFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,7 +33,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             return new ReportFragment();
         case 4:
             // VIP fragment activity
-            return new EditFragment();
+            return new CreateFragment();
         }
  
         return null;
