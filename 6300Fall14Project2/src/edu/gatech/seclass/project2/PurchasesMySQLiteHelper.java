@@ -8,7 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
+import android.util.Log;p
 
 
 //date help here
@@ -18,7 +18,7 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
 	   // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
-    private static final String DATABASE_NAME = "puchasesDB";
+    private static final String DATABASE_NAME = "customersDB";
  
     public PurchasesMySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION); 
@@ -27,33 +27,33 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         // SQL statement to create purchases table
-        String CREATE_PURCHASES_TABLE = "CREATE TABLE puchases ( " +
+        String CREATE_PURCHASES_TABLE = "CREATE TABLE purchases ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "flavor TEXT, "+
                 "category TEXT, "+ //yogurt or icecream
-                "puchasetype TEXT, "+ //puchase or preorder
+                "purchasetype TEXT, "+ //purchase or preorder
                 "price TEXT, "+
                 "date TEXT, "+
                 "vipid TEXT )";
  
-        // create puchases table
+        // create purchases table
         db.execSQL(CREATE_PURCHASES_TABLE);
     }
  
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS puchases");
-        // create fresh puchases table
+        db.execSQL("DROP TABLE IF EXISTS purchases");
+        // create fresh purchases table
         this.onCreate(db);
     }
      
-    private static final String TABLE_PURCHASES = "puchases";
+    private static final String TABLE_PURCHASES = "purchases";
  
-    // puchases Table Columns names
+    // purchases Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_FLAVOR = "flavor";
     private static final String KEY_CATEGORY = "category";
-    private static final String KEY_PURCHASETYPE = "puchasetype";
+    private static final String KEY_PURCHASETYPE = "purchasetype";
     private static final String KEY_PRICE = "price";
     private static final String KEY_DATE = "date";
     private static final String KEY_VIPID = "vipid";
