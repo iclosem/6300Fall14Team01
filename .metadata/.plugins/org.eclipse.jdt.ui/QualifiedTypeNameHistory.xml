@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="edu.gatech.seclass.project2.R"/>
 <fullyQualifiedTypeName name="android.widget.TabHost"/>
 <fullyQualifiedTypeName name="android.widget.TabHost.TabSpec"/>
@@ -7,4 +8,14 @@
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
 <fullyQualifiedTypeName name="android.support.v4.view.ViewPager"/>
 <fullyQualifiedTypeName name="android.support.v7.app.ActionBar"/>
+=======
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.text.Annotation"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="edu.gatech.seclass.project2.Purchase"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+>>>>>>> deliverable2
 </qualifiedTypeNameHistroy>
