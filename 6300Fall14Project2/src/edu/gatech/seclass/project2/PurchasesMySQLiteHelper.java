@@ -108,11 +108,11 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
         return purchases;
     }
  
-    public void deletePurchase(Purchase puchase) {
+    public void deletePurchase(Purchase purchase) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PURCHASES,
                 KEY_ID+" = ?",
-                new String[] { String.valueOf(puchase.getID()) });
+                new String[] { String.valueOf(purchase.getID()) });
         db.close();
     }
 }
