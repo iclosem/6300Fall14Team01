@@ -78,6 +78,7 @@ public class Customer {
     //this method can be called anytime the customer is accessed it will s
     public int creditFreeItem(){
         this.freeItemsAvailable++;
+        return this.freeItemsAvailable;
     };
     
     //private methods 

@@ -83,7 +83,7 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
     }
 
     public List<Customer> getCustomers() {
-        List<Customer> Customers = new LinkedList<Customer>();
+        List<Customer> customers = new LinkedList<Customer>();
  
         String query = "SELECT  * FROM " + TABLE_CUSTOMERS;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -110,7 +110,7 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
         }
  
         // return customers
-        //return customers;
+        return customers;
     }
     
     //this function will increment all gold customers freeitemsavailable by one
