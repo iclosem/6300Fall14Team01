@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;6300Fall14Project2&apos;&#x0D;&#x0A;- Original project: &apos;6300Fall14Project2&apos;&#x0D;&#x0A;- Original element: &apos;edu.gatech.seclass.project2.ItemsMySQLiteHelper.java&apos;" description="Delete element" element1="/src&lt;edu.gatech.seclass.project2{ItemsMySQLiteHelper.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1414459463189" subPackages="false" version="1.0"/>
-</session>
