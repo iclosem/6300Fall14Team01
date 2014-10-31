@@ -1,14 +1,15 @@
-## **iScream - User Manual**
-
+## **iScream - User Manual** 
+#####CS6300 Fall 2014 Team 01
 Contents
 -----------------
+
 - [Introduction](#introduction)
   - [Scope and Purpose](#scope-and-purpose)
   - [Process Overview](#process-overview)
-  - [Create a VIP Customer](#Create-a-VIP-Customer)
-  - [Process a Purchase](#Process-a-Purchase)
-  - [Process a Preorder](#Process-a-Preorder)
-  - [Daily Sales Report](#Daily-Sales-Report)
+  - [Create a VIP Customer](#create-a-vip-customer)
+  - [Process a Purchase](#process-a-purchase)
+  - [Process a Preorder](#process-a-preorder)
+  - [Daily Sales Report](#daily-Sales-peport)
 - [Team](#team)
   - [Team Members](#team-members)
   - [Roles](#roles)
