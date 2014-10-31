@@ -9,11 +9,9 @@ Contents
   - [Create a VIP Customer](#create-a-vip-customer)
   - [Process a Purchase](#process-a-purchase)
   - [Process a Preorder](#process-a-preorder)
-  - [Daily Sales Report](#daily-Sales-peport)
-- [Team](#team)
+  - [Daily Sales Report](#daily-sales-report)
+- [Appendix](#appendix)
   - [Team Members](#team-members)
-  - [Roles](#roles)
-  - [Project Roles](#project-roles)
 
 
 
@@ -61,8 +59,8 @@ _typical sequence for using the software to manage {group of workflows/functions
 
 - **Activity description** 
 
-
-### Team
+#### Apendix
+### Contacts
 
 #### Team Members:
 
