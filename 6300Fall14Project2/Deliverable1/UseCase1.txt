@@ -1,0 +1,12 @@
+[Cart Manager]
+[Cart Manager]-(Edit VIP)
+(Edit VIP)<(Create VIP)
+(Edit VIP)<(Remove VIP)
+(Edit VIP)>(Query VIP Database)
+[Cart Manager]-(Process Purchase)
+(Process Purchase)>(Query VIP Database)
+[Cart Manager]-(Process Preorder)
+[Cart Manager]-(Generate Daily Report)
+(Process Purchase)>(Query Sales Database)
+(Process Preorder)>(Query Sales Database)
+(Generate Daily Report)>(Query Sales Database)
