@@ -2,7 +2,7 @@ package edu.gatech.seclass.project2;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.gatech.seclass.project2.Customer;
+import edu.gatech.seclass.project2.Customers;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -101,7 +101,7 @@ public class CustomerMySQLiteHelper extends SQLiteOpenHelper{
             	String goldstatusdate = cursor.getString(5);
                 Double discount = Double.parseDouble(cursor.getString(6));
             	int freeitemsavailable = Integer.getInteger(cursor.getString(7));
-                //customer = new Customer(ID, name, birthday, address, vippointstotal, goldstatusdate, discount, freeitemsavailable);
+                customer = new Customer(ID, name, birthday, address, vippointstotal, goldstatusdate, discount, freeitemsavailable);
                
     
                 customers.add(customer);

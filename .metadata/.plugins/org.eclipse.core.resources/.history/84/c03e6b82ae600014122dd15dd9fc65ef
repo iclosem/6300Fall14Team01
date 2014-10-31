@@ -2,7 +2,7 @@ package edu.gatech.seclass.project2;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.gatech.seclass.project2.Customer;
+import edu.gatech.seclass.project2.Customers;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
