@@ -2,7 +2,7 @@ package edu.gatech.seclass.project2;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.gatech.seclass.project2.Customers;;
+import edu.gatech.seclass.project2.Customers;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,13 +14,13 @@ import android.util.Log;
 //date help here
 //http://stackoverflow.com/questions/1081234/java-date-insert-into-database
 
-public class Customers extends SQLiteOpenHelper{
+public class CustomerMySQLiteHelper extends SQLiteOpenHelper{
 	   // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
     private static final String DATABASE_NAME = "customersDB";
- 
-    public CustomersMySQLiteHelper(Context context) {
+    
+    public CustomerMySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION); 
     }
  
@@ -102,7 +102,7 @@ public class Customers extends SQLiteOpenHelper{
                 Double discount = Double.parseDouble(cursor.getString(6));
             	int freeitemsavailable = cursor.getString(7);
                 Customer customer = new Customer(ID, name, birthday, address, vippointstotal, goldstatusdate, percentdiscount, freeitemsavailable);
-                customer.setID(ID)
+                customer.setID(ID);
     
                 customers.add(customer);
             } while (cursor.moveToNext());
