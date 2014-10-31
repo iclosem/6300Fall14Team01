@@ -2,6 +2,7 @@ package edu.gatech.seclass.project2;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Customer {
@@ -15,13 +16,12 @@ public class Customer {
     private int freeItemsAvailable;
     
     //this creates a new customer
-    public Customer(String initName, string initBirthday, String initAddress){
+    public Customer(String initName, String initBirthday, String initAddress){
         this.birthday = initBirthday;
         this.name = initName;
         this.address = initAddress;
         this.goldStatusDate = null;
         this.percentDiscount = 0;
-        this.goldStatus = false;
         this.freeItemsAvailable = 0;
 
     }
@@ -68,10 +68,11 @@ public class Customer {
             this.freeItemsAvailable-=numberOfItems;
             return numberOfItems; //all are available for free
         } else if (this.freeItemsAvailable < numberOfItems){
-            int returnAvailable = this.freeItemsAvailable
+            int returnAvailable = this.freeItemsAvailable;
             this.freeItemsAvailable = 0;
             return returnAvailable;
         }
+        return 0;
     }
     
     //this method can be called anytime the customer is accessed it will s
@@ -89,20 +90,21 @@ public class Customer {
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         String formatted = format1.format(cal.getTime());
         this.goldStatusDate = formatted;
-        this.percentDiscount = .10 //
+        this.percentDiscount = .10; //
       
     };
     
     //getters 
     //
-    public String getBirthday(){ return this.birthday}
-    public String getName(){ return this.name}
-    public String getAddress(){ return this.address}
-    public int getVIPNumber(){ return this.vipNumber}
-    public int getVIPPointsTotal (){ return this.vipPointsTotal}
-    public String getGoldStatusDate(){ return this.goldStatusDate}
-    public double getPercentDiscount(){ return this.percentDiscount}
-    public int getFreeItemsAvailable(){ return this.freeItemsAvailable}
+    public int getID(){ return this.vipNumber;}
+    public String getBirthday(){ return this.birthday;}
+    public String getName(){ return this.name;}
+    public String getAddress(){ return this.address;}
+    public int getVIPNumber(){ return this.vipNumber;}
+    public int getVIPPointsTotal (){ return this.vipPointsTotal;}
+    public String getGoldStatusDate(){ return this.goldStatusDate;}
+    public double getPercentDiscount(){ return this.percentDiscount;}
+    public int getFreeItemsAvailable(){ return this.freeItemsAvailable;}
   
 }
 

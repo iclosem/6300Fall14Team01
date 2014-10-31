@@ -2,13 +2,13 @@ package edu.gatech.seclass.project2;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.gatech.seclass.project2.Purchase;;
+import edu.gatech.seclass.project2.Purchase;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;p
+import android.util.Log;
 
 
 //date help here
@@ -89,7 +89,7 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
         Purchase purchase = null;
         if (cursor.moveToFirst()) {
             do {
-                
+                int ID = Integer.parseInt(cursor.getString(0));
                 String flavor = cursor.getString(1);
                 String category = cursor.getString(2);
                 String purchaseType = cursor.getString(3);
@@ -97,8 +97,8 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 String date = cursor.getString(5);
                 String vipid= cursor.getString(6);
             	
-                Purchase purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
-                purchase.setID(ID)
+                purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
+                purchase.setID(ID);
     
                 purchases.add(purchase);
             } while (cursor.moveToNext());
