@@ -59,21 +59,34 @@ iScream manages 5 basic user input scenarios represented by tabs on the applicat
 #### Edit VIP Customer Data
 
 - To review, edit or delete VIP customer data, select the VIPS tab from the main interface.  
+	- Enter the Customer VIP ID
+	- Tap the "Retrieve" button to bring up the customer's data.
+	- Edit the fields as needed and tap the "Save" button to record changes.
+	- Tap the "Delete" button to remove the VIP customer from the database
+
+#### Daily Sales Report
+
+- To access the sales reports features, select the REPORTS tab from the main interface.
+	- Select the desired date
+	- For the daily sales report, select the SALES REPORT radio button.
+	- For the daily preorders report, select the PREORDERS REPORT radio button.
+	- Tap the "Execute" button to view the chosen report. 
 
 
 #### Create a VIP Customer
 
-- **Activity description** 
+- To create a new VIP customer select the CREATE tab from the Main Interface
+	- Enter the customer name, address and birth date in the appropriate fields.
+	- Tap the "Generate" button to add the customer to the VIP database.  
+	- The customer's VIP ID will be displayed.  Provide this to the customer.
 
 
- 
-#### Daily Sales Report
 
-- **Activity description** 
 
-#### Apendix
+## Apendix
 ### Contacts
-
+- For user support, contact any of our team members below.
+ 
 #### Team Members:
 
 | Name  				| GATECH Username		| E-mail						| Alias |

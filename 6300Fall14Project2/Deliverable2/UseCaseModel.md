@@ -4,8 +4,9 @@
  
 ### 1) Use Case Diagram
 
-[Charts built with yuml...editing link here](http://yuml.me/edit/26df9b41)
-![Cart Manager](http://yuml.me/26df9b41)
+[Charts built with yuml...editing link here](http://yuml.me/edit/5b927c22)
+![Cart Manager](http://yuml.me/5b927c22)
+
 
 ### 2) Use Case Descriptions
 
