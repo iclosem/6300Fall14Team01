@@ -1,4 +1,47 @@
-# Traceability Information Table
+# Test Plan
+
+**Author**: [CS6300 Fall 2014 Team #1](https://github.com/gt-ud-softeng/6300Fall14Team01) 
+
+## 2 Testing Strategy
+
+### 2.1 Overall strategy
+
+Our overall testing strategy will be a mix of black-box and white-box testing. We will attempt to verify all user interactions with manual testing, and verify calculations with JUnit testing.
+
+### 2.2 Test Selection
+
+Test cases will be selected based on level of functionality and ability of the user to directly interact with the functionality.
+
+In order to test the base functionality (database connectivity, computational functions), we will use automated JUnit testing in a white-box testing strategy. 
+
+In order to test UI functionality, we will use black-box testing techniques with manual testing based off of scripts. Tests will be created to cover the use cases stated in the Use Case model.
+
+### 2.3 Adequacy Criterion
+
+We will verify the adequacy of our black-box testing by ensuring all use cases and user screens have testing associated with them. We will also verify that functions involving calculations are covered with JUnit testing, both negative and positive tests.  
+
+### 2.4 Bug Tracking
+
+Bugs will be tracked with a [Google spreadsheet](https://docs.google.com/forms/d/1gytVHrfrbv2MI5VQauExF8aECjGkEsM3ZttJiNqXxU4/viewform), with issues submitted through a form. 
+
+The form will include fields for:
+- Description
+- Type of Bug
+	- Bug
+	- UI Issue
+	- Investigation
+	- Feature
+	- Other categories as needed
+- Priority
+
+
+### 2.5 Technology
+
+We intend to use JUnit to create any automated testing.
+
+
+## 4 Test Cases
+
 
 | Case Number | Purpose             | Steps                                                                                               | Expected Result                                     | Actual Result | Pass/Fail information | Tester's Initials | Notes |
 |:-------------:|---------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------|---------------|-----------------------|:-------------------:|-------|

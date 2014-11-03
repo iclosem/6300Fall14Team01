@@ -17,45 +17,66 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/TextViewTitle"
+	    android:height="@dimen/abc_action_bar_title_text_size"
 	    android:hint="Name"
 	    android:inputType="textEmailAddress"
+	    android:lines="@integer/abc_max_action_buttons"
 	    android:textSize="15dp" >
 
 	</EditText>
 
     <EditText
-        android:id="@+id/EditTextFeedbackBody"
+        android:id="@+id/EditTextAddress"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/EditTextName"
         android:ems="10"
+        android:height="@dimen/abc_action_bar_title_text_size"
         android:hint="Address"
         android:inputType="textMultiLine"
-        android:lines="5"
+        android:lines="@integer/abc_max_action_buttons"
         android:textSize="15dp" />
-    
-    <DatePicker
-        android:id="@+id/datePicker1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/EditTextFeedbackBody"
-        android:paddingBottom="15dp"
-        android:paddingLeft="18dp"
-        android:paddingRight="18dp" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/datePicker1"
+        android:layout_below="@+id/EditTextDOB"
         android:paddingLeft="18dp"
         android:paddingRight="18dp"
         android:paddingTop="5dp"
         android:text="Register" />
+
+    <EditText
+        android:id="@+id/EditTextDOB"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditTextAddress"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="date" 
+        android:hint="Birth Date" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="57dp"
+        android:text="Generated VIP ID: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
     
 </RelativeLayout>
