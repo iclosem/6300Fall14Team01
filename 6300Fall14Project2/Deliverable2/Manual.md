@@ -8,7 +8,7 @@ Contents
   - [Process Overview](#process-overview)
   - [Process a Purchase](#process-a-purchase)
   - [Process a Preorder](#process-a-preorder)
-  - [Edit VIP Customer Data](edit-vip-customer-data)
+  - [Edit VIP Customer Data](#edit-vip-customer-data)
   - [Daily Sales Report](#daily-sales-report)
   - [Create a VIP Customer](#create-a-vip-customer)
 - [Appendix](#appendix)
