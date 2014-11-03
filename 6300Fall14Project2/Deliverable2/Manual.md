@@ -1,9 +1,13 @@
 ## **iScream - User Manual** 
 <<<<<<< HEAD
+##### CS6300 Fall 2014 Team 01
+=======
+<<<<<<< HEAD
 #####CS6300 Fall 2014 Team 01
 =======
 ##### CS6300 Fall 2014 Team 01
 >>>>>>> deliverable2
+>>>>>>> master
 Contents
 -----------------
 
@@ -11,22 +15,30 @@ Contents
   - [Scope and Purpose](#scope-and-purpose)
   - [Process Overview](#process-overview)
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   - [Create a VIP Customer](#create-a-vip-customer)
   - [Process a Purchase](#process-a-purchase)
   - [Process a Preorder](#process-a-preorder)
   - [Daily Sales Report](#daily-sales-report)
 =======
+>>>>>>> master
   - [Process a Purchase](#process-a-purchase)
   - [Process a Preorder](#process-a-preorder)
   - [Edit VIP Customer Data](#edit-vip-customer-data)
   - [Daily Sales Report](#daily-sales-report)
   - [Create a VIP Customer](#create-a-vip-customer)
+<<<<<<< HEAD
+=======
 >>>>>>> deliverable2
+>>>>>>> master
 - [Appendix](#appendix)
   - [Team Members](#team-members)
 
 
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 ### Introduction
 
@@ -76,6 +88,7 @@ _typical sequence for using the software to manage {group of workflows/functions
 ### Contacts
 
 =======
+>>>>>>> master
 ## Introduction
 
 #### Scope and Purpose
@@ -147,7 +160,10 @@ iScream manages 5 basic user input scenarios represented by tabs on the applicat
 ### Contacts
 - For user support, contact any of our team members below.
  
+<<<<<<< HEAD
+=======
 >>>>>>> deliverable2
+>>>>>>> master
 #### Team Members:
 
 | Name  				| GATECH Username		| E-mail						| Alias |
@@ -157,5 +173,9 @@ iScream manages 5 basic user input scenarios represented by tabs on the applicat
 <<<<<<< HEAD
 | [Charles Cone](http://github.com/ccone8)  	 		| ccone8		        | charlesprestoncone@gmail.com  | [CC](http://github.com/ccone8 )    |
 =======
+<<<<<<< HEAD
+| [Charles Cone](http://github.com/ccone8)  	 		| ccone8		        | charlesprestoncone@gmail.com  | [CC](http://github.com/ccone8 )    |
+=======
 | [Charles Cone](http://github.com/ccone8)  	 		| ccone8		        | charlesprestoncone@gmail.com  | [CC](http://github.com/ccone8 )    |
 >>>>>>> deliverable2
+>>>>>>> master
