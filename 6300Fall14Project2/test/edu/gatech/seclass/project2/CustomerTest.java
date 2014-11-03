@@ -30,5 +30,10 @@ public class CustomerTest {
 	public void test() {
 		fail("Not yet implemented");
 	}
+	
+	public void createCustomerTest(){
+		Customer newCust = new Customer("Pickles McGee", "01/02/03", "123 Main St.");
+		assertEquals("new cust", newCust.getName(), "Pickles McGee");
+	}
 
 }
