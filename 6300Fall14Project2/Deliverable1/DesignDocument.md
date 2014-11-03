@@ -44,8 +44,8 @@ Here the low-level design for each of the system components is shown. For each c
 
 This section shows the relationship of our classes.
 
-[Charts built with yuml...editing link here](http://yuml.me/edit/1f150011)
-![](http://yuml.me/1f150011)
+[Charts built with yuml...editing link here](http://yuml.me/edit/89609458)
+![](http://yuml.me/89609458)
 
 ### 3.2 Other Diagrams
 
