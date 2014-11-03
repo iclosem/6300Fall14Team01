@@ -25,7 +25,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Firstname Lastname" />
+        android:hint="FirstName LastName" />
 
     <EditText
         android:id="@+id/EditTextAddress"
@@ -45,12 +45,12 @@
         android:id="@+id/EditTextDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/EditTextAddress"
+        android:layout_alignStart="@+id/EditTextAddress"
         android:layout_below="@+id/EditTextAddress"
         android:layout_marginTop="23dp"
         android:ems="10"
         android:inputType="date"
-        android:hint="DoB" />
+        android:hint="DOB: MM/DD/YYYY" />
 
     <Button
         android:id="@+id/create_button1"
@@ -60,7 +60,7 @@
         android:layout_alignLeft="@+id/EditTextDOB"
         android:layout_below="@+id/EditTextDOB"
         android:layout_marginTop="36dp"
-        android:onClick="handleClick"
+        android:onClick="handleClick" 
         android:text="Register" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/create_button1"
         android:layout_marginTop="57dp"
-        android:text="Generated VIP ID: "
+        android:text="New VIP ID: "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

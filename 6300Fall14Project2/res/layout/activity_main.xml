@@ -6,20 +6,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
 	<Button
-	    android:id="@+id/button1"
-	    style="?android:attr/buttonStyleSmall"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true"
-	    android:layout_marginLeft="23dp"
-	    android:layout_marginTop="36dp"
-        android:onClick="handleMenuSelection"
-	    android:text="Create VIP" />
-
-	<Button
 	    android:id="@+id/button2"
-	    style="?android:attr/buttonStyleSmall"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignLeft="@+id/button1"
@@ -30,7 +17,6 @@
 
 	<Button
 	    android:id="@+id/button3"
-	    style="?android:attr/buttonStyleSmall"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignLeft="@+id/button2"
@@ -41,7 +27,6 @@
 
 	<Button
 	    android:id="@+id/button4"
-	    style="?android:attr/buttonStyleSmall"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignLeft="@+id/button3"
@@ -60,5 +45,18 @@
 	    android:layout_marginTop="18dp"
         android:onClick="handleMenuSelection"
 	    android:text="Generate Report" />
+
+	<Button
+	    android:id="@+id/button1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginLeft="28dp"
+	    android:layout_marginTop="27dp"
+	    android:onClick="handleMenuSelection"
+	    android:text="Create VIP" />
+
+
 
 </RelativeLayout>
