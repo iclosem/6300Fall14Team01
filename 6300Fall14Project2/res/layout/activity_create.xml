@@ -60,6 +60,7 @@
         android:layout_alignLeft="@+id/EditTextDOB"
         android:layout_below="@+id/EditTextDOB"
         android:layout_marginTop="36dp"
+        android:onClick="handleClick"
         android:text="Register" />
 
     <TextView
@@ -73,12 +74,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/NewCreatedVIPNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
         android:layout_toRightOf="@+id/textView1"
-        android:text="Large Text"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>

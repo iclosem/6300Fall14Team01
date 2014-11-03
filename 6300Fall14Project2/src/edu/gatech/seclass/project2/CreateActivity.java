@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class CreateActivity extends Activity {
 
@@ -30,5 +33,17 @@ public class CreateActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void handleClick(View view){
+
+		EditText txtName = (EditText) findViewById(R.id.EditTextName);
+		EditText txtAddr = (EditText) findViewById(R.id.EditTextAddress);
+		EditText txtDob = (EditText) findViewById(R.id.EditTextDOB);
+		if(!txtName.getText().toString().matches("") && !txtAddr.getText().toString().matches("") && !txtDob.getText().toString().matches("")){
+			Customer newCust = new Customer(txtName.getText().toString(), txtAddr.getText().toString(), txtDob.getText().toString() );
+			EditText txtVipNum = (EditText) findViewById(R.id.NewCreatedVIPNum);
+			txtVipNum.setText(newCust.getVIPNumber());
+		}
 	}
 }
