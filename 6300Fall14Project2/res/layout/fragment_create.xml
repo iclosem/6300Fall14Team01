@@ -17,10 +17,8 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/TextViewTitle"
-	    android:height="@dimen/abc_action_bar_title_text_size"
 	    android:hint="Name"
 	    android:inputType="textEmailAddress"
-	    android:lines="@integer/abc_max_action_buttons"
 	    android:textSize="15dp" >
 
 	</EditText>
@@ -32,10 +30,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/EditTextName"
         android:ems="10"
-        android:height="@dimen/abc_action_bar_title_text_size"
         android:hint="Address"
         android:inputType="textMultiLine"
-        android:lines="@integer/abc_max_action_buttons"
         android:textSize="15dp" />
 
     <Button
