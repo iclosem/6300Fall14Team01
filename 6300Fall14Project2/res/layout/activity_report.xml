@@ -8,9 +8,49 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.gatech.seclass.project2.ReportActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+  <requestFocus
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+    <EditText
+        android:id="@+id/editTextReportDate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="date" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextReportDate" >
+
+        <RadioButton
+            android:id="@+id/radioPurchases"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="Purchases" />
+
+        <RadioButton
+            android:id="@+id/radioPreOrders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Preorders" />
+
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioGroup1" >
+
+    </ListView>
 
 </RelativeLayout>

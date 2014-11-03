@@ -7,10 +7,58 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.gatech.seclass.project2.PreorderActivity" >
-
-    <TextView
+    <Button
+        android:id="@+id/buttonPurchasePreorder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/preorder" />
 
+    <Spinner
+        android:id="@+id/spinnerCustomersPreorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPurchasePreorder"
+        android:layout_alignParentLeft="true" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerPreorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPurchasePreorder"
+        android:layout_alignParentRight="true" />
+
+    <ListView
+        android:id="@+id/listViewItemsPreorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnerCustomersPreorder"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextPickupDate" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/editTextPreVIPID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="VIP ID"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextPickupDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextPreVIPID"
+        android:ems="10"
+        android:hint="Pickup Date"
+        android:inputType="date" />
 </RelativeLayout>
