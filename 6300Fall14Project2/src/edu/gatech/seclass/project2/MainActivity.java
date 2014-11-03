@@ -26,7 +26,7 @@ public class MainActivity extends FragmentActivity implements android.app.Action
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_main);
 	
-	    // Initilization
+	    // Initialization
 	    viewPager = (ViewPager) findViewById(R.id.pager);
 	    actionBar = this.getActionBar();
 	    mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
