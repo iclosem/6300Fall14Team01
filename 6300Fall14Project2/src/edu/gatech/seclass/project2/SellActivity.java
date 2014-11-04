@@ -1,16 +1,33 @@
 package edu.gatech.seclass.project2;
-
+import android.widget.ListView;
+import java.util.ArrayList;
+import edu.gatech.seclass.project2.Items;
+import android.widget.ArrayAdapter;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class SellActivity extends Activity {
-
+	private ListView m_listview;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sell);
+		m_listview = (ListView) findViewById(R.id.listViewItemsSell);
+		//String[] items = new String[] {};
+		ArrayList<String> items = new ArrayList<String>();
+		
+		Items menu = new Items();
+		Item[] menuItems = menu.inventory();
+		for(Item item: menuItems){
+			items.add(item.getFlavor());
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+
+		m_listview.setAdapter(adapter);
+		
+		
 	}
 
 	@Override
