@@ -14,19 +14,29 @@ public class SellActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sell);
+		
+		
+		//This section populates the flavor
 		m_listview = (ListView) findViewById(R.id.listViewItemsSell);
 		//String[] items = new String[] {};
-		ArrayList<String> items = new ArrayList<String>();
 		
+		ArrayList<String> items = new ArrayList<String>();
 		Items menu = new Items();
 		Item[] menuItems = menu.inventory();
 		for(Item item: menuItems){
-			items.add(item.getFlavor());
+			items.add(item.getFlavor()+ "     "+String.valueOf(item.getPrice()));
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
-		m_listview.setAdapter(adapter);
-		
+//		m_listview.setAdapter(adapter);
+//		m_listview.setOn.setOnItemClickListener(new OnItemClickListener())
+//		{
+//		     @Override
+//		     public void onItemClick(AdapterView<?> a, View v,int position, long id) 
+//		     {
+//		          Toast.makeText(getBaseContext(), "Click", Toast.LENGTH_LONG).show();
+//		      }
+//		});
 		
 	}
 
