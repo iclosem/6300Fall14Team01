@@ -115,4 +115,5 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 new String[] { String.valueOf(purchase.getID()) });
         db.close();
     }
+   
 }
