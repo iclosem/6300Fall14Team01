@@ -23,14 +23,43 @@ public class CustomersMySQLiteHelperTest extends AndroidTestCase  {
 	 }
 
 	 public void testAddEntry(){
+		 
+		 ///adding new customer
 		 Customer newCust = new Customer("Pickles McGee", "2013-12-01", "123 Main St.");
 		 db.addCustomer(newCust);
-		 
+		 //retrieving list of customers
 		 List<Customer> list = new ArrayList<Customer>();
 		 list = db.getCustomers();
 		 Customer cust = list.get(0);
 		 for(Customer customer: list){
 			 assertEquals("customer created in DB", customer.getName(), "Pickles McGee");
+		 }
+	 }
+	 public void testRmEntry(){
+		 //adding another customer
+		 Customer newCust = new Customer("Pickles McGee", "2013-12-01", "123 Main St.");
+		 db.addCustomer(newCust);
+		 List<Customer> list = new ArrayList<Customer>();
+		 list = db.getCustomers();
+		 Customer cust = list.get(0);
+		 db.deleteCustomer(cust);
+		 list = new ArrayList<Customer>();
+		 assertEquals("no customers should be in list", list.size(), 0);
+	 }
+	 
+	 public void testEditEntry(){
+		 //adding another customer
+		 Customer newCust = new Customer("Pickles McGee", "2013-12-01", "123 Main St.");
+		 db.addCustomer(newCust);
+		 List<Customer> list = new ArrayList<Customer>();
+		 list = db.getCustomers();
+		 Customer cust = list.get(0);
+		 cust.awardPoints(100000);
+		 db.editCustomer(cust);
+		 list = db.getCustomers();
+		 cust = list.get(0);
+		 for(Customer customer: list){
+			 assertEquals("customer created in DB", customer.getVIPPointsTotal(), 100000);
 		 }
 	 }
 

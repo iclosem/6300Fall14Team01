@@ -117,12 +117,17 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
     public void giveGoldFreebie(){
         
     }
-    
+  	  
     public void deleteCustomer(Customer customer) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CUSTOMERS,
                 KEY_ID+" = ?",
                 new String[] { String.valueOf(customer.getID()) });
         db.close();
+    }
+    
+    public void editCustomer (Customer customer){
+    	this.deleteCustomer(customer);
+    	this.addCustomer(customer);
     }
 }
