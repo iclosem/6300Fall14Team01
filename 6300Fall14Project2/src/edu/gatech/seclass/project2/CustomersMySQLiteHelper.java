@@ -73,7 +73,7 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
         values.put(KEY_GOLDSTATUSDATE, customer.getGoldStatusDate());
         values.put(KEY_PERCENTDISCOUNT, customer.getPercentDiscount());
         values.put(KEY_FREEITEMSAVAILABLE, customer.getFreeItemsAvailable()); 
-        
+        System.out.println(values); //goes to logcat
         db.insert(TABLE_CUSTOMERS, // table
                 null, //nullColumnHack
                 values); // key/value -> keys = column names/ values = column values
@@ -94,18 +94,18 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
         if (cursor.moveToFirst()) {
             do {
                 
-                //int ID = Integer.parseInt((cursor.getString(0));
+                int ID = Integer.parseInt((cursor.getString(0)));
                 String name = cursor.getString(1);
                 String birthday = cursor.getString(2);
                 String address = cursor.getString(3);
-                String vippointstotal = cursor.getString(4);
+                int vippointstotal = Integer.parseInt((cursor.getString(4)));
                 String goldstatusdate = cursor.getString(5);
                 Double discount = Double.parseDouble(cursor.getString(6));
-                String freeitemsavailable = cursor.getString(7);
-                //customer = new Customer(ID, name, birthday, address, vippointstotal, goldstatusdate, discount, freeitemsavailable);
-                //customer.setID(ID);
+                int freeitemsavailable = Integer.parseInt(cursor.getString(7));
+                customer = new Customer(ID, name, birthday, address, vippointstotal, goldstatusdate, discount, freeitemsavailable);
+              
     
-                //customers.add(customer);
+                customers.add(customer);
             } while (cursor.moveToNext());
         }
  

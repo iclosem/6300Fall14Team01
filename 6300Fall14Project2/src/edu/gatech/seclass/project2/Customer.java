@@ -32,7 +32,6 @@ public class Customer {
                     String initAddress,
                     int initVIPPointsTotal, 
                     String initGoldStatusDate, 
-                    String initLastFreeItem,
                     double initPercentDiscount, 
                     int initFreeItemsAvailable){
         this.vipNumber = initID;
