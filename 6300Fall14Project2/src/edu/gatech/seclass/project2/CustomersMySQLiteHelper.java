@@ -63,7 +63,7 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
     
     private static final String[] COLUMNS = {KEY_ID,KEY_NAME, KEY_BIRTHDAY, KEY_ADDRESS, KEY_VIPPOINTSTOTAL, KEY_GOLDSTATUSDATE, KEY_PERCENTDISCOUNT, KEY_FREEITEMSAVAILABLE};
      
-    public void addCustomer(Customer customer){
+    public long addCustomer(Customer customer){
         SQLiteDatabase db = this.getWritableDatabase(); //get reference to writable DB 
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, customer.getName()); 
@@ -74,12 +74,14 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
         values.put(KEY_PERCENTDISCOUNT, customer.getPercentDiscount());
         values.put(KEY_FREEITEMSAVAILABLE, customer.getFreeItemsAvailable()); 
         System.out.println(values); //goes to logcat
-        db.insert(TABLE_CUSTOMERS, // table
+        // Changed below to add return of ID when adding customer - Charles
+        long id = db.insert(TABLE_CUSTOMERS, // table
                 null, //nullColumnHack
                 values); // key/value -> keys = column names/ values = column values
  
 
         db.close();
+        return id;
     }
 
     public List<Customer> getCustomers() {

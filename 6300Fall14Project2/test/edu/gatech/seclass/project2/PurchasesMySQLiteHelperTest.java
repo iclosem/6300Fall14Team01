@@ -37,7 +37,7 @@ public class PurchasesMySQLiteHelperTest extends AndroidTestCase  {
 		 list = db.getPurchases();
 		 Purchase pur = list.get(0);
 		 for(Purchase purchase: list){
-			 assertEquals("customer created in DB", purchase.getCategory(), "YOGURT");
+			 assertEquals("purchase created in DB", purchase.getCategory(), "YOGURT");
 		 }
 	 }
 	 public void testRmEntry(){
@@ -55,7 +55,7 @@ public class PurchasesMySQLiteHelperTest extends AndroidTestCase  {
 		 Purchase pur = list.get(0);
 		 db.deletePurchase(pur);
 		 list = db.getPurchases();
-		 assertEquals("no customers should be in list", list.size(), 0);
+		 assertEquals("no purchases should be in list", list.size(), 0);
 	 }
 	 
 	
