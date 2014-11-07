@@ -16,7 +16,7 @@ import android.view.View;
 public class VIPActivity extends Activity implements OnClickListener {
 	EditText vipId, vipName, address, dob, vipPointsTotal, goldStatusDate, 
 			percentDiscount, freeItemsAvailable ;
-	Button btnRetrieve, btnSave, btnDelete;
+	Button btnRetrieve, btnSave, btnDelete, btnList;
 	SQLiteDatabase db;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,12 @@ public class VIPActivity extends Activity implements OnClickListener {
 		btnRetrieve=(Button)findViewById(R.id.ButtonVIPRetrieve);
 		btnSave=(Button)findViewById(R.id.ButtonSaveVIP);
 		btnDelete=(Button)findViewById(R.id.ButtonIPDelete);
+		btnList=(Button)findViewById(R.id.buttonList);
 		
 		btnRetrieve.setOnClickListener(this);
 		btnSave.setOnClickListener(this);
 		btnDelete.setOnClickListener(this);
-		
+		btnList.setOnClickListener(this);
 		
 		
 	}
@@ -53,7 +54,7 @@ public class VIPActivity extends Activity implements OnClickListener {
 		CustomersMySQLiteHelper dbhelp = new CustomersMySQLiteHelper(context);
 		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
-		if (vipId.getText().toString().trim().length()==0)
+		if ((view!=btnList) && (vipId.getText().toString().trim().length()==0))
 		{
 			showMessage("Error!", "Enter VIP ID");
 		}
@@ -89,6 +90,29 @@ public class VIPActivity extends Activity implements OnClickListener {
 					
 			clearText();
 			showMessage("Success", "Record Deleted"); 
+		}
+		if (view==btnList)
+		{
+			
+			Cursor c=db.rawQuery("SELECT * FROM customers", null);
+    		if(c.getCount()==0)
+    		{
+    			showMessage("Error", "No VIP records found");
+    			return;
+    		}
+    		StringBuffer buffer=new StringBuffer();
+    		while(c.moveToNext())
+    		{
+    			buffer.append("VIP ID: "+c.getString(0)+"\n");
+    			buffer.append("Name: "+c.getString(1)+"\n");
+    			buffer.append("Address: "+c.getString(2)+"\n");
+    			buffer.append("DOB: "+c.getString(3)+"\n");
+    			buffer.append("VIP Points: "+c.getString(4)+"\n");
+    			buffer.append("Gold Date: "+c.getString(5)+"\n");
+    			buffer.append("Discount: "+c.getString(6)+"\n");
+    			buffer.append("Freebies: "+c.getString(7)+"\n\n");
+    		}
+    		showMessage("VIP Records", buffer.toString());
 		}
 	}
 		

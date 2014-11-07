@@ -202,4 +202,14 @@
         android:ems="10"
         android:inputType="textPostalAddress" />
 
+    <Button
+        android:id="@+id/buttonList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/ButtonIPDelete"
+        android:layout_toLeftOf="@+id/ButtonIPDelete"
+        android:layout_toRightOf="@+id/ButtonSaveVIP"
+        android:text="List" />
+
 </RelativeLayout>
