@@ -9,12 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.view.View;
 
 public class VIPActivity extends Activity implements OnClickListener {
-	EditText vipId, name, address, dob,vipPointsTotal,goldStatusDate, 
-			percentDiscount,freeItemsAvailable ;
+	EditText vipId, vipName, address, dob, vipPointsTotal, goldStatusDate, 
+			percentDiscount, freeItemsAvailable ;
 	Button btnRetrieve, btnSave, btnDelete;
 	SQLiteDatabase db;
 	@Override
@@ -23,7 +24,7 @@ public class VIPActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_vip);
 		
 		vipId=(EditText)findViewById(R.id.editTextFindVIPID);
-		name=(EditText)findViewById(R.id.editTextVIPName);
+		vipName=(EditText)findViewById(R.id.editTextVIPName);
 		address=(EditText)findViewById(R.id.editTextAddress);
 		dob=(EditText)findViewById(R.id.editTextDOB);
 		vipPointsTotal= (EditText)findViewById(R.id.editTextVIPPts); 
@@ -40,29 +41,61 @@ public class VIPActivity extends Activity implements OnClickListener {
 		btnSave.setOnClickListener(this);
 		btnDelete.setOnClickListener(this);
 		
+		
+		
+	}
+
+	public void onClick(View view)
+	{
 		// set context
 		Context context = this;
 		// instantiate helper
 		CustomersMySQLiteHelper dbhelp = new CustomersMySQLiteHelper(context);
 		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
-	}
-
-	public void onClick(View view)
-	{
-		
-		
 		if (vipId.getText().toString().trim().length()==0)
 		{
 			showMessage("Error!", "Enter VIP ID");
 		}
-		// String query = "SELECT  * FROM " + TABLE_CUSTOMERS;
-	    //    SQLiteDatabase db = this.getWritableDatabase();
-	    //    Cursor cursor = db.rawQuery(query, null);
+		if (view==btnRetrieve)
+		{
+			Cursor c=db.rawQuery("SELECT * FROM customers WHERE id='"
+					+vipId.getText()+"'", null);
+    		if(c.moveToFirst())
+    		{
+    			vipName.setText(c.getString(1));
+    			address.setText(c.getString(2));
+    			dob.setText(c.getString(3));
+    			vipPointsTotal.setText(c.getString(4));
+    			goldStatusDate.setText(c.getString(5));
+    			percentDiscount.setText(c.getString(6));
+    			freeItemsAvailable.setText(c.getString(7));
+    		}
+		}
+		if (view==btnSave)
+		{
+			db.execSQL("UPDATE customers SET name ='"
+					+vipName.getText()+"',address='"+address.getText()+"',birthday='"
+					+dob.getText()+"',vippointstotal='"+vipPointsTotal.getText()+"',goldstatusdate= '"
+					+goldStatusDate.getText()+"', percentdiscount='"+percentDiscount.getText()+"', freeitemsavailable='"
+					+freeItemsAvailable.getText()+"' WHERE id='"+vipId.getText()+"'");
+    		// clearText();
+			showMessage("Success", "Record Updated");
+    			
+    	}
+		if (view==btnDelete)
+		{
+			db.execSQL("DELETE FROM customers WHERE id='"+vipId.getText()+"'");
+					//+name.getText()+"',address='"+address.getText()+"',birthday='"
+					//+dob.getText()+"',vippointstotal='"+vipPointsTotal.getText()+"',goldstatusdate= '"
+					//+goldStatusDate.getText()+"', percentdiscount='"+percentDiscount.getText()+"', freeitemsavailable='"
+					//+freeItemsAvailable.getText()+"' WHERE id='"+vipId.getText()+"'", null);
+			clearText();
+			showMessage("Success", "Record Deleted"); 
+		}
 	}
-	
 		
-	
+		
 	
 	
 	
@@ -93,7 +126,18 @@ public class VIPActivity extends Activity implements OnClickListener {
     	builder.setMessage(message);
     	builder.show();
 	}
-
+	public void clearText()
+    {
+		vipId.setText("");
+		vipName.setText("");
+		address.setText("");
+		dob.setText("");
+		vipPointsTotal.setText("");
+		goldStatusDate.setText("");
+		percentDiscount.setText("");
+		freeItemsAvailable.setText("");
+		vipId.requestFocus();
+    }
 
 
 

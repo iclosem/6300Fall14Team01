@@ -57,8 +57,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ButtonVIPRetrieve"
         android:layout_below="@+id/editTextFindVIPID"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        />
 
     <TextView
         android:id="@+id/TextViewAddress"
@@ -66,39 +69,23 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TextViewName"
         android:layout_below="@+id/TextViewName"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="Address"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/TextViewDOB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextViewAddress"
-        android:layout_below="@+id/TextViewAddress"
-        android:text="Birthday"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        />
 
     <EditText
         android:id="@+id/editTextVIPName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextViewName"
-        android:layout_alignBottom="@+id/TextViewName"
+        android:layout_alignLeft="@+id/editTextFindVIPID"
+        android:layout_below="@+id/editTextFindVIPID"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editTextPercent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/TextViewPercent"
-        android:layout_toRightOf="@+id/TextViewGoldDate"
-        android:ems="10" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/TextViewFreebies"
@@ -106,6 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextFreebies"
         android:layout_alignLeft="@+id/TextViewPercent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="Free Items"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -116,36 +105,20 @@
         android:layout_alignLeft="@+id/editTextVIPPts"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextPercent"
-        android:layout_marginTop="18dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="number" />
-
-    <TextView
-        android:id="@+id/TextViewGoldDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextViewPercent"
-        android:layout_alignLeft="@+id/TextViewVIPPts"
-        android:text="Gold Date"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/editTextAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editTextDOB"
-        android:layout_alignTop="@+id/TextViewAddress"
-        android:layout_toRightOf="@+id/ButtonVIPRetrieve"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
 
     <EditText
         android:id="@+id/editTextVIPPts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextDOB"
+        android:layout_alignLeft="@+id/editTextGoldDate"
         android:layout_alignRight="@+id/editTextDOB"
         android:layout_below="@+id/editTextDOB"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="number" />
 
@@ -155,6 +128,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextVIPPts"
         android:layout_alignLeft="@+id/TextViewDOB"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="VIP Points"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -162,9 +137,11 @@
         android:id="@+id/editTextDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextViewDOB"
-        android:layout_alignBottom="@+id/TextViewDOB"
-        android:layout_alignLeft="@+id/ButtonSaveVIP"
+        android:layout_below="@+id/editTextAddress"
+        android:layout_alignLeft="@+id/editTextGoldDate"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        
         android:ems="10"
         android:inputType="date" />
 
@@ -174,17 +151,55 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/editTextPercent"
         android:layout_alignTop="@+id/TextViewGoldDate"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/TextViewFreebies"
         android:ems="10"
         android:inputType="date" />
 
     <TextView
+        android:id="@+id/TextViewGoldDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextViewVIPPts"
+        android:layout_below="@+id/editTextVIPPts"
+        android:text="Gold Date"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         android:id="@+id/TextViewPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/ButtonVIPRetrieve"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/TextViewGoldDate"
+        android:layout_marginTop="14dp"
         android:text="Discount"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/TextViewPercent"
+        android:layout_toRightOf="@+id/TextViewFreebies"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/TextViewDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextDOB"
+        android:layout_alignBottom="@+id/editTextDOB"
+        android:layout_alignLeft="@+id/TextViewAddress"
+        android:text="Birthday"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextVIPName"
+        android:layout_toRightOf="@+id/TextViewFreebies"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
 
 </RelativeLayout>
