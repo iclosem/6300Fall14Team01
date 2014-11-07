@@ -86,10 +86,7 @@ public class VIPActivity extends Activity implements OnClickListener {
 		if (view==btnDelete)
 		{
 			db.execSQL("DELETE FROM customers WHERE id='"+vipId.getText()+"'");
-					//+name.getText()+"',address='"+address.getText()+"',birthday='"
-					//+dob.getText()+"',vippointstotal='"+vipPointsTotal.getText()+"',goldstatusdate= '"
-					//+goldStatusDate.getText()+"', percentdiscount='"+percentDiscount.getText()+"', freeitemsavailable='"
-					//+freeItemsAvailable.getText()+"' WHERE id='"+vipId.getText()+"'", null);
+					
 			clearText();
 			showMessage("Success", "Record Deleted"); 
 		}
