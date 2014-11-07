@@ -7,51 +7,84 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.gatech.seclass.project2.SellActivity" >
-
-
-    <Button
+    <Button
         android:id="@+id/buttonPurchaseSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:text="Purchase" />
-
-    <Spinner
-        android:id="@+id/spinnerCustomersSell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonPurchaseSell"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/numberPicker1" />
 
     <ListView
         android:id="@+id/listViewItemsSell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/numberPickerSell"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/editTextSellVIPID" >
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1" >
 
     </ListView>
 
-    <NumberPicker
-        android:id="@+id/numberPickerSell"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Flavors"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/listViewItemsSell"
+        android:text="Customers"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/listCustomersSell"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonPurchaseSell"
-        android:layout_alignParentRight="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="22dp"
+        android:layout_toLeftOf="@+id/editTextCartSell" >
 
-    <EditText
-        android:id="@+id/editTextSellVIPID"
+    </ListView>
+
+    
+    
+    <Button
+        android:id="@+id/ButtonPreorderSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Preorder" />
+
+    <EditText
+        android:id="@+id/editTextCartSell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/listCustomersSell"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        
         android:ems="10"
-        android:hint="VIP ID"
-        android:inputType="number" >
+        android:inputType="textMultiLine" >
 
         <requestFocus />
     </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listViewItemsSell"
+        android:layout_toRightOf="@+id/listCustomersSell"
+        android:text="Cart"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>

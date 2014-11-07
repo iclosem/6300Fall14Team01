@@ -10,7 +10,7 @@
 
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listViewItemsSell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
@@ -33,11 +33,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/Button01"
+        android:layout_alignTop="@+id/ButtonPreorderSell"
         android:text="Retrieve" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/ButtonPreorderSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
