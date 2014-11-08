@@ -50,7 +50,7 @@
         android:layout_marginTop="23dp"
         android:ems="10"
         android:inputType="date"
-        android:hint="DOB: MM/DD/YYYY" />
+        android:hint="DOB: YYYY-MM-DD" />
 
     <Button
         android:id="@+id/create_button1"
