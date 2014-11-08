@@ -121,12 +121,12 @@ public class SellActivity extends Activity {
 		});		
 		////////////////////////////////////////////////////////////////////////////////////
 		
-		m_listview2 = (ListView) findViewById(R.id.listCustomersSell);
+		m_listview2 = (ListView) findViewById(R.id.ListView01);
 		
 		List<String> custStringList = new ArrayList<String>();
 		final List<Customer> customerList = db.getCustomers();
 		for(Customer cust: customerList){
-			custStringList.add(cust.getName() + "	ID	" + String.valueOf(cust.getID()));
+			custStringList.add(cust.getName());
 		}
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, custStringList);
 

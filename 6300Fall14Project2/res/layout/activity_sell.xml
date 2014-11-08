@@ -43,17 +43,6 @@
         android:text="Customers"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ListView
-        android:id="@+id/listCustomersSell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonPurchaseSell"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="22dp"
-        android:layout_toLeftOf="@+id/editTextCartSell" >
-
-    </ListView>
-
     
     
     <Button
@@ -66,25 +55,25 @@
 
     <EditText
         android:id="@+id/editTextCartSell"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/listCustomersSell"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView2"
-        
+        android:layout_above="@+id/buttonPurchaseSell"
+        android:layout_alignLeft="@+id/listCustomersSell"
+        android:layout_alignRight="@+id/ButtonPreorderSell"
+        android:layout_below="@+id/listCustomersSell"
         android:ems="10"
         android:inputType="textMultiLine" >
 
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/listViewItemsSell"
-        android:layout_toRightOf="@+id/listCustomersSell"
-        android:text="Cart"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <ListView
+        android:id="@+id/listCustomersSell"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2" >
+
+    </ListView>
 
 </RelativeLayout>
