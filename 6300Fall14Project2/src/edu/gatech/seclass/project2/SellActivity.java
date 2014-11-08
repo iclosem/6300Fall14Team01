@@ -155,7 +155,7 @@ public class SellActivity extends Activity {
 		});
 		///this section defines sells
 		Button clickSellButton = (Button) findViewById(R.id.buttonPurchaseSell);
-		clickPreOrderButton.setOnClickListener( new View.OnClickListener() {
+		clickSellButton.setOnClickListener( new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
