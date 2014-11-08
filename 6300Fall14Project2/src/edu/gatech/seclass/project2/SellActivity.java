@@ -121,7 +121,7 @@ public class SellActivity extends Activity {
 		});		
 		////////////////////////////////////////////////////////////////////////////////////
 		
-		m_listview2 = (ListView) findViewById(R.id.ListView01);
+		m_listview2 = (ListView) findViewById(R.id.listCustomersSell);
 		
 		List<String> custStringList = new ArrayList<String>();
 		final List<Customer> customerList = db.getCustomers();
