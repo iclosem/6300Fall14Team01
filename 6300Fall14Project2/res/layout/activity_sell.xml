@@ -72,7 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2" >
+        android:layout_below="@+id/textView2"
+        android:footerDividersEnabled="false" >
 
     </ListView>
 
