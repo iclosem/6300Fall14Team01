@@ -38,7 +38,7 @@ public class SellActivity extends Activity {
 		String sellText = "";
 		for (Item item: this.cart){
 			//branch removed yogurt if its a preorder
-			if(isPreorder == "PREORDER "&& item.getCategory() == "FrozenYogurt"){
+			if(isPreorder == "PREORDER" && item.getCategory() == "FrozenYogurt"){
 				sellText += "\nCanx "+ item.getFlavor()+": not preorderable";
 			} else {
 				//applying discount
