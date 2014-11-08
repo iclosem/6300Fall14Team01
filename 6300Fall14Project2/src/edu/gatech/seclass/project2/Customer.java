@@ -12,7 +12,7 @@ public class Customer {
     private int vipNumber;
     private int vipPointsTotal; 
     private String goldStatusDate; //store as YYYY-MM-DD
-    private double percentDiscount;
+    private double percentDiscount = 0;
     private int freeItemsAvailable;
     
     //this creates a new customer
