@@ -51,8 +51,8 @@ public class Customer {
     //award points
     //
     //this will be called when a purchase is executed, will modify status to gold if over 1000
-    public int awardPoints(int numberOfPoints){
-        this.vipPointsTotal+=numberOfPoints;///need to check for negative?
+    public int awardPoints(int numberOfPoints) {
+        this.vipPointsTotal += numberOfPoints;///need to check for negative?
         if (this.vipPointsTotal >= 1000){
             this.awardGold();
         }
