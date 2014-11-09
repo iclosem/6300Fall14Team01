@@ -26,52 +26,54 @@ public class SellActivity extends Activity {
 	private Customer curCust;
 	
 	private void executePurchase(String saleType) {
-		
-		CustomersMySQLiteHelper dbCust;
-		dbCust = new CustomersMySQLiteHelper(this);
-		PurchasesMySQLiteHelper dbPer;
-		dbPer = new PurchasesMySQLiteHelper(this);
-		double totalPrice = 0;
-		int totalPoints = 0;
-		//needs to check for free items user has
-		int freeItems = curCust.getFreeItemsAvailable();
-		String sellText = "";
-		for (Item item: this.cart){
-			//branch removed yogurt if its a preorder
-			if(saleType == "PREORDER" && item.getCategory() == "FrozenYogurt"){
-				sellText += "\nCanx " + item.getFlavor() + ": not preorderable";
-			} else {
-				//applying discount
-				double price = item.getPrice() - (item.getPrice() * curCust.getPercentDiscount()); 
-			    //adding new points 
-				int points = (int) price; 
-				totalPoints += points;
-				
-				///creating date
-				Calendar cal = Calendar.getInstance();
-		        cal.add(Calendar.DATE, 1);
-		        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-		        String formattedDate = format1.format(cal.getTime());
-				
-				curCust.awardPoints(points);//awards the amount of points based on price
-				if (freeItems >0){
-					sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
-					curCust.creditFreeItem();
-					price = 0;
-					freeItems--;
+		if(cart.size() > 0){
+			CustomersMySQLiteHelper dbCust;
+			dbCust = new CustomersMySQLiteHelper(this);
+			PurchasesMySQLiteHelper dbPer;
+			dbPer = new PurchasesMySQLiteHelper(this);
+			double totalPrice = 0;
+			int totalPoints = 0;
+			//needs to check for free items user has
+			int freeItems = curCust.getFreeItemsAvailable();
+			String sellText = "";
+			for (Item item: this.cart){
+				//branch removed yogurt if its a preorder
+				if(saleType == "PREORDER" && item.getCategory() == "FrozenYogurt"){
+					sellText += "\nCanx " + item.getFlavor() + ": not preorderable";
 				} else {
-					sellText += "\n Purchased"+ item.getFlavor() + price; //adds to receipt
-					totalPrice += price;
+					//applying discount
+					double price = item.getPrice() - (item.getPrice() * curCust.getPercentDiscount()); 
+				    //adding new points 
+					int points = (int) price; 
+					totalPoints += points;
+					
+					///creating date
+					Calendar cal = Calendar.getInstance();
+			        cal.add(Calendar.DATE, 1);
+			        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+			        String formattedDate = format1.format(cal.getTime());
+					
+					curCust.awardPoints(points);//awards the amount of points based on price
+					if (freeItems >0){
+						sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
+						curCust.creditFreeItem();
+						price = 0;
+						freeItems--;
+					} else {
+						sellText += "\n Purchased"+ item.getFlavor() + price; //adds to receipt
+						totalPrice += price;
+					}
+					Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, String.valueOf(curCust.getID()));
+					dbPer.addPurchase(curPurchase);
 				}
-				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, String.valueOf(curCust.getID()));
-				dbPer.addPurchase(curPurchase);
+				dbCust.editCustomer(curCust); //adds the customer's current record
+				sellText += "\n Total:" + totalPrice + "Points:" + totalPoints;
+				
 			}
-			dbCust.editCustomer(curCust); //adds the customer's current record
-			sellText += "\n Total:" + totalPrice + "Points:" + totalPoints;
-			
+			Toast.makeText(getBaseContext(), "Purchase added:" + sellText, Toast.LENGTH_LONG).show();
+		} else {
+			Toast.makeText(getBaseContext(), "Cart is empty", Toast.LENGTH_SHORT).show();
 		}
-		Toast.makeText(getBaseContext(), "Purchase added:" + sellText, Toast.LENGTH_LONG).show();
-		
 	}
 	
 	
@@ -152,15 +154,24 @@ public class SellActivity extends Activity {
 				
 			}
 		});
-		
+
 		///this section defines sells
 		Button clickSellButton = (Button) findViewById(R.id.buttonPurchaseSell);
 		clickSellButton.setOnClickListener( new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				executePurchase("SALE");
+			}
+		});
+		
+		///comment about clear button
+		Button clickClearButton = (Button) findViewById(R.id.buttonClearCart);
+		clickClearButton.setOnClickListener( new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				clearCart();
 			}
 		});
 
@@ -184,5 +195,13 @@ public class SellActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void clearCart(){
+		this.cart = new ArrayList<Item>();
+		EditText editText = (EditText) findViewById( R.id.editTextCartSell);
+		editText.setText("");
+
+		Toast.makeText(getBaseContext(), "Cart Cleared", Toast.LENGTH_SHORT).show();
 	}
 }
