@@ -10,6 +10,7 @@ public abstract class Item {
     public Item (String initFlavor, double initCost, String category){
         this.flavor = initFlavor;
         this.cost = initCost;
+        this.category = category;
     }
     
     public String getFlavor(){

@@ -26,7 +26,7 @@ public class SellActivity extends Activity {
 	private List<Item> cart = new ArrayList<Item>(); //stores the cart	
 	private Customer curCust;
 	
-	private void executePurchase(String saleType) {
+	private void executePurchase() {
 		if(cart.size() > 0){
 			CustomersMySQLiteHelper dbCust = new CustomersMySQLiteHelper(this);
 			PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
@@ -45,32 +45,26 @@ public class SellActivity extends Activity {
 			}
 			String sellText = "";
 			for (Item item: this.cart){
-				//branch removed yogurt if its a preorder
-				if(saleType == "PREORDER" && item.getCategory() == "FrozenYogurt"){
-					sellText += "\nCanx " + item.getFlavor() + ": not preorderable";
-				} else {
-					//applying discount
-					double price = item.getPrice() * (1 - discount); 
-					
-					///creating date
-					Calendar cal = Calendar.getInstance();
-			        cal.add(Calendar.DATE, 1);
-			        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-			        String formattedDate = format1.format(cal.getTime());
-					
-					if (freeItems > 0){
-						sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
-						curCust.creditFreeItem();
-						price = 0;
-						freeItems--;
-					} else {
-						sellText += "\n Purchased: "+ item.getFlavor() +"\t $" + price; //adds to receipt
-						totalPrice += price;
-					}
-					Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, custSaleId);
-					dbPer.addPurchase(curPurchase);
-				}
+				//applying discount
+				double price = item.getPrice() * (1 - discount); 
 				
+				///creating date
+				Calendar cal = Calendar.getInstance();
+		        
+		        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		        String formattedDate = format1.format(cal.getTime());
+				
+				if (freeItems > 0){
+					sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
+					curCust.creditFreeItem();
+					price = 0;
+					freeItems--;
+				} else {
+					sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+					totalPrice += price;
+				}
+				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "SALE", price, formattedDate, custSaleId);
+				dbPer.addPurchase(curPurchase);
 			}
 			int points = (int)(Math.floor(totalPrice));
 			sellText = sellText + "\n Total: $" + totalPrice;
@@ -153,18 +147,6 @@ public class SellActivity extends Activity {
 				updateCart();
 			}
 		});		
-		
-		///this section defines preorder
-		Button clickPreOrderButton = (Button) findViewById(R.id.ButtonPreorderSell);
-		clickPreOrderButton.setOnClickListener( new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				executePurchase("PREORDER");
-				
-				
-			}
-		});
 
 		///this section defines sells
 		Button clickSellButton = (Button) findViewById(R.id.buttonPurchaseSell);
@@ -172,7 +154,7 @@ public class SellActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				executePurchase("SALE");
+				executePurchase();
 			}
 		});
 		

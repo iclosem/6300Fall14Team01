@@ -20,6 +20,26 @@ public class Items {
 	}
 	public Item[] inventory(){
       return this.inventory;
-	}    
+	}
+	
+	public Item[] preorderInventory(){
+		
+		int nomPreorderItems = 0;
+		for(Item item: this.inventory) {
+			if( item.getCategory() == "IceCream"){
+				nomPreorderItems++;
+			}
+		}
+		Item[] preorderInventory = new Item[nomPreorderItems];
+		nomPreorderItems = 0;
+		for(Item item: this.inventory) {
+			if( item.getCategory() == "IceCream"){
+				preorderInventory[nomPreorderItems] = item;
+				nomPreorderItems++;
+			}
+		}
+		
+		return preorderInventory;
+	}
   //Statically initializing inventory
 }
