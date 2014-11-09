@@ -1,18 +1,153 @@
 package edu.gatech.seclass.project2;
 
 import android.app.Activity;
+import android.app.AlertDialog.Builder;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
-public class ReportActivity extends Activity {
+public class ReportActivity extends Activity implements OnClickListener {
 
+	EditText rptDate;
+	Button btnSalesRpt, btnPreOrdRept;
+	SQLiteDatabase db;
+	CustomersMySQLiteHelper dbCust;
+	PurchasesMySQLiteHelper dbPer;
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_report);
+	
+		rptDate=(EditText)findViewById(R.id.editTextReportDate);
+		btnSalesRpt=(Button)findViewById(R.id.buttonSalesReport);
+		btnPreOrdRept=(Button)findViewById(R.id.buttonSalesReport);
+		
+		btnSalesRpt.setOnClickListener(this);
+		btnPreOrdRept.setOnClickListener(this);
+		
+		
+//		   // purchases Table Columns names
+//	    private static final String KEY_ID = "id";
+//	    private static final String KEY_FLAVOR = "flavor";
+//	    private static final String KEY_CATEGORY = "category";
+//	    private static final String KEY_PURCHASETYPE = "purchasetype";
+//	    private static final String KEY_PRICE = "price";
+//	    private static final String KEY_DATE = "date";
+//	    private static final String KEY_VIPID = "vipid";
+		
 	}
-
+	
+	@Override
+	public void onClick(View view) 
+	{
+		dbCust = new CustomersMySQLiteHelper(getBaseContext());
+		dbPer = new PurchasesMySQLiteHelper(getBaseContext());
+		
+		
+		if ((rptDate.getText().toString().trim().length()==0))
+		{
+			showMessage("Error!", "Enter Report Date");
+		}
+		if (view==btnSalesRpt)
+		{
+			Cursor c;
+			db = dbPer.getWritableDatabase();
+			try {
+				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
+						+rptDate.getText()+"'", null);
+			} catch (Exception e) {
+				showMessage("Exception!", "Table problem.");
+    			return;
+			}
+    		if(c.getCount()==0)
+        		{
+        			showMessage("Error", "No Sales found for this date");
+        			return;
+        		}
+        		StringBuffer buffer=new StringBuffer();
+        		while(c.moveToNext())
+        		{
+        			buffer.append("Date: "+c.getString(5)+"\n");
+        			buffer.append("Transaction: "+c.getString(3)+"\n");
+        			buffer.append("Flavor: "+c.getString(1)+"\n");
+        			buffer.append("Amount: "+c.getString(4)+"\n\n");
+        			
+        		}
+        	showMessage("Daily Sales for " +rptDate.getText(), buffer.toString());
+    	}
+		if (view==btnPreOrdRept)
+		{
+			Cursor c;
+			db = dbPer.getWritableDatabase();
+			try {
+				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
+						+rptDate.getText()+"' AND purchasetype ='PREORDER'", null);
+			} catch (Exception e) {
+				showMessage("Exception!", "Table problem.");
+    			return;
+			}
+    		if(c.getCount()==0)
+        		{
+        			showMessage("Error", "No Sales found for this date");
+        			return;
+        		}
+        		StringBuffer buffer=new StringBuffer();
+        		while(c.moveToNext())
+        		{
+        			buffer.append("Date: "+c.getString(5)+"\n");
+        			buffer.append("Flavor: "+c.getString(1)+"\n");
+        			buffer.append("Amount: "+c.getString(4)+"\n\n");
+        			
+        		}
+        	showMessage("Daily Preorders for " +rptDate.getText(), buffer.toString());
+    	}
+	}
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void showMessage(String title,String message)
+    {
+    	Builder builder=new Builder(this);
+    	builder.setCancelable(true);
+    	builder.setTitle(title);
+    	builder.setMessage(message);
+    	builder.show();
+	}
+	public void clearText()
+    {
+		rptDate.setText("");
+		rptDate.requestFocus();
+    }
+	
+	
+	
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -31,4 +166,25 @@ public class ReportActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 }

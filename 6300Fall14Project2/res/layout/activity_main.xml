@@ -6,11 +6,11 @@
     tools:context="${relativePackage}.${activityClass}" >
 
 	<Button
-	    android:id="@+id/button2"
+	    android:id="@+id/buttonDailyPreordersReport"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/button1"
-	    android:layout_below="@+id/button1"
+	    android:layout_alignLeft="@+id/buttonSalesReport"
+	    android:layout_below="@+id/buttonSalesReport"
 	    android:layout_marginTop="19dp"
         android:onClick="handleMenuSelection"
 	    android:text="Manage VIP" />
@@ -19,8 +19,8 @@
 	    android:id="@+id/button3"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/button2"
-	    android:layout_below="@+id/button2"
+	    android:layout_alignLeft="@+id/buttonDailyPreordersReport"
+	    android:layout_below="@+id/buttonDailyPreordersReport"
 	    android:layout_marginTop="18dp"
         android:onClick="handleMenuSelection"
 	    android:text="Sell Product" />
@@ -47,7 +47,7 @@
 	    android:text="Generate Report" />
 
 	<Button
-	    android:id="@+id/button1"
+	    android:id="@+id/buttonSalesReport"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentLeft="true"

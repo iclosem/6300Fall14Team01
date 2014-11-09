@@ -26,10 +26,10 @@ public class MainActivity extends Activity {
 	public void handleMenuSelection(View view){
 				
 		switch(view.getId()){
-		case R.id.button1:
+		case R.id.buttonSalesReport:
 			startNewActivity( CreateActivity.class);
 			break;
-		case R.id.button2:
+		case R.id.buttonDailyPreordersReport:
 			startNewActivity(VIPActivity.class);
 			break;
 		case R.id.button3:
