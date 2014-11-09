@@ -25,7 +25,7 @@ public class SellActivity extends Activity {
 	private List<Item> cart = new ArrayList<Item>(); //stores the cart	
 	private Customer curCust;
 	
-	private void executePurchase(String isPreorder){
+	private void executePurchase(String saleType) {
 		
 		CustomersMySQLiteHelper dbCust;
 		dbCust = new CustomersMySQLiteHelper(this);
@@ -38,14 +38,14 @@ public class SellActivity extends Activity {
 		String sellText = "";
 		for (Item item: this.cart){
 			//branch removed yogurt if its a preorder
-			if(isPreorder == "PREORDER" && item.getCategory() == "FrozenYogurt"){
-				sellText += "\nCanx "+ item.getFlavor()+": not preorderable";
+			if(saleType == "PREORDER" && item.getCategory() == "FrozenYogurt"){
+				sellText += "\nCanx " + item.getFlavor() + ": not preorderable";
 			} else {
 				//applying discount
 				double price = item.getPrice() - (item.getPrice() * curCust.getPercentDiscount()); 
 			    //adding new points 
-				int points = (int)price; 
-				totalPoints+=points;
+				int points = (int) price; 
+				totalPoints += points;
 				
 				///creating date
 				Calendar cal = Calendar.getInstance();
@@ -53,21 +53,21 @@ public class SellActivity extends Activity {
 		        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 		        String formattedDate = format1.format(cal.getTime());
 				
-				curCust.awardPoints(points);//awards the ammount of points based on price
+				curCust.awardPoints(points);//awards the amount of points based on price
 				if (freeItems >0){
-					sellText += "\n FREE "+ item.getFlavor(); //adds to reciept
+					sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
 					curCust.creditFreeItem();
 					price = 0;
 					freeItems--;
 				} else {
-					sellText += "\n Purchased"+ item.getFlavor() + price; //adds to reciept
-					totalPrice+= price;
+					sellText += "\n Purchased"+ item.getFlavor() + price; //adds to receipt
+					totalPrice += price;
 				}
-				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), isPreorder, price, formattedDate, String.valueOf(curCust.getID()));
+				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, String.valueOf(curCust.getID()));
 				dbPer.addPurchase(curPurchase);
 			}
-			dbCust.editCustomer(curCust);//adds the customers current record
-			sellText += "\n Total:"+totalPrice + "Points:"+totalPoints;
+			dbCust.editCustomer(curCust); //adds the customer's current record
+			sellText += "\n Total:" + totalPrice + "Points:" + totalPoints;
 			
 		}
 		Toast.makeText(getBaseContext(), "Purchase added:" + sellText, Toast.LENGTH_LONG).show();
@@ -75,17 +75,18 @@ public class SellActivity extends Activity {
 	}
 	
 	
-	private void updateCart(){
+	private void updateCart() {
 		EditText editText = (EditText)findViewById(R.id.editTextCartSell);
 		String cartText = "" ;
 		if (curCust != null){
-			cartText = "Current Customer "+curCust.getName();	
+			cartText = "Current Customer " + curCust.getName();	
 		}
 		for (Item item: this.cart){
 			cartText += "\n "+ item.getFlavor() + item.getPrice();
 		}
 		editText.setText(cartText);
 	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		CustomersMySQLiteHelper db;
@@ -102,14 +103,13 @@ public class SellActivity extends Activity {
 		ArrayList<String> itemStringList = new ArrayList<String>();
 		Items menu = new Items();
 		Item[] menuItems = menu.inventory();
-		for(Item item: menuItems){
+		for(Item item: menuItems) {
 			itemStringList.add(item.getFlavor()+ "     "+String.valueOf(item.getPrice()));
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemStringList);
 
 		m_listview.setAdapter(adapter);
-		m_listview.setOnItemClickListener(new OnItemClickListener()
-		{
+		m_listview.setOnItemClickListener(new OnItemClickListener() {
 			Items menu = new Items();
 			Item[] menuItems = menu.inventory();
 			@Override
@@ -125,14 +125,13 @@ public class SellActivity extends Activity {
 		
 		List<String> custStringList = new ArrayList<String>();
 		final List<Customer> customerList = db.getCustomers();
-		for(Customer cust: customerList){
+		for(Customer cust: customerList) {
 			custStringList.add(cust.getName());
 		}
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, custStringList);
 
 		m_listview2.setAdapter(adapter2);
-		m_listview2.setOnItemClickListener(new OnItemClickListener()
-		{
+		m_listview2.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
@@ -153,6 +152,7 @@ public class SellActivity extends Activity {
 				
 			}
 		});
+		
 		///this section defines sells
 		Button clickSellButton = (Button) findViewById(R.id.buttonPurchaseSell);
 		clickSellButton.setOnClickListener( new View.OnClickListener() {

@@ -77,4 +77,15 @@
 
     </ListView>
 
+    <Button
+        android:id="@+id/buttonClearCart"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPurchaseSell"
+        android:layout_alignBottom="@+id/buttonPurchaseSell"
+        android:layout_centerHorizontal="true"
+        android:onClick="handleClearCart" 
+        android:text="Clear" />
+
 </RelativeLayout>

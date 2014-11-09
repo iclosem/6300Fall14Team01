@@ -19,7 +19,7 @@ public class CreateActivity extends Activity {
 		
 	}
 	
-	public void handleClick(View view){
+	public void handleClick( View view) {
 		// set context
 		Context context = this;
 		// instantiate helper
@@ -32,8 +32,7 @@ public class CreateActivity extends Activity {
 		TextView txtVipNum = (TextView) findViewById(R.id.NewCreatedVIPNum);
 		try{
 			if(!txtName.getText().toString().matches("") && !txtAddr.getText().toString().matches("") && 
-					!txtDob.getText().toString().matches(""))
-			{
+					!txtDob.getText().toString().matches("")) {
 				//check for duplicates??
 				//Cursor c=db.rawQuery("SELECT * FROM TABLE_CUSTOMERS WHERE KEY_NAME='"+txtName.getText()+"' AND "
 				//		+ "KEY_ADDRESS='"+txtAddr.getText()+"' AND KEY_BIRTHDAY='"+txtDob.getText()+"'", null);
@@ -49,26 +48,23 @@ public class CreateActivity extends Activity {
 		    	//{
 		    	//	showMessage("Duplicate!","This VIP already exists");
 		    	//}
-		    }
-			else
-			{
-				txtVipNum.setText("Wrong");
+		    } else {
 				showMessage("Error!","Please Enter all data fields");
 			}
 		}catch(Exception e){
-			txtVipNum.setText("FAILED");
+			showMessage("Error!","An error occurred.");
 		}
 		
 	}
-	public void clearText()
-    {
+	
+	public void clearText() {
 		((EditText) findViewById(R.id.EditTextName)).setText("");
 		((EditText) findViewById(R.id.EditTextAddress)).setText("");
 		((EditText) findViewById(R.id.EditTextDOB)).setText("");
 		findViewById(R.id.NewCreatedVIPNum).requestFocus();
     }
-	public void showMessage(String title,String message)
-    {
+	
+	public void showMessage(String title,String message) {
     	Builder builder=new Builder(this);
     	builder.setCancelable(true);
     	builder.setTitle(title);
