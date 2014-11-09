@@ -40,6 +40,19 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
  
         // create customers table
         db.execSQL(CREATE_CUSTOMERS_TABLE);
+        
+        String CREATE_PURCHASES_TABLE = "CREATE TABLE purchases ( " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "flavor TEXT, "+
+                "category TEXT, "+ //yogurt or icecream
+                "purchasetype TEXT, "+ //purchase or preorder
+                "price TEXT, "+
+                "date TEXT, "+
+                "vipid TEXT )";
+ 
+        // create purchases table
+        
+        db.execSQL(CREATE_PURCHASES_TABLE);
     }
  
     @Override

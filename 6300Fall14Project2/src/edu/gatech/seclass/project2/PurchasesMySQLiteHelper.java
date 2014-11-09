@@ -22,11 +22,25 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
  
     public PurchasesMySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION); 
+        
     }
  
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // SQL statement to create purchases table
+        // SQL statement to create Customers table
+        String CREATE_CUSTOMERS_TABLE = "CREATE TABLE customers ( " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " + //this will be the VIP ID
+                "name TEXT, "+ 
+                "birthday TEXT, "+
+                "address TEXT, "+ //customer or preorder
+                "vippointstotal TEXT, "+
+                "goldstatusdate TEXT, "+
+                "percentdiscount TEXT, "+
+                "freeitemsavailable TEXT )";
+ 
+        // create customers table
+        db.execSQL(CREATE_CUSTOMERS_TABLE);
+        
         String CREATE_PURCHASES_TABLE = "CREATE TABLE purchases ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "flavor TEXT, "+
@@ -37,6 +51,7 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 "vipid TEXT )";
  
         // create purchases table
+        
         db.execSQL(CREATE_PURCHASES_TABLE);
     }
  

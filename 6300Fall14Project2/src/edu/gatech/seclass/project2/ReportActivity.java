@@ -17,9 +17,9 @@ public class ReportActivity extends Activity implements OnClickListener {
 
 	EditText rptDate;
 	Button btnSalesRpt, btnPreOrdRept;
-	//SQLiteDatabase db;
+	SQLiteDatabase db;
 	//CustomersMySQLiteHelper dbCust;
-	PurchasesMySQLiteHelper db;
+	//PurchasesMySQLiteHelper db;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 	
 		rptDate=(EditText)findViewById(R.id.editTextReportDate);
 		btnSalesRpt=(Button)findViewById(R.id.buttonSalesReport);
-		btnPreOrdRept=(Button)findViewById(R.id.buttonSalesReport);
+		btnPreOrdRept=(Button)findViewById(R.id.buttonDailyPreordersReport);
 		
 		btnSalesRpt.setOnClickListener(this);
 		btnPreOrdRept.setOnClickListener(this);
@@ -49,9 +49,12 @@ public class ReportActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View view) 
 	{
-		
+		db = openOrCreateDatabase("customersDB", 0, null);
+		// set context
 		Context context = this;
-		db=new PurchasesMySQLiteHelper(context);
+		// instantiate helper
+		CustomersMySQLiteHelper dbhelp = new CustomersMySQLiteHelper(context);
+		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
 		//db = openOrCreateDatabase("customersDB", 0, null);
 		//dbCust = new CustomersMySQLiteHelper(getBaseContext());
@@ -64,38 +67,37 @@ public class ReportActivity extends Activity implements OnClickListener {
 		}
 		if (view==btnSalesRpt)
 		{
-			SQLiteDatabase dbWrite = db.getWritableDatabase();
 			Cursor c;
 			
 			try {
-				c = dbWrite.rawQuery("SELECT * FROM purchases WHERE date='"
+				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
 						+rptDate.getText()+"'", null);
-			} catch (Exception e) {
-				showMessage("Exception!", "Table problem.");
-    			return;
-			}
+//				c = db.rawQuery("SELECT * FROM purchases", null);
+				} catch (Exception e) {
+					showMessage("Exception!", "Table problem.");
+					return;
+				}
     		if(c.getCount()==0)
-        		{
-        			showMessage("Error", "No Sales found for this date");
-        			return;
-        		}
-        		StringBuffer buffer=new StringBuffer();
-        		while(c.moveToNext())
-        		{
-        			buffer.append("Date: "+c.getString(5)+"\n");
-        			buffer.append("Transaction: "+c.getString(3)+"\n");
-        			buffer.append("Flavor: "+c.getString(1)+"\n");
-        			buffer.append("Amount: "+c.getString(4)+"\n\n");
+        	{
+        		showMessage("Error", "No Sales found for this date");
+        		return;
+        	}
+        	StringBuffer buffer=new StringBuffer();
+        	while(c.moveToNext())
+        	{
+        		buffer.append("Date: "+c.getString(5)+"\n");
+        		buffer.append("Transaction: "+c.getString(3)+"\n");
+        		buffer.append("Flavor: "+c.getString(1)+"\n");
+        		buffer.append("Amount: "+c.getString(4)+"\n\n");
         			
-        		}
+        	}
         	showMessage("Daily Sales for " +rptDate.getText(), buffer.toString());
     	}
 		if (view==btnPreOrdRept)
 		{
 			Cursor c;
-			SQLiteDatabase dbWrite = db.getWritableDatabase();
 			try {
-				c = dbWrite.rawQuery("SELECT * FROM purchases WHERE date='"
+				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
 						+rptDate.getText()+"' AND purchasetype ='PREORDER'", null);
 			} catch (Exception e) {
 				showMessage("Exception!", "Table problem.");
