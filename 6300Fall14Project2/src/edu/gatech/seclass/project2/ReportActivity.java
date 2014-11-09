@@ -2,6 +2,7 @@ package edu.gatech.seclass.project2;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,9 +17,9 @@ public class ReportActivity extends Activity implements OnClickListener {
 
 	EditText rptDate;
 	Button btnSalesRpt, btnPreOrdRept;
-	SQLiteDatabase db;
-	CustomersMySQLiteHelper dbCust;
-	PurchasesMySQLiteHelper dbPer;
+	//SQLiteDatabase db;
+	//CustomersMySQLiteHelper dbCust;
+	PurchasesMySQLiteHelper db;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 		
 		btnSalesRpt.setOnClickListener(this);
 		btnPreOrdRept.setOnClickListener(this);
+		
 		
 		
 //		   // purchases Table Columns names
@@ -47,8 +49,13 @@ public class ReportActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View view) 
 	{
-		dbCust = new CustomersMySQLiteHelper(getBaseContext());
-		dbPer = new PurchasesMySQLiteHelper(getBaseContext());
+		
+		Context context = this;
+		db=new PurchasesMySQLiteHelper(context);
+		
+		//db = openOrCreateDatabase("customersDB", 0, null);
+		//dbCust = new CustomersMySQLiteHelper(getBaseContext());
+		//dbPer = new PurchasesMySQLiteHelper(getBaseContext());
 		
 		
 		if ((rptDate.getText().toString().trim().length()==0))
@@ -57,10 +64,11 @@ public class ReportActivity extends Activity implements OnClickListener {
 		}
 		if (view==btnSalesRpt)
 		{
+			SQLiteDatabase dbWrite = db.getWritableDatabase();
 			Cursor c;
-			db = dbPer.getWritableDatabase();
+			
 			try {
-				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
+				c = dbWrite.rawQuery("SELECT * FROM purchases WHERE date='"
 						+rptDate.getText()+"'", null);
 			} catch (Exception e) {
 				showMessage("Exception!", "Table problem.");
@@ -85,9 +93,9 @@ public class ReportActivity extends Activity implements OnClickListener {
 		if (view==btnPreOrdRept)
 		{
 			Cursor c;
-			db = dbPer.getWritableDatabase();
+			SQLiteDatabase dbWrite = db.getWritableDatabase();
 			try {
-				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
+				c = dbWrite.rawQuery("SELECT * FROM purchases WHERE date='"
 						+rptDate.getText()+"' AND purchasetype ='PREORDER'", null);
 			} catch (Exception e) {
 				showMessage("Exception!", "Table problem.");
