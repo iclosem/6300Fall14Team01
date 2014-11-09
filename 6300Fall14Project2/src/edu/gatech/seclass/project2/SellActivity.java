@@ -73,12 +73,12 @@ public class SellActivity extends Activity {
 				
 			}
 			int points = (int)(Math.floor(totalPrice));
-			sellText += sellText + "\n Total: $" + totalPrice;
+			sellText = sellText + "\n Total: $" + totalPrice;
 
 			if(curCust != null){
 				curCust.awardPoints(points);
 				dbCust.updateCustomer(curCust); 
-				sellText += sellText + "\nPoints Awarded: " + points;
+				sellText = sellText + "\nPoints Awarded: " + points;
 			}
 			showMessage("Sale Made!", sellText);
 			clearCart();
