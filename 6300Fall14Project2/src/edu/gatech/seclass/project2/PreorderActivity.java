@@ -115,18 +115,17 @@ public class PreorderActivity extends Activity {
 		
 		ArrayList<String> itemStringList = new ArrayList<String>();
 		Items menu = new Items();
-		Item[] menuItems = menu.inventory();
+		Item[] menuItems = menu.preorderInventory();
 		for(Item item: menuItems) {
-			if(item.getCategory() == "IceCream"){
 				itemStringList.add(item.getFlavor() + "\t\t" + String.valueOf(item.getPrice()));
-			}
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemStringList);
 
+		
 		m_listview.setAdapter(adapter);
 		m_listview.setOnItemClickListener(new OnItemClickListener() {
 			Items menu = new Items();
-			Item[] menuItems = menu.inventory();
+			Item[] menuItems = menu.preorderInventory();
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
