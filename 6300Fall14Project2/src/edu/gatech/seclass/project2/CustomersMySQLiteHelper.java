@@ -128,8 +128,13 @@ public class CustomersMySQLiteHelper extends SQLiteOpenHelper{
         db.close();
     }
     
-    public void editCustomer (Customer customer){
-    	this.deleteCustomer(customer);
-    	this.addCustomer(customer);
+    public void updateCustomer (Customer customer){
+        SQLiteDatabase db = this.getWritableDatabase();
+    	db.execSQL("UPDATE customers SET name ='"
+				+ customer.getName() + "',address='" + customer.getAddress() + "',birthday='"
+				+ customer.getBirthday() +"',vippointstotal='" + customer.getVIPPointsTotal() + "',goldstatusdate= '"
+				+ customer.getGoldStatusDate() + "', percentdiscount='" + customer.getPercentDiscount() + "', freeitemsavailable='"
+				+ customer.getFreeItemsAvailable()  + "' WHERE id='" + customer.getID() + "'");
+
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 import edu.gatech.seclass.project2.Items;
 import android.widget.ArrayAdapter;
 import android.app.Activity;
+import android.app.AlertDialog.Builder;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,14 +28,21 @@ public class SellActivity extends Activity {
 	
 	private void executePurchase(String saleType) {
 		if(cart.size() > 0){
-			CustomersMySQLiteHelper dbCust;
-			dbCust = new CustomersMySQLiteHelper(this);
-			PurchasesMySQLiteHelper dbPer;
-			dbPer = new PurchasesMySQLiteHelper(this);
+			CustomersMySQLiteHelper dbCust = new CustomersMySQLiteHelper(this);
+			PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
 			double totalPrice = 0;
 			int totalPoints = 0;
-			//needs to check for free items user has
-			int freeItems = curCust.getFreeItemsAvailable();
+			
+			double discount = 0;
+			String custSaleId = "-1";
+			int freeItems = 0;
+			
+			if(curCust != null){
+				discount = curCust.getPercentDiscount();
+				custSaleId = String.valueOf(curCust.getID());
+				//needs to check for free items user has
+				freeItems = curCust.getFreeItemsAvailable();
+			}
 			String sellText = "";
 			for (Item item: this.cart){
 				//branch removed yogurt if its a preorder
@@ -42,10 +50,7 @@ public class SellActivity extends Activity {
 					sellText += "\nCanx " + item.getFlavor() + ": not preorderable";
 				} else {
 					//applying discount
-					double price = item.getPrice() - (item.getPrice() * curCust.getPercentDiscount()); 
-				    //adding new points 
-					int points = (int) price; 
-					totalPoints += points;
+					double price = item.getPrice() * (1 - discount); 
 					
 					///creating date
 					Calendar cal = Calendar.getInstance();
@@ -53,24 +58,30 @@ public class SellActivity extends Activity {
 			        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 			        String formattedDate = format1.format(cal.getTime());
 					
-					curCust.awardPoints(points);//awards the amount of points based on price
-					if (freeItems >0){
+					if (freeItems > 0){
 						sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
 						curCust.creditFreeItem();
 						price = 0;
 						freeItems--;
 					} else {
-						sellText += "\n Purchased"+ item.getFlavor() + price; //adds to receipt
+						sellText += "\n Purchased: "+ item.getFlavor() +"\t $" + price; //adds to receipt
 						totalPrice += price;
 					}
-					Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, String.valueOf(curCust.getID()));
+					Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), saleType, price, formattedDate, custSaleId);
 					dbPer.addPurchase(curPurchase);
 				}
-				dbCust.editCustomer(curCust); //adds the customer's current record
-				sellText += "\n Total:" + totalPrice + "Points:" + totalPoints;
 				
 			}
-			Toast.makeText(getBaseContext(), "Purchase added:" + sellText, Toast.LENGTH_LONG).show();
+			int points = (int)(Math.floor(totalPrice));
+			sellText += sellText + "\n Total: $" + totalPrice;
+
+			if(curCust != null){
+				curCust.awardPoints(points);
+				dbCust.updateCustomer(curCust); 
+				sellText += sellText + "\nPoints Awarded: " + points;
+			}
+			showMessage("Sale Made!", sellText);
+			clearCart();
 		} else {
 			Toast.makeText(getBaseContext(), "Cart is empty", Toast.LENGTH_SHORT).show();
 		}
@@ -106,7 +117,7 @@ public class SellActivity extends Activity {
 		Items menu = new Items();
 		Item[] menuItems = menu.inventory();
 		for(Item item: menuItems) {
-			itemStringList.add(item.getFlavor()+ "     "+String.valueOf(item.getPrice()));
+			itemStringList.add(item.getFlavor() + "\t\t" + String.valueOf(item.getPrice()));
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemStringList);
 
@@ -172,6 +183,8 @@ public class SellActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				clearCart();
+
+				Toast.makeText(getBaseContext(), "Cart Cleared", Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -201,7 +214,13 @@ public class SellActivity extends Activity {
 		this.cart = new ArrayList<Item>();
 		EditText editText = (EditText) findViewById( R.id.editTextCartSell);
 		editText.setText("");
-
-		Toast.makeText(getBaseContext(), "Cart Cleared", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void showMessage(String title, String message) {
+    	Builder builder=new Builder(this);
+    	builder.setCancelable(true);
+    	builder.setTitle(title);
+    	builder.setMessage(message);
+    	builder.show();
 	}
 }

@@ -33,21 +33,15 @@ public class CreateActivity extends Activity {
 		try{
 			if(!txtName.getText().toString().matches("") && !txtAddr.getText().toString().matches("") && 
 					!txtDob.getText().toString().matches("")) {
-				//check for duplicates??
-				//Cursor c=db.rawQuery("SELECT * FROM TABLE_CUSTOMERS WHERE KEY_NAME='"+txtName.getText()+"' AND "
-				//		+ "KEY_ADDRESS='"+txtAddr.getText()+"' AND KEY_BIRTHDAY='"+txtDob.getText()+"'", null);
-		    	//if(c.getCount()==0){
-		  
+
 		    		Customer newCust = new Customer(txtName.getText().toString(), txtAddr.getText().toString(), 
 						txtDob.getText().toString() );
 		    		// addCustomer now returns the primary key value
 		    		long id = dbhelp.addCustomer(newCust);
+		    		//TODO also add the new cust's name to a field
 		    		txtVipNum.setText(String.valueOf(id));
-		    	
-		    	//else
-		    	//{
-		    	//	showMessage("Duplicate!","This VIP already exists");
-		    	//}
+		    		clearText();
+
 		    } else {
 				showMessage("Error!","Please Enter all data fields");
 			}

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.view.View.OnClickListener;
 import android.view.View;
 
@@ -46,24 +47,20 @@ public class VIPActivity extends Activity implements OnClickListener {
 		
 	}
 
-	public void onClick(View view)
-	{
+	public void onClick(View view) {
 		// set context
 		Context context = this;
 		// instantiate helper
 		CustomersMySQLiteHelper dbhelp = new CustomersMySQLiteHelper(context);
 		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
-		if ((view!=btnList) && (vipId.getText().toString().trim().length()==0))
-		{
+		if ((view != btnList) && (vipId.getText().toString().trim().length() == 0)) {
 			showMessage("Error!", "Enter VIP ID");
 		}
-		if (view==btnRetrieve)
-		{
+		if (view==btnRetrieve) {
 			Cursor c=db.rawQuery("SELECT * FROM customers WHERE id='"
 					+vipId.getText()+"'", null);
-    		if(c.moveToFirst())
-    		{
+    		if(c.moveToFirst()) {
     			vipName.setText(c.getString(1));
     			address.setText(c.getString(2));
     			dob.setText(c.getString(3));
@@ -71,45 +68,47 @@ public class VIPActivity extends Activity implements OnClickListener {
     			goldStatusDate.setText(c.getString(5));
     			percentDiscount.setText(c.getString(6));
     			freeItemsAvailable.setText(c.getString(7));
+    		} else {
+    			Toast.makeText(getBaseContext(), "No Customer Found", Toast.LENGTH_SHORT).show();
     		}
 		}
-		if (view==btnSave)
-		{
+		if (view == btnSave) {
 			db.execSQL("UPDATE customers SET name ='"
 					+vipName.getText()+"',address='"+address.getText()+"',birthday='"
 					+dob.getText()+"',vippointstotal='"+vipPointsTotal.getText()+"',goldstatusdate= '"
 					+goldStatusDate.getText()+"', percentdiscount='"+percentDiscount.getText()+"', freeitemsavailable='"
 					+freeItemsAvailable.getText()+"' WHERE id='"+vipId.getText()+"'");
     		// clearText();
-			showMessage("Success", "Record Updated");
+			showMessage("Success", vipName.getText().toString() + " Record Updated");
     			
     	}
-		if (view==btnDelete)
-		{
+		
+		if (view == btnDelete) {
+			String placeholdername = vipName.getText().toString();
 			db.execSQL("DELETE FROM customers WHERE id='"+vipId.getText()+"'");
 					
 			clearText();
-			showMessage("Success", "Record Deleted"); 
+			showMessage("Success", placeholdername + " Record Deleted"); 
 		}
-		if (view==btnList)
-		{
+		
+		if (view == btnList) {
 			
 			Cursor c=db.rawQuery("SELECT * FROM customers", null);
-    		if(c.getCount()==0)
-    		{
+    		if(c.getCount() == 0) {
     			showMessage("Error", "No VIP records found");
     			return;
     		}
     		StringBuffer buffer=new StringBuffer();
-    		while(c.moveToNext())
-    		{
+    		while(c.moveToNext()) {
     			buffer.append("VIP ID: "+c.getString(0)+"\n");
     			buffer.append("Name: "+c.getString(1)+"\n");
     			buffer.append("Address: "+c.getString(2)+"\n");
     			buffer.append("DOB: "+c.getString(3)+"\n");
     			buffer.append("VIP Points: "+c.getString(4)+"\n");
-    			buffer.append("Gold Date: "+c.getString(5)+"\n");
-    			buffer.append("Discount: "+c.getString(6)+"\n");
+    			if(c.getString(5) != null && c.getString(5) != "" && c.getString(5) != "null"){
+	    			buffer.append("Gold Date: "+c.getString(5)+"\n");
+	    			buffer.append("Discount: "+c.getString(6)+"\n");
+    			}
     			buffer.append("Freebies: "+c.getString(7)+"\n\n");
     		}
     		showMessage("VIP Records", buffer.toString());
@@ -139,16 +138,16 @@ public class VIPActivity extends Activity implements OnClickListener {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void showMessage(String title,String message)
-    {
+	
+	public void showMessage(String title,String message) {
     	Builder builder=new Builder(this);
     	builder.setCancelable(true);
     	builder.setTitle(title);
     	builder.setMessage(message);
     	builder.show();
 	}
-	public void clearText()
-    {
+	
+	public void clearText() {
 		vipId.setText("");
 		vipName.setText("");
 		address.setText("");

@@ -55,7 +55,7 @@ public class CustomersMySQLiteHelperTest extends AndroidTestCase  {
 		 list = db.getCustomers();
 		 Customer cust = list.get(0);
 		 cust.awardPoints(100000);
-		 db.editCustomer(cust);
+		 db.updateCustomer(cust);
 		 list = db.getCustomers();
 		 cust = list.get(0);
 		 for(Customer customer: list){
