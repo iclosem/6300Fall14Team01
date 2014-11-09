@@ -20,6 +20,7 @@ public class Items {
 	}
 	public Item[] inventory(){
       return this.inventory;
-	}    
+	}
+	
   //Statically initializing inventory
 }
