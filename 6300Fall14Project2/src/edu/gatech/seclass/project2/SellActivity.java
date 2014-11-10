@@ -218,17 +218,29 @@ public class SellActivity extends Activity {
     	int numToAward = 0;
     	
     	int vipId = this.curCust.getVIPNumber();
-        List<Purchase> last30Purchase;
+        List<Purchase> lastMonthPurchase;
+        Purchase lastPurchase;
        
 		try {
-			last30Purchase = dbPer.getLastMonthPurchases(String.valueOf(vipId));
-
-	    	if(last30Purchase.size() > 0){
-	    		if(this.curCust.getGoldStatusDate().compareTo("null") != 0 && this.curCust.getGoldStatusDate() != null){
-	    			numToAward++; //TODO: Problem, this will award extra freebie on every purchase for a gold cust
+			lastMonthPurchase = dbPer.getLastMonthPurchases(String.valueOf(vipId));
+	    	if(lastMonthPurchase.size() > 0){
+	    		lastPurchase = dbPer.getLastPurchases(String.valueOf(vipId));
+	    		Calendar cal = Calendar.getInstance();
+	    		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+	    		Date lastPurchDate = format1.parse(lastPurchase.getDate());
+	    		if(lastPurchDate.before(format1.parse(getLastLastMonthPurchase(lastMonthPurchase).getDate()))){
+		    		if(this.curCust.getGoldStatusDate().compareTo("") != 0 && this.curCust.getGoldStatusDate().compareTo("null") != 0 && this.curCust.getGoldStatusDate() != null){
+		    			numToAward++; 
+		    		}
+		    		double totalPurch = 0;
+		    		for(Purchase purch: lastMonthPurchase){
+		    			totalPurch += purch.getPrice();
+		    		}
+		    		
+		    		if(totalPurch >= 50){
+		    			numToAward++; 
+		    		}
 	    		}
-	    		
-	    		//TODO go through purchase list, add up, when hit $50 or eolist, award or don't
 	    	}
 		} catch (Exception e) {
 			showMessage("Exception!", "Table problem.");
@@ -236,6 +248,7 @@ public class SellActivity extends Activity {
 		}
     	return numToAward;
     }
+    
     private String formatPrice(double price){
     	price = Math.floor(price * 100 ) / 100;
 		String totalPriceStr = String.valueOf( price);
@@ -244,6 +257,24 @@ public class SellActivity extends Activity {
 		}
 		
 		return totalPriceStr;
+    }
+    
+    private Purchase getLastLastMonthPurchase(List<Purchase> lastMonthPurchase){
+    	Purchase lastPurchase = lastMonthPurchase.get(0);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+        	Date lastPurchDate = format1.parse(lastPurchase.getDate());
+	    	for(Purchase purch: lastMonthPurchase){
+	    		if(lastPurchDate.after(format1.parse(purch.getDate()))){
+	    			lastPurchDate = format1.parse(purch.getDate());
+	    			lastPurchase = purch;
+	    		}
+	    	}
+        } catch (ParseException e) {
+        	// TODO Auto-generated catch block
+        	e.printStackTrace();
+        }
+    	return lastPurchase;
     }
 //    private boolean purchase50LastMonth(){
 //    }

@@ -161,7 +161,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 		{
 	        List<Purchase> last30Purchase;
 			try {
-				last30Purchase = dbPer.getLastMonthPurchases(rptVIPID.getText().toString());
+				last30Purchase = dbPer.getLast30DaysPurchases(rptVIPID.getText().toString());
 			
 	    		if(last30Purchase.size() == 0) {
 	        		showMessage("Error", "No Sales found for this date range");
