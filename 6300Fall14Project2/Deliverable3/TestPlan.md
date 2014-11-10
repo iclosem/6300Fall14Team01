@@ -66,4 +66,5 @@ We intend to use JUnit to create any automated testing.
 | 19          | Gold Status awarded|   <ul><li>Order over $1000 worth of product for a non-Gold status customer</li><li>Check VIP status</li></ul> | Gold status has been awarded |                       | Pass | ABS|
 | 20          | VIP last 30 day report |   <ul><li>Click on reports </li><li>Enter a known vip id</li><li>Check report</li></ul> |  Report of al items for last 30 days is listed  |                       | Pass          | ABS      |
 | 21          | Gold VIP gets double points|   <ul><li>Check VIP Cust's VIP points</li><li>Make a purchase for VIP</li><li>COnfirm that they recieved double points</li></ul> |               |  Pass| ABS | Awarded in total, but not reflected at time of purchase |
-| 22          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 22          | VIP purchase report |   <ul><li>Click on reports </li><li>Enter a known vip id</li><li>Check report</li></ul> |  Report of all items purchased is listed  |                       | Pass          | ABS      |
+| 23          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
