@@ -31,7 +31,6 @@ public class SellActivity extends Activity {
 			CustomersMySQLiteHelper dbCust = new CustomersMySQLiteHelper(this);
 			PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
 			double totalPrice = 0;
-			int totalPoints = 0;
 			
 			double discount = 0;
 			String custSaleId = "-1";
@@ -43,7 +42,7 @@ public class SellActivity extends Activity {
 				//needs to check for free items user has
 				freeItems = curCust.getFreeItemsAvailable();
 			}
-			String sellText = "";
+			String sellText = "Purchased";
 			for (Item item: this.cart){
 				//applying discount
 				double price = item.getPrice() * (1 - discount); 
@@ -60,12 +59,13 @@ public class SellActivity extends Activity {
 					price = 0;
 					freeItems--;
 				} else {
-					sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+					sellText += "\n"+ item.getFlavor() +"\t\t  $" + price; //adds to receipt
 					totalPrice += price;
 				}
 				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "SALE", price, formattedDate, custSaleId);
 				dbPer.addPurchase(curPurchase);
 			}
+			totalPrice = Math.floor(totalPrice * 100) / 100;
 			int points = (int)(Math.floor(totalPrice));
 			sellText = sellText + "\n Total: $" + totalPrice;
 
