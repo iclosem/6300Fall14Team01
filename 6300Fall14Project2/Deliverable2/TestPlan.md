@@ -37,7 +37,11 @@ The form will include fields for:
 
 ### 2.5 Technology
 
+<<<<<<< HEAD
+We intend to use Android JUnit to create any automated testing.
+=======
 We intend to use JUnit to create any automated testing.
+>>>>>>> master
 
 
 ## 4 Test Cases
@@ -45,10 +49,21 @@ We intend to use JUnit to create any automated testing.
 
 | Case Number | Purpose             | Steps                                                                                               | Expected Result                                     | Actual Result | Pass/Fail information | Tester's Initials | Notes |
 |:-------------:|---------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------|---------------|-----------------------|:-------------------:|-------|
+<<<<<<< HEAD
 | 1           | System Start        | Open App                                                                                            | App Opens                                           | App opens   | Pass         |                   | ABS |
 | 2           | Create VIP Customer | <ul><li>Select VIPS tab</li><li>Select New User</li><li>Enter Customer's name</li><li>Enter Customer's address</li><li>Enter Customer's DOB</li><li>Click Create User</li></ul> | User is created with correct Name, Address, and DOB |               |  Pass   |    ABS   |       |
 | 3           | Order Product | <ul><li>Select Sell tab</li><li>Select product</li><li>Select VIP Customer</li><li>Click Purchase</li></ul>|Verify that Purchase was made  |                       |  Pass    |  ABS |
 | 4           |Points awarded on purchase| <ul><li>Check a VIP's points count</li><li>Complete a purchase for that VIP</li><li>Check the VIP's points status again</li></ul>|VIP's points should have increased by the whole dollar amount of the purchase|                       |    Pass  | ABS  |
+=======
+<<<<<<< HEAD
+| 1           | System Start        | Open App                                                                                            | App Opens                                           |               | Pass | ABS |       |
+=======
+| 1           | System Start        | Open App                                                                                            | App Opens                                           |               |                       |                   |       |
+>>>>>>> master
+| 2           | Create VIP Customer | <ul><li>Select VIPS tab</li><li>Select New User</li><li>Enter Customer's name</li><li>Enter Customer's address</li><li>Enter Customer's DOB</li><li>Click Create User</li></ul> | User is created with correct Name, Address, and DOB |               |                       |                   |       |
+| 3           | Order Product | <ul><li>Select Sell tab</li><li>Select product</li><li>Select VIP Customer</li><li>Click Purchase</li></ul>|Verify that Purchase was made  |                       |                   |       |
+| 4           |Points awarded on purchase| <ul><li>Check a VIP's points count</li><li>Complete a purchase for that VIP</li><li>Check the VIP's points status again</li></ul>|VIP's points should have increased by the whole dollar amount of the purchase|                       |                   |       |
+>>>>>>> master
 | 5           | Generate Daily Report|<ul><li>Select Report Tab</li><li>Enter date</li><li>Click Generate</li></ul>| Daily report should be generated |                       |                   |       |
 | 6           |Free Ice cream awarded on 50 points|<ul><li>Order over $50 worth of product for a VIP customer</li><li>Make the date roll over for a month</li><li>Check VIP's status</li></ul>|VIP should have a free purchase award|                       |                   |       |
 | 7           |Check VIP status|<ul><li>Select VIPS tab</li><li>Select List Button</li></ul>|Verify that all VIPS Name, Address, DOB, Points and status are displayed|                       |     Pass   | ABS |
@@ -64,4 +79,18 @@ We intend to use JUnit to create any automated testing.
 | 17          | Cancel Preorder |    <ul><li>Create pre-order</li><li>Cancel preorder</li></ul> | Preorder is canceled and no longer shows up in list of preorders. Preorder slots are increased by number of preorder slots cancelled. |                       |                   |       |
 | 18          | Monthly Accrual of Gold Rewards|   <ul><li>Check Gold VIPs awards balance</li><li>Make the month roll over to the next one</li><li>Check Gold VIP's awards balance</li></ul> | Gold Status VIP is awarded a free purchase for the month |                       |                   |       |
 | 19          | Gold Status awarded|   <ul><li>Order over $1000 worth of product for a non-Gold status customer</li><li>Check VIP status</li></ul> | Gold status has been awarded |                       |                   |       |
+<<<<<<< HEAD
+| 20          |WB- Create Customer |   <ul><li>In CustomerTests.java</li><li>Create customer directly</li></ul> | expect the created customer to have the same name, address and dob as the values passed in, and to have a VIP number created for them with 0 points | New customer is created with same name, dob and address, and has a new VP number with 0 points |  ABS               |       |
+| 21          | WB- Preorder |   <ul><li>In Preorder Tests</li><li>Create preorder</li></ul> | Getting the information about the preorder returns the same information as passed in |                       |                   |       |
+| 22          |WB- Items |   <ul><li>Item tests</li><li>Ensure that Yologurt is an item with a price</li></ul> |               |                       |                   |       |
+| 23          |WB-VIP customer Free items|   <ul><li>In Customer Tests</li><li>Award a vip customer a free item</li><li>Check to see if they have a free item</li></ul> | Custoemr should have a free item available |                       |                   |       |
+| 24          |WB- Award gold |   <ul><li>In Customer Tests</li><li>Award GOLD a VIP</li><li>Check VIP’s status</li></ul> | VIP should have GOLD status |                       |                   |       |
+| 25          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 26          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 27          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 28          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 29          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+| 30          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+=======
 | 20          | |   <ul><li></li><li></li><li></li></ul> |               |                       |                   |       |
+>>>>>>> master
