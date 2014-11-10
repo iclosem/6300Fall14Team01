@@ -7,6 +7,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +26,8 @@ public class PreorderActivity extends Activity {
 	private ListView m_listview2;
 	private List<Item> cart = new ArrayList<Item>(); //stores the cart	
 	private Customer curCust;
-	
+	private String pickupDate;
+	private int preSlotsMax = 3;
 	private void executePurchase() {
 		if(cart.size() > 0){
 			CustomersMySQLiteHelper dbCust = new CustomersMySQLiteHelper(this);
@@ -36,12 +39,14 @@ public class PreorderActivity extends Activity {
 			String custSaleId = "-1";
 			int freeItems = 0;
 			
+			
+			
 			if(curCust == null){
 				//error, must have a customer
 				Toast.makeText(getBaseContext(), "Must select a VIP Customer", Toast.LENGTH_SHORT).show();
 			}else{
 				String preorderDate = getPreorderDate(cart.size());
-				if(preorderDate != ""){
+				if(preorderDate != null){
 					discount = curCust.getPercentDiscount();
 					custSaleId = String.valueOf(curCust.getID());
 					//needs to check for free items user has
@@ -79,6 +84,7 @@ public class PreorderActivity extends Activity {
 					showMessage("Preorder Made!", sellText);
 					clearCart();
 				}
+				
 			}
 		} else {
 			Toast.makeText(getBaseContext(), "Cart is empty", Toast.LENGTH_SHORT).show();
@@ -87,18 +93,35 @@ public class PreorderActivity extends Activity {
 	
 
 	private String getPreorderDate(int numItems){
-		String preorderDate = "";
+		String preorderDate;
+		pickupDate = ((EditText) findViewById(R.id.editTextPickupDate)).getText().toString();
 		//TODO: check number of items, compare to preorders available, popup a date radio list
-
+		if (pickupDate == "" || pickupDate==null) { // TODO || more than 1 week in the future  
+			Toast.makeText(getBaseContext(), "Invalid Pickup Date", Toast.LENGTH_SHORT).show();
+			return null;
+		} 
 		Calendar cal = Calendar.getInstance();
 		for(int i = 1; i < 8; i++){
-	        cal.add(Calendar.DATE, i);
+	        cal.add(Calendar.DATE, 1);
 	        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 	        preorderDate = format1.format(cal.getTime());
-	        //go ask about this date
+	        if (preorderDate==pickupDate){
+	        	PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
+	        	SQLiteDatabase db = dbPer.getWritableDatabase();
+	        	Cursor c = db.rawQuery("SELECT * FROM purchases WHERE date='"+preorderDate+"'", null);
+	        	if (c.getCount() >= preSlotsMax){
+	        		Toast.makeText(getBaseContext(), "No Slots Left for this Pickup Date", Toast.LENGTH_SHORT).show();
+	        		return null;
+	        	}
+	        	else 
+	        	{
+	        		return preorderDate;
+	        	}
+	        }	              
 		}
-		return preorderDate;
-	}
+		Toast.makeText(getBaseContext(), "Please select a pickup date within the next week.", Toast.LENGTH_SHORT).show();
+		return null;
+}
 	
 	private void updateCart() {
 		EditText editText = (EditText)findViewById(R.id.editTextCartPreorder);
@@ -120,6 +143,7 @@ public class PreorderActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_preorder);
+		// pickupDate=findViewById(R.id.editTextPickupDate).toString();
 		
 		/////////////////////////////////////////////////////////////////////////////////
 		//This section populates the flavors for sale
