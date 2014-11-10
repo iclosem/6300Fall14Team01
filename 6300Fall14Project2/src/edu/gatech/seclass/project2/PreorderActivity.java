@@ -70,7 +70,7 @@ public class PreorderActivity extends Activity {
 							sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + formatPrice(price); //adds to receipt
 							totalPrice += price;
 						}
-						Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, formattedDate, custSaleId);
+						Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, preorderDate, custSaleId);
 						dbPer.addPurchase(curPurchase);
 					}
 					int points = (int)(Math.floor(totalPrice));
