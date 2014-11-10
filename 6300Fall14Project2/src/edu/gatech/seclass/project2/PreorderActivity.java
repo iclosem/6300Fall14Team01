@@ -49,7 +49,7 @@ public class PreorderActivity extends Activity {
 					String sellText = "Pickup Date: ";
 					for (Item item: this.cart){
 						//applying discount
-						double price = item.getPrice() * (1 - discount); 
+						double price = Math.round((item.getPrice() * (1 - discount))*100)/100; 
 						
 						///creating date
 						Calendar cal = Calendar.getInstance();
@@ -62,13 +62,12 @@ public class PreorderActivity extends Activity {
 							price = 0;
 							freeItems--;
 						} else {
-							sellText += "\n"+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+							sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
 							totalPrice += price;
 						}
 						Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, formattedDate, custSaleId);
 						dbPer.addPurchase(curPurchase);
 					}
-					totalPrice = Math.floor(totalPrice * 100) / 100;
 					int points = (int)(Math.floor(totalPrice));
 					sellText = sellText + "\n Total: $" + totalPrice;
 		
@@ -105,7 +104,7 @@ public class PreorderActivity extends Activity {
 			cartText = "Current Customer " + curCust.getName();	
 		}
 		for (Item item: this.cart){
-			cartText += "\n "+ item.getFlavor() + "\t\t" + item.getPrice();
+			cartText += "\n "+ item.getFlavor() + item.getPrice();
 		}
 		editText.setText(cartText);
 	};

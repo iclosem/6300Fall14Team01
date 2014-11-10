@@ -6,15 +6,20 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import edu.gatech.seclass.project2.Items;
 import android.widget.ArrayAdapter;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +36,7 @@ public class SellActivity extends Activity {
 			CustomersMySQLiteHelper dbCust = new CustomersMySQLiteHelper(this);
 			PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
 			double totalPrice = 0;
+			int totalPoints = 0;
 			
 			double discount = 0;
 			String custSaleId = "-1";
@@ -42,7 +48,7 @@ public class SellActivity extends Activity {
 				//needs to check for free items user has
 				freeItems = curCust.getFreeItemsAvailable();
 			}
-			String sellText = "Purchased";
+			String sellText = "";
 			for (Item item: this.cart){
 				//applying discount
 				double price = item.getPrice() * (1 - discount); 
@@ -59,13 +65,12 @@ public class SellActivity extends Activity {
 					price = 0;
 					freeItems--;
 				} else {
-					sellText += "\n"+ item.getFlavor() +"\t\t  $" + price; //adds to receipt
+					sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
 					totalPrice += price;
 				}
 				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "SALE", price, formattedDate, custSaleId);
 				dbPer.addPurchase(curPurchase);
 			}
-			totalPrice = Math.floor(totalPrice * 100) / 100;
 			int points = (int)(Math.floor(totalPrice));
 			sellText = sellText + "\n Total: $" + totalPrice;
 
@@ -205,4 +210,44 @@ public class SellActivity extends Activity {
     	builder.setMessage(message);
     	builder.show();
 	}
+//    public int monthlyFreebies(){
+//    	
+//    	
+//    	int vipId = this.curCust.getVIPNumber();
+//    	Calendar cal = Calendar.getInstance();
+//        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+//        String formattedDate = format1.format(cal.getTime());
+//        
+//        PurchasesMySQLiteHelper dbhelp = new PurchasesMySQLiteHelper(this);
+//		SQLiteDatabase db = dbhelp.getWritableDatabase();
+//		Cursor c;
+//		try {
+//			c = db.rawQuery("SELECT * FROM purchases WHERE vipid='"
+//					+getString(vipId)+"'", null);
+//			} catch (Exception e) {
+//				showMessage("Exception!", "Table problem.");
+//				return 0;
+//			}
+//        	String lastPurchDate;
+//			if(c.moveToLast()){
+//        		lastPurchDate = c.getString(5);
+//        	}
+//        	else{
+//        		lastPurchDate = formattedDate;
+//        	}
+//        	
+//			Calendar cal2 = Calendar.getInstance();
+//			Date lastP = null;
+//			try {
+//				lastP = format1.parse(lastPurchDate);
+//			} catch (ParseException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			cal2.setTime(lastP);
+//        	int difInMonths = cal.get(Calendar.MONTH) - cal2.get(Calendar.MONTH);
+//        	
+//    	return difInMonths-1;
+//    	
+//    }
 }

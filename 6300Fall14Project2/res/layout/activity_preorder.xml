@@ -21,8 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textPreorderflavors"
-        android:background="#EEEEEE" >
+        android:layout_below="@+id/textPreorderflavors" >
 
     </ListView>
 
@@ -74,13 +73,13 @@
         android:text="Customers"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    
     <ListView
         android:id="@+id/listCustomersPreorder"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignLeft="@+id/textView2Preorder"
         android:layout_below="@+id/textView2Preorder"
-        android:background="#EEEEEE"
         android:footerDividersEnabled="false" >
 
     </ListView>

@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 public class Customer {
     private String birthday;
     private String name;
@@ -79,6 +82,7 @@ public class Customer {
         this.freeItemsAvailable++;
         return this.freeItemsAvailable;
     };
+
     
     //private methods 
     //
