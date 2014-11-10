@@ -1,5 +1,9 @@
 package edu.gatech.seclass.project2;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
@@ -15,8 +19,8 @@ import android.widget.EditText;
 
 public class ReportActivity extends Activity implements OnClickListener {
 
-	EditText rptDate;
-	Button btnSalesRpt, btnPreOrdRept;
+	EditText rptDate, rptVIPID;
+	Button btnSalesRpt, btnPreOrdRept, btnHistory, btn30Day;
 	SQLiteDatabase db;
 	//CustomersMySQLiteHelper dbCust;
 	//PurchasesMySQLiteHelper db;
@@ -27,13 +31,17 @@ public class ReportActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_report);
 	
 		rptDate=(EditText)findViewById(R.id.editTextReportDate);
+		rptVIPID=(EditText)findViewById(R.id.editTextRptVIPID);
+		
 		btnSalesRpt=(Button)findViewById(R.id.buttonSalesReport);
 		btnPreOrdRept=(Button)findViewById(R.id.buttonDailyPreordersReport);
+		btnHistory=(Button)findViewById(R.id.ButtonPurchaseHist);
+		btn30Day=(Button)findViewById(R.id.Button30Day);
 		
 		btnSalesRpt.setOnClickListener(this);
 		btnPreOrdRept.setOnClickListener(this);
-		
-		
+		btnHistory.setOnClickListener(this);
+		btn30Day.setOnClickListener(this);
 		
 //		   // purchases Table Columns names
 //	    private static final String KEY_ID = "id";
@@ -61,12 +69,13 @@ public class ReportActivity extends Activity implements OnClickListener {
 		//dbPer = new PurchasesMySQLiteHelper(getBaseContext());
 		
 		
-		if ((rptDate.getText().toString().trim().length()==0))
-		{
-			showMessage("Error!", "Enter Report Date");
-		}
+		
 		if (view==btnSalesRpt)
 		{
+			if ((rptDate.getText().toString().trim().length()==0))
+			{
+				showMessage("Error!", "Enter Report Date");
+			}
 			Cursor c;
 			
 			try {
@@ -95,6 +104,11 @@ public class ReportActivity extends Activity implements OnClickListener {
     	}
 		if (view==btnPreOrdRept)
 		{
+			if ((rptDate.getText().toString().trim().length()==0))
+			{
+				showMessage("Error!", "Enter Report Date");
+			}
+			
 			Cursor c;
 			try {
 				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
@@ -118,6 +132,63 @@ public class ReportActivity extends Activity implements OnClickListener {
         		}
         	showMessage("Daily Preorders for " +rptDate.getText(), buffer.toString());
     	}
+		if (view==btnHistory)
+		{
+			Cursor c;
+			try {
+				c = db.rawQuery("SELECT * FROM purchases WHERE vipid='"
+						+rptVIPID.getText()+"'", null);
+			} catch (Exception e) {
+				showMessage("Exception!", "Table problem.");
+    			return;
+			}
+    		if(c.getCount()==0)
+        	{
+        		showMessage("Error", "No Sales found for this VIP ID");
+        		return;
+        	}
+    		StringBuffer buffer=new StringBuffer();
+    		while(c.moveToNext())
+        		{
+    			buffer.append("Date: "+c.getString(5)+"\n");
+    			buffer.append("Flavor: "+c.getString(1)+"\n");
+    			buffer.append("Amount: "+c.getString(4)+"\n\n");
+        		
+        		}
+        	showMessage("Purchase history for VIP #" +rptVIPID.getText(), buffer.toString());
+    	}
+		if (view==btn30Day)
+		{
+			Calendar cal = Calendar.getInstance();
+			Calendar cal2 = Calendar.getInstance();
+			cal2.add(Calendar.DATE, -31);
+			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+	        String formattedDate = format1.format(cal.getTime());
+	        String formattedDate2 = format1.format(cal2.getTime());
+						
+			Cursor c;
+			try {
+				c = db.rawQuery("SELECT * FROM purchases WHERE date <='"+formattedDate+"' AND date>'"+formattedDate2+"'", null);
+			} catch (Exception e) {
+				showMessage("Exception!", "Table problem.");
+    			return;
+			}
+    		if(c.getCount()==0)
+        	{
+        		showMessage("Error", "No Sales found for this date");
+        		return;
+        	}
+        StringBuffer buffer=new StringBuffer();
+        while(c.moveToNext())
+        {
+        	buffer.append("Date: "+c.getString(5)+"\n");
+        	buffer.append("Flavor: "+c.getString(1)+"\n");
+        	buffer.append("Amount: "+c.getString(4)+"\n\n");
+        	
+        }
+        	showMessage("Daily Preorders for " +rptDate.getText(), buffer.toString());
+    	}
+		
 	}
 		
 		
