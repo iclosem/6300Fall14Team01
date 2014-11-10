@@ -73,11 +73,11 @@ public class VIPActivity extends Activity implements OnClickListener {
     		}
 		}
 		if (view == btnSave) {
-			db.execSQL("UPDATE customers SET name ='"
-					+vipName.getText()+"',address='"+address.getText()+"',birthday='"
-					+dob.getText()+"',vippointstotal='"+vipPointsTotal.getText()+"',goldstatusdate= '"
-					+goldStatusDate.getText()+"', percentdiscount='"+percentDiscount.getText()+"', freeitemsavailable='"
-					+freeItemsAvailable.getText()+"' WHERE id='"+vipId.getText()+"'");
+			Customer curCust = new Customer(Integer.parseInt(vipId.getText().toString()), vipName.getText().toString(), dob.getText().toString(), address.getText().toString(), 
+					Integer.parseInt(vipPointsTotal.getText().toString()), goldStatusDate.getText().toString(),
+					Double.parseDouble(percentDiscount.getText().toString()), Integer.parseInt(freeItemsAvailable.getText().toString()));
+			curCust.awardPoints(0);//cheating to check gold status
+			dbhelp.updateCustomer(curCust); 
     		// clearText();
 			showMessage("Success", vipName.getText().toString() + " Record Updated");
     			

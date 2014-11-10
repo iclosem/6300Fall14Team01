@@ -62,6 +62,8 @@ public class Customer {
         this.vipPointsTotal += numberOfPoints;///need to check for negative?
         if (this.vipPointsTotal >= 1000){
             this.awardGold();
+        }else{
+        	clearGold();
         }
         
         return this.vipPointsTotal;
@@ -102,7 +104,12 @@ public class Customer {
         this.percentDiscount = .10; //
       
     };
-    
+
+    private void clearGold(){
+        this.goldStatusDate = "";
+        this.percentDiscount = 0; //
+      
+    };
     //getters 
     //
     public int getID(){ return this.vipNumber;}
