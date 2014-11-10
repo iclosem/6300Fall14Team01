@@ -129,7 +129,7 @@ public class PreorderActivity extends Activity {
 			cartText = "Current Customer " + curCust.getName();	
 		}
 		for (Item item: this.cart){
-			cartText += "\n "+ item.getFlavor() + item.getPrice();
+			cartText += "\n "+ item.getFlavor() + " " + item.getPrice();
 		}
 		editText.setText(cartText);
 	};
@@ -152,7 +152,7 @@ public class PreorderActivity extends Activity {
 		Items menu = new Items();
 		Item[] menuItems = menu.preorderInventory();
 		for(Item item: menuItems) {
-				itemStringList.add(item.getFlavor() + "\t\t" + String.valueOf(item.getPrice()));
+				itemStringList.add(item.getFlavor() + "\t\t " + String.valueOf(item.getPrice()));
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemStringList);
 
