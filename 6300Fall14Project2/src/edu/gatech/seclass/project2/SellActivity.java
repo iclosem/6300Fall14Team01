@@ -43,6 +43,7 @@ public class SellActivity extends Activity {
 			int freeItems = 0;
 			
 			if(curCust != null){
+				monthlyFreebies();
 				discount = curCust.getPercentDiscount();
 				custSaleId = String.valueOf(curCust.getID());
 				//needs to check for free items user has
@@ -71,7 +72,12 @@ public class SellActivity extends Activity {
 				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "SALE", price, formattedDate, custSaleId);
 				dbPer.addPurchase(curPurchase);
 			}
+			totalPrice = Math.floor(totalPrice * 100 ) / 100;
 			int points = (int)(Math.floor(totalPrice));
+			String totalPriceStr = String.valueOf( totalPrice);
+			if(totalPriceStr.charAt(totalPriceStr.length() - 3) != '.'){
+				totalPriceStr += "0";
+			}
 			sellText = sellText + "\n Total: $" + totalPrice;
 
 			if(curCust != null){
@@ -210,44 +216,33 @@ public class SellActivity extends Activity {
     	builder.setMessage(message);
     	builder.show();
 	}
-//    public int monthlyFreebies(){
+    public int monthlyFreebies(){
+    	
+    	int numToAward = 0;
+    	
+    	int vipId = this.curCust.getVIPNumber();
+        List<Purchase> last30Purchase;
+		PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
+       
+		try {
+			dbPer.getLastMonthPurchases(getString(vipId));
+			last30Purchase = dbPer.getLastMonthPurchases(getString(vipId));
+
+	    	if(last30Purchase.size() > 0){
+	    		if(this.curCust.getGoldStatusDate().compareTo("null") != 0 && this.curCust.getGoldStatusDate() != null){
+	    			numToAward++; //TODO: Problem, this will award extra freebie on every purchase for a gold cust
+	    		}
+	    		
+	    		//TODO go through purchase list, add up, when hit $50 or eolist, award or don't
+	    	}
+		} catch (Exception e) {
+			showMessage("Exception!", "Table problem.");
+		}
+    	return numToAward;
+    }
+//    private boolean purchaseLastMonth(){
 //    	
-//    	
-//    	int vipId = this.curCust.getVIPNumber();
-//    	Calendar cal = Calendar.getInstance();
-//        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-//        String formattedDate = format1.format(cal.getTime());
-//        
-//        PurchasesMySQLiteHelper dbhelp = new PurchasesMySQLiteHelper(this);
-//		SQLiteDatabase db = dbhelp.getWritableDatabase();
-//		Cursor c;
-//		try {
-//			c = db.rawQuery("SELECT * FROM purchases WHERE vipid='"
-//					+getString(vipId)+"'", null);
-//			} catch (Exception e) {
-//				showMessage("Exception!", "Table problem.");
-//				return 0;
-//			}
-//        	String lastPurchDate;
-//			if(c.moveToLast()){
-//        		lastPurchDate = c.getString(5);
-//        	}
-//        	else{
-//        		lastPurchDate = formattedDate;
-//        	}
-//        	
-//			Calendar cal2 = Calendar.getInstance();
-//			Date lastP = null;
-//			try {
-//				lastP = format1.parse(lastPurchDate);
-//			} catch (ParseException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			cal2.setTime(lastP);
-//        	int difInMonths = cal.get(Calendar.MONTH) - cal2.get(Calendar.MONTH);
-//        	
-//    	return difInMonths-1;
-//    	
+//    }
+//    private boolean purchase50LastMonth(){
 //    }
 }

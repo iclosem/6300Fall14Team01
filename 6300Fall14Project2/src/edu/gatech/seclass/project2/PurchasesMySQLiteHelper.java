@@ -1,4 +1,8 @@
 package edu.gatech.seclass.project2;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -116,6 +120,46 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 purchase.setID(ID);
     
                 purchases.add(purchase);
+            } while (cursor.moveToNext());
+        }
+ 
+        // return purchases
+        return purchases;
+    }
+    
+
+
+    public List<Purchase> getLastMonthPurchases(String vipId) throws ParseException {
+        List<Purchase> purchases = new LinkedList<Purchase>();
+
+    	Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -30);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = format1.format(cal.getTime());
+        Date startDate = format1.parse(formattedDate);
+        
+        String query = "SELECT  * FROM " + TABLE_PURCHASES + " WHERE vipid='"
+				+ vipId + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+ 
+        //go over each row, build item and add it to list
+        Purchase purchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+                int ID = Integer.parseInt(cursor.getString(0));
+                String flavor = cursor.getString(1);
+                String category = cursor.getString(2);
+                String purchaseType = cursor.getString(3);
+                Double price = Double.parseDouble(cursor.getString(4));
+                String date = cursor.getString(5);
+                String vipid= cursor.getString(6);
+            	if(startDate.before(format1.parse(date) )){
+	                purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
+	                purchase.setID(ID);
+	    
+	                purchases.add(purchase);
+            	}
             } while (cursor.moveToNext());
         }
  
