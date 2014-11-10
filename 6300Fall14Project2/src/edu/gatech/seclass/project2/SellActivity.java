@@ -221,8 +221,7 @@ public class SellActivity extends Activity {
         List<Purchase> last30Purchase;
        
 		try {
-			dbPer.getLastMonthPurchases(getString(vipId));
-			last30Purchase = dbPer.getLastMonthPurchases(getString(vipId));
+			last30Purchase = dbPer.getLastMonthPurchases(String.valueOf(getString(vipId)));
 
 	    	if(last30Purchase.size() > 0){
 	    		if(this.curCust.getGoldStatusDate().compareTo("null") != 0 && this.curCust.getGoldStatusDate() != null){

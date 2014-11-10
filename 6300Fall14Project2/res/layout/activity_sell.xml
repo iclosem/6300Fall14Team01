@@ -43,23 +43,13 @@
         android:text="Customers"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    
-    
-    <Button
-        android:id="@+id/ButtonPreorderSell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="Preorder" />
-
     <EditText
         android:id="@+id/editTextCartSell"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonPurchaseSell"
         android:layout_alignLeft="@+id/listCustomersSell"
-        android:layout_alignRight="@+id/ButtonPreorderSell"
+        android:layout_alignRight="@+id/listCustomersSell"
         android:layout_below="@+id/listCustomersSell"
         android:ems="10"
         android:inputType="textMultiLine" >

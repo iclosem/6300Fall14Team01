@@ -163,15 +163,5 @@ public class VIPActivity extends Activity implements OnClickListener {
 
 
 
-
-
-
-
-
-
-
-
-
-
 	
 }

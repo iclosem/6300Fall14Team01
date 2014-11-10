@@ -49,7 +49,7 @@ public class PreorderActivity extends Activity {
 					String sellText = "Pickup Date: ";
 					for (Item item: this.cart){
 						//applying discount
-						double price = Math.round((item.getPrice() * (1 - discount))*100)/100; 
+						double price = item.getPrice() * (1 - discount); 
 						
 						///creating date
 						Calendar cal = Calendar.getInstance();
@@ -62,14 +62,14 @@ public class PreorderActivity extends Activity {
 							price = 0;
 							freeItems--;
 						} else {
-							sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+							sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + formatPrice(price); //adds to receipt
 							totalPrice += price;
 						}
 						Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, formattedDate, custSaleId);
 						dbPer.addPurchase(curPurchase);
 					}
 					int points = (int)(Math.floor(totalPrice));
-					sellText = sellText + "\n Total: $" + totalPrice;
+					sellText = sellText + "\n Total: $" + formatPrice(totalPrice);
 		
 					if(curCust != null){
 						//curCust.awardPoints(points);
@@ -228,4 +228,14 @@ public class PreorderActivity extends Activity {
     	builder.setMessage(message);
     	builder.show();
 	}
+    private String formatPrice(double price){
+    	price = Math.floor(price * 100 ) / 100;
+		String totalPriceStr = String.valueOf( price);
+		if(totalPriceStr.charAt(totalPriceStr.length() - 3) != '.'){
+			totalPriceStr += "0";
+		}
+		
+		return totalPriceStr;
+    }
+	
 }
