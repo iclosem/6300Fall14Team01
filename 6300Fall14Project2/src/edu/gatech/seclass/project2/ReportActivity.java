@@ -22,8 +22,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 	EditText rptDate, rptVIPID;
 	Button btnSalesRpt, btnPreOrdRept, btnHistory, btn30Day;
 	SQLiteDatabase db;
-	//CustomersMySQLiteHelper dbCust;
-	//PurchasesMySQLiteHelper db;
+	
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +63,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 		CustomersMySQLiteHelper dbhelp = new CustomersMySQLiteHelper(context);
 		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
-		//db = openOrCreateDatabase("customersDB", 0, null);
-		//dbCust = new CustomersMySQLiteHelper(getBaseContext());
-		//dbPer = new PurchasesMySQLiteHelper(getBaseContext());
+		
 		
 		
 		
@@ -81,7 +78,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 			try {
 				c = db.rawQuery("SELECT * FROM purchases WHERE date='"
 						+rptDate.getText()+"'", null);
-//				c = db.rawQuery("SELECT * FROM purchases", null);
+
 				} catch (Exception e) {
 					showMessage("Exception!", "Table problem.");
 					return;
