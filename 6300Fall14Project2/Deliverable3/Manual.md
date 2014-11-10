@@ -40,6 +40,8 @@ iScream manages 5 basic user input scenarios represented by tabs on the applicat
 [Charts built with yuml...editing link here](http://yuml.me/edit/5b927c22)
 ![Cart Manager](http://yuml.me/5b927c22)
 
+![Imgur](http://i.imgur.com/wBTV940.png)
+
 #### Process a Purchase
 
 - To process a puchase, select the **SELL PRODUCT** button from the main interface
@@ -88,7 +90,7 @@ iScream manages 5 basic user input scenarios represented by tabs on the applicat
 	- Enter the customer name, address and birth date in the appropriate fields.
 	- Tap the "Register" button to add the customer to the VIP database.  
 	- The customer's VIP ID will be displayed.  Provide this to the customer.
-	
+![Imgur](http://i.imgur.com/RODyEjm.png)	
 
 
 

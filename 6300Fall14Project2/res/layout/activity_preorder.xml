@@ -73,11 +73,10 @@
         android:text="Customers"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    
     <ListView
         android:id="@+id/listCustomersPreorder"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_alignLeft="@+id/textView2Preorder"
         android:layout_below="@+id/textView2Preorder"
         android:footerDividersEnabled="false" >
@@ -91,6 +90,26 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/ButtonPreorderSell"
         android:layout_alignBottom="@+id/ButtonPreorderSell"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/ButtonPreorderSell"
         android:text="Clear" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextCartSell"
+        android:layout_alignTop="@+id/editTextCartSell"
+        android:text="Pickup Date"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextPickupDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editTextCartSell"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:hint="YYYY-MM-DD"
+        android:inputType="date" />
+
 </RelativeLayout>
