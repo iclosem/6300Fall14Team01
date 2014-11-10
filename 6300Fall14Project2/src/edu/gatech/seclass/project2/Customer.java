@@ -55,10 +55,15 @@ public class Customer {
     //
     //this will be called when a purchase is executed, will modify status to gold if over 1000
     public int awardPoints(int numberOfPoints) {
+    	
+    	if(this.getVIPPointsTotal() >= 1000){
+    		numberOfPoints += numberOfPoints;
+    	}
         this.vipPointsTotal += numberOfPoints;///need to check for negative?
         if (this.vipPointsTotal >= 1000){
             this.awardGold();
         }
+        
         return this.vipPointsTotal;
     };
     
@@ -67,7 +72,7 @@ public class Customer {
         if (this.freeItemsAvailable == 0 ){
             return 0;
         } else if (this.freeItemsAvailable >= numberOfItems){
-            this.freeItemsAvailable-=numberOfItems;
+            this.freeItemsAvailable -= numberOfItems;
             return numberOfItems; //all are available for free
         } else if (this.freeItemsAvailable < numberOfItems){
             int returnAvailable = this.freeItemsAvailable;
