@@ -1,8 +1,10 @@
 package edu.gatech.seclass.project2;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
@@ -64,7 +66,8 @@ public class ReportActivity extends Activity implements OnClickListener {
 		SQLiteDatabase db = dbhelp.getWritableDatabase();
 		
 		
-		
+
+		PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
 		
 		
 		if (view==btnSalesRpt)
@@ -154,38 +157,32 @@ public class ReportActivity extends Activity implements OnClickListener {
         		}
         	showMessage("Purchase history for VIP #" +rptVIPID.getText(), buffer.toString());
     	}
-		if (view==btn30Day)
+		if (view == btn30Day)
 		{
-			Calendar cal = Calendar.getInstance();
-			Calendar cal2 = Calendar.getInstance();
-			cal2.add(Calendar.DATE, -31);
-			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-	        String formattedDate = format1.format(cal.getTime());
-	        String formattedDate2 = format1.format(cal2.getTime());
-						
-			Cursor c;
+	        List<Purchase> last30Purchase;
 			try {
-				c = db.rawQuery("SELECT * FROM purchases WHERE date <='"+formattedDate+"' AND date>'"+formattedDate2+"'", null);
-			} catch (Exception e) {
-				showMessage("Exception!", "Table problem.");
-    			return;
+				last30Purchase = dbPer.getLastMonthPurchases(rptVIPID.getText().toString());
+			
+	    		if(last30Purchase.size() == 0) {
+	        		showMessage("Error", "No Sales found for this date range");
+	        		return;
+	        	}
+		        StringBuffer buffer = new StringBuffer();
+		        for (Purchase purch: last30Purchase){
+		       
+		        	buffer.append("Date: " + purch.getDate() + "\n");
+		        	buffer.append("Flavor: " + purch.getFlavor() + "\n");
+		        	buffer.append("Amount: " + purch.getPrice() + "\n\n");
+		        	
+		        }
+	        	showMessage("Daily Preorders for " +rptDate.getText(), buffer.toString());
+    	
+			} catch (ParseException e) {
+	    		showMessage("Error", "No Sales found for this date range");
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-    		if(c.getCount()==0)
-        	{
-        		showMessage("Error", "No Sales found for this date");
-        		return;
-        	}
-        StringBuffer buffer=new StringBuffer();
-        while(c.moveToNext())
-        {
-        	buffer.append("Date: "+c.getString(5)+"\n");
-        	buffer.append("Flavor: "+c.getString(1)+"\n");
-        	buffer.append("Amount: "+c.getString(4)+"\n\n");
-        	
-        }
-        	showMessage("Daily Preorders for " +rptDate.getText(), buffer.toString());
-    	}
-		
+		}
 	}
 		
 	public void showMessage(String title,String message)

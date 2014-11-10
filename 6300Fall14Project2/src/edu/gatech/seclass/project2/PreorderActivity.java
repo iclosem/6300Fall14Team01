@@ -101,7 +101,7 @@ public class PreorderActivity extends Activity {
 	}
 	
 	private void updateCart() {
-		EditText editText = (EditText)findViewById(R.id.editTextCartSell);
+		EditText editText = (EditText)findViewById(R.id.editTextCartPreorder);
 		String cartText = "" ;
 		if (curCust != null){
 			cartText = "Current Customer " + curCust.getName();	

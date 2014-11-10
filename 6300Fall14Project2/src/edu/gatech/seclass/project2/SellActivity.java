@@ -221,7 +221,7 @@ public class SellActivity extends Activity {
         List<Purchase> last30Purchase;
        
 		try {
-			last30Purchase = dbPer.getLastMonthPurchases(String.valueOf(getString(vipId)));
+			last30Purchase = dbPer.getLastMonthPurchases(String.valueOf(vipId));
 
 	    	if(last30Purchase.size() > 0){
 	    		if(this.curCust.getGoldStatusDate().compareTo("null") != 0 && this.curCust.getGoldStatusDate() != null){
@@ -232,6 +232,7 @@ public class SellActivity extends Activity {
 	    	}
 		} catch (Exception e) {
 			showMessage("Exception!", "Table problem.");
+			e.printStackTrace();
 		}
     	return numToAward;
     }
