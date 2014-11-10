@@ -37,13 +37,13 @@
 
 	<Button
 	    android:id="@+id/button5"
-	    style="?android:attr/buttonStyleSmall"
+	    style="android:buttonStyle"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignLeft="@+id/button4"
 	    android:layout_below="@+id/button4"
 	    android:layout_marginTop="18dp"
-        android:onClick="handleMenuSelection"
+	    android:onClick="handleMenuSelection"
 	    android:text="Generate Report" />
 
 	<Button

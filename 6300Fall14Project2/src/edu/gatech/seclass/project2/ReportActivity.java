@@ -191,26 +191,6 @@ public class ReportActivity extends Activity implements OnClickListener {
 		
 	}
 		
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void showMessage(String title,String message)
     {
     	Builder builder=new Builder(this);
