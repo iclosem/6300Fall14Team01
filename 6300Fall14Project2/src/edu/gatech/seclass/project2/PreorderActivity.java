@@ -89,12 +89,15 @@ public class PreorderActivity extends Activity {
 
 	private String getPreorderDate(int numItems){
 		String preorderDate = "";
-		//TODO: check number of items, compare to preorders available, popup thing
+		//TODO: check number of items, compare to preorders available, popup a date radio list
 
 		Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, 1);
-        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-        preorderDate = format1.format(cal.getTime());
+		for(int i = 1; i < 8; i++){
+	        cal.add(Calendar.DATE, i);
+	        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+	        preorderDate = format1.format(cal.getTime());
+	        //go ask about this date
+		}
 		return preorderDate;
 	}
 	
