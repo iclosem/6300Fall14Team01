@@ -105,16 +105,15 @@ public class PreorderActivity extends Activity {
 	        cal.add(Calendar.DATE, 1);
 	        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 	        preorderDate = format1.format(cal.getTime());
-	        if (preorderDate.equals(pickupDate)){
+
+	        if (preorderDate.compareTo(pickupDate) == 0){
 	        	PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
 	        	SQLiteDatabase db = dbPer.getWritableDatabase();
 	        	Cursor c = db.rawQuery("SELECT * FROM purchases WHERE date='"+preorderDate+"'", null);
 	        	if ((c.getCount()+numItems) >= preSlotsMax){
 	        		Toast.makeText(getBaseContext(), "No Slots Left for this Pickup Date", Toast.LENGTH_SHORT).show();
 	        		return null;
-	        	}
-	        	else 
-	        	{
+	        	} else {
 	        		return preorderDate;
 	        	}
 	        }	              
