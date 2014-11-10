@@ -51,7 +51,7 @@ public class PreorderActivity extends Activity {
 					custSaleId = String.valueOf(curCust.getID());
 					//needs to check for free items user has
 					freeItems = curCust.getFreeItemsAvailable();
-					String sellText = "Pickup Date: ";
+					String sellText = "Pickup Date: " +preorderDate;
 					for (Item item: this.cart){
 						//applying discount
 						double price = item.getPrice() * (1 - discount); 
