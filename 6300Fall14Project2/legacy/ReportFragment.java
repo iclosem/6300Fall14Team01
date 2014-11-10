@@ -1,19 +1,19 @@
 package edu.gatech.seclass.project2;
 
-import edu.gatech.seclass.project2.R;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
  
-public class CreateFragment extends Fragment {
+public class ReportFragment extends Fragment {
  
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment_create, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_report, container, false);
          
         return rootView;
     }

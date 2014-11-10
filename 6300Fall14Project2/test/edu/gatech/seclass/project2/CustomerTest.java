@@ -27,8 +27,14 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void createCustomerTest(){
+		Customer newCust = new Customer("Pickles McGee", "2013-12-01", "123 Main St.");
+		assertEquals("Created cust", newCust.getName(), "Pickles McGee");
+	}
+	@Test
+	public void newCustomerTest(){
+		Customer newCust = new Customer("Pickles McGee", "2013-12-01", "123 Main St.");
+		assertEquals("new cust", newCust.getVIPPointsTotal(), 0);
 	}
 
 }

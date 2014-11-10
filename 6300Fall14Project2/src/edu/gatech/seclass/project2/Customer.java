@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 public class Customer {
     private String birthday;
     private String name;
@@ -12,7 +15,7 @@ public class Customer {
     private int vipNumber;
     private int vipPointsTotal; 
     private String goldStatusDate; //store as YYYY-MM-DD
-    private double percentDiscount;
+    private double percentDiscount = 0;
     private int freeItemsAvailable;
     
     //this creates a new customer
@@ -32,7 +35,6 @@ public class Customer {
                     String initAddress,
                     int initVIPPointsTotal, 
                     String initGoldStatusDate, 
-                    String initLastFreeItem,
                     double initPercentDiscount, 
                     int initFreeItemsAvailable){
         this.vipNumber = initID;
@@ -52,11 +54,18 @@ public class Customer {
     //award points
     //
     //this will be called when a purchase is executed, will modify status to gold if over 1000
-    public int awardPoints(int numberOfPoints){
-        this.vipPointsTotal+=numberOfPoints;///need to check for negative?
+    public int awardPoints(int numberOfPoints) {
+    	
+    	if(this.getVIPPointsTotal() >= 1000){
+    		numberOfPoints += numberOfPoints;
+    	}
+        this.vipPointsTotal += numberOfPoints;///need to check for negative?
         if (this.vipPointsTotal >= 1000){
             this.awardGold();
+        }else{
+        	clearGold();
         }
+        
         return this.vipPointsTotal;
     };
     
@@ -65,7 +74,7 @@ public class Customer {
         if (this.freeItemsAvailable == 0 ){
             return 0;
         } else if (this.freeItemsAvailable >= numberOfItems){
-            this.freeItemsAvailable-=numberOfItems;
+            this.freeItemsAvailable -= numberOfItems;
             return numberOfItems; //all are available for free
         } else if (this.freeItemsAvailable < numberOfItems){
             int returnAvailable = this.freeItemsAvailable;
@@ -80,6 +89,7 @@ public class Customer {
         this.freeItemsAvailable++;
         return this.freeItemsAvailable;
     };
+
     
     //private methods 
     //
@@ -94,7 +104,12 @@ public class Customer {
         this.percentDiscount = .10; //
       
     };
-    
+
+    private void clearGold(){
+        this.goldStatusDate = "";
+        this.percentDiscount = 0; //
+      
+    };
     //getters 
     //
     public int getID(){ return this.vipNumber;}

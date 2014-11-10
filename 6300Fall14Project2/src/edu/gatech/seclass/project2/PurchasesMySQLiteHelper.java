@@ -1,4 +1,8 @@
 package edu.gatech.seclass.project2;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,11 +26,25 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
  
     public PurchasesMySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION); 
+        
     }
  
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // SQL statement to create purchases table
+        // SQL statement to create Customers table
+        String CREATE_CUSTOMERS_TABLE = "CREATE TABLE customers ( " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " + //this will be the VIP ID
+                "name TEXT, "+ 
+                "birthday TEXT, "+
+                "address TEXT, "+ //customer or preorder
+                "vippointstotal TEXT, "+
+                "goldstatusdate TEXT, "+
+                "percentdiscount TEXT, "+
+                "freeitemsavailable TEXT )";
+ 
+        // create customers table
+        db.execSQL(CREATE_CUSTOMERS_TABLE);
+        
         String CREATE_PURCHASES_TABLE = "CREATE TABLE purchases ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "flavor TEXT, "+
@@ -37,6 +55,7 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 "vipid TEXT )";
  
         // create purchases table
+        
         db.execSQL(CREATE_PURCHASES_TABLE);
     }
  
@@ -107,7 +126,123 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
         // return purchases
         return purchases;
     }
+    
+
+
+    public List<Purchase> getLast30DaysPurchases(String vipId) throws ParseException {
+        List<Purchase> purchases = new LinkedList<Purchase>();
+
+    	Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -30);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = format1.format(cal.getTime());
+        Date startDate = format1.parse(formattedDate);
+        
+        String query = "SELECT  * FROM " + TABLE_PURCHASES + " WHERE vipid='"
+				+ vipId + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
  
+        //go over each row, build item and add it to list
+        Purchase purchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+                int ID = Integer.parseInt(cursor.getString(0));
+                String flavor = cursor.getString(1);
+                String category = cursor.getString(2);
+                String purchaseType = cursor.getString(3);
+                Double price = Double.parseDouble(cursor.getString(4));
+                String date = cursor.getString(5);
+                String vipid= cursor.getString(6);
+            	if(startDate.before(format1.parse(date) )){
+	                purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
+	                purchase.setID(ID);
+	    
+	                purchases.add(purchase);
+            	}
+            } while (cursor.moveToNext());
+        }
+ 
+        // return purchases
+        return purchases;
+    }
+    public List<Purchase> getLastMonthPurchases(String vipId) throws ParseException {
+        List<Purchase> purchases = new LinkedList<Purchase>();
+
+    	Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -30);
+        cal.add(Calendar.MONTH, -1);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = format1.format(cal.getTime());
+        Date startDate = format1.parse(formattedDate);
+        cal.add(Calendar.MONTH, 1);
+        Date endDate = format1.parse(formattedDate);
+        
+        
+        String query = "SELECT  * FROM " + TABLE_PURCHASES + " WHERE vipid='"
+				+ vipId + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+ 
+        //go over each row, build item and add it to list
+        Purchase purchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+                int ID = Integer.parseInt(cursor.getString(0));
+                String flavor = cursor.getString(1);
+                String category = cursor.getString(2);
+                String purchaseType = cursor.getString(3);
+                Double price = Double.parseDouble(cursor.getString(4));
+                String date = cursor.getString(5);
+                String vipid= cursor.getString(6);
+            	if(startDate.before(format1.parse(date) ) && endDate.after(format1.parse(date))){
+	                purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
+	                purchase.setID(ID);
+	    
+	                purchases.add(purchase);
+            	}
+            } while (cursor.moveToNext());
+        }
+ 
+        // return purchases
+        return purchases;
+    }
+    public Purchase getLastPurchases(String vipId) throws ParseException {
+
+    	Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -80);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = format1.format(cal.getTime());
+        Date startDate = format1.parse(formattedDate);
+        
+        String query = "SELECT  * FROM " + TABLE_PURCHASES + " WHERE vipid='"
+				+ vipId + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+ 
+        //go over each row, build item and add it to list
+        Purchase purchase = null;
+        if (cursor.moveToFirst()) {
+            do {
+            	String date = cursor.getString(5);
+            	if(startDate.before(format1.parse(date) )){
+	                int ID = Integer.parseInt(cursor.getString(0));
+	                String flavor = cursor.getString(1);
+	                String category = cursor.getString(2);
+	                String purchaseType = cursor.getString(3);
+	                Double price = Double.parseDouble(cursor.getString(4));
+	                String vipid= cursor.getString(6);
+	                purchase = new Purchase(flavor, category, purchaseType, price, date, vipid);
+	                purchase.setID(ID);
+	                startDate = format1.parse(date);
+            	}
+            } while (cursor.moveToNext());
+        }
+
+        // return purchases
+        return purchase;
+    }
     public void deletePurchase(Purchase purchase) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PURCHASES,
@@ -115,4 +250,5 @@ public class PurchasesMySQLiteHelper extends SQLiteOpenHelper{
                 new String[] { String.valueOf(purchase.getID()) });
         db.close();
     }
+   
 }

@@ -27,28 +27,36 @@ public class Purchase {
         this.vipid = initVIPID;
         this.date = initDate;
     }
+
     
     public int setID(int initID){
         return this.id = initID;
     }
+    
     public int getID(){
         return this.id;
     }
+    
     public String getFlavor(){
         return this.flavor;
     }
+    
     public String getCategory(){
         return this.category;
     }//yogurt or icecream 
+    
     public String getPurchaseType(){
         return this.purchaseType;
     }
+    
     public double getPrice(){
         return this.price;
     }
+    
     public String getDate(){
         return this.date;
     }
+    
     public String getVIPID(){
         return this.vipid;
     }
