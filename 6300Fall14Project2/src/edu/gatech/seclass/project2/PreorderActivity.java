@@ -40,43 +40,45 @@ public class PreorderActivity extends Activity {
 				//error, must have a customer
 				Toast.makeText(getBaseContext(), "Must select a VIP Customer", Toast.LENGTH_SHORT).show();
 			}else{
-				discount = curCust.getPercentDiscount();
-				custSaleId = String.valueOf(curCust.getID());
-				//needs to check for free items user has
-				freeItems = curCust.getFreeItemsAvailable();
-				String sellText = "Pickup Date: ";
-				for (Item item: this.cart){
-					//applying discount
-					double price = item.getPrice() * (1 - discount); 
-					
-					///creating date
-					Calendar cal = Calendar.getInstance();
-			        cal.add(Calendar.DATE, 1);
-			        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-			        String formattedDate = format1.format(cal.getTime());
-					
-					if (freeItems > 0){
-						sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
-						curCust.creditFreeItem();
-						price = 0;
-						freeItems--;
-					} else {
-						sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
-						totalPrice += price;
+				String preorderDate = getPreorderDate(cart.size());
+				if(preorderDate != ""){
+					discount = curCust.getPercentDiscount();
+					custSaleId = String.valueOf(curCust.getID());
+					//needs to check for free items user has
+					freeItems = curCust.getFreeItemsAvailable();
+					String sellText = "Pickup Date: ";
+					for (Item item: this.cart){
+						//applying discount
+						double price = item.getPrice() * (1 - discount); 
+						
+						///creating date
+						Calendar cal = Calendar.getInstance();
+				        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+				        String formattedDate = format1.format(cal.getTime());
+						
+						if (freeItems > 0){
+							sellText += "\n FREE "+ item.getFlavor(); //adds to receipt
+							curCust.creditFreeItem();
+							price = 0;
+							freeItems--;
+						} else {
+							sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+							totalPrice += price;
+						}
+						Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, formattedDate, custSaleId);
+						dbPer.addPurchase(curPurchase);
 					}
-					Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "PREORDER", price, formattedDate, custSaleId);
-					dbPer.addPurchase(curPurchase);
+					int points = (int)(Math.floor(totalPrice));
+					sellText = sellText + "\n Total: $" + totalPrice;
+		
+					if(curCust != null){
+						//curCust.awardPoints(points);
+						//dbCust.updateCustomer(curCust); 
+						sellText = sellText + "\nPoints Will be Awarded: " + points;
+					}
+					showMessage("Preorder Made!", sellText);
+					clearCart();
 				}
-				int points = (int)(Math.floor(totalPrice));
-				sellText = sellText + "\n Total: $" + totalPrice;
-	
-				if(curCust != null){
-					//curCust.awardPoints(points);
-					//dbCust.updateCustomer(curCust); 
-					sellText = sellText + "\nPoints Will be Awarded: " + points;
-				}
-				showMessage("Preorder Made!", sellText);
-				clearCart();
 			}
 		} else {
 			Toast.makeText(getBaseContext(), "Cart is empty", Toast.LENGTH_SHORT).show();
@@ -84,8 +86,15 @@ public class PreorderActivity extends Activity {
 	}
 	
 
-	private void datePreorder(){
-		
+	private String getPreorderDate(int numItems){
+		String preorderDate = "";
+		//TODO: check number of items, compare to preorders available, popup thing
+
+		Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 1);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        preorderDate = format1.format(cal.getTime());
+		return preorderDate;
 	}
 	
 	private void updateCart() {
