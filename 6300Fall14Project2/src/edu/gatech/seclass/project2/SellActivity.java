@@ -66,7 +66,7 @@ public class SellActivity extends Activity {
 					price = 0;
 					freeItems--;
 				} else {
-					sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + price; //adds to receipt
+					sellText += "\n Purchased: "+ item.getFlavor() +"\t\t $" + formatPrice(price); //adds to receipt
 					totalPrice += price;
 				}
 				Purchase curPurchase = new Purchase(item.getFlavor(), item.getCategory(), "SALE", price, formattedDate, custSaleId);
@@ -74,11 +74,7 @@ public class SellActivity extends Activity {
 			}
 			totalPrice = Math.floor(totalPrice * 100 ) / 100;
 			int points = (int)(Math.floor(totalPrice));
-			String totalPriceStr = String.valueOf( totalPrice);
-			if(totalPriceStr.charAt(totalPriceStr.length() - 3) != '.'){
-				totalPriceStr += "0";
-			}
-			sellText = sellText + "\n Total: $" + totalPrice;
+			sellText = sellText + "\n Total: $" + formatPrice(totalPrice);
 
 			if(curCust != null){
 				curCust.awardPoints(points);
@@ -217,12 +213,12 @@ public class SellActivity extends Activity {
     	builder.show();
 	}
     public int monthlyFreebies(){
-    	
+
+		PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
     	int numToAward = 0;
     	
     	int vipId = this.curCust.getVIPNumber();
         List<Purchase> last30Purchase;
-		PurchasesMySQLiteHelper dbPer = new PurchasesMySQLiteHelper(this);
        
 		try {
 			dbPer.getLastMonthPurchases(getString(vipId));
@@ -240,9 +236,15 @@ public class SellActivity extends Activity {
 		}
     	return numToAward;
     }
-//    private boolean purchaseLastMonth(){
-//    	
-//    }
+    private String formatPrice(double price){
+    	price = Math.floor(price * 100 ) / 100;
+		String totalPriceStr = String.valueOf( price);
+		if(totalPriceStr.charAt(totalPriceStr.length() - 3) != '.'){
+			totalPriceStr += "0";
+		}
+		
+		return totalPriceStr;
+    }
 //    private boolean purchase50LastMonth(){
 //    }
 }

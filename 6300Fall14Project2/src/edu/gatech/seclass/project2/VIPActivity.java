@@ -105,7 +105,7 @@ public class VIPActivity extends Activity implements OnClickListener {
     			buffer.append("Address: "+c.getString(2)+"\n");
     			buffer.append("DOB: "+c.getString(3)+"\n");
     			buffer.append("VIP Points: "+c.getString(4)+"\n");
-    			if(c.getString(5) != null && c.getString(5) != "" && c.getString(5) != "null"){
+    			if(c.getString(5) != null && c.getString(5) != "" && c.getString(5).compareTo("null") != 0){
 	    			buffer.append("Gold Date: "+c.getString(5)+"\n");
 	    			buffer.append("Discount: "+c.getString(6)+"\n");
     			}
